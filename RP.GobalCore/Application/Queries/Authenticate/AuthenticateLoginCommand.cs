@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace RP.GobalCore.Application.Commands.AuthenticateCommand
+namespace RP.GobalCore.Application.Queries.Authenticate
 {
     public class AuthenticateLoginCommand : IRequest<GenericResponse<>>
     {

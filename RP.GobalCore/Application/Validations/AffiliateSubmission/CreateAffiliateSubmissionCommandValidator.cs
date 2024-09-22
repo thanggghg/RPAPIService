@@ -3,7 +3,7 @@ using RP.Affiliate.Tracking.Commands;
 using RP.Affiliate.Tracking.Commons.Constants;
 using RP.Affiliate.Tracking.Commons.Enums;
 
-namespace RP.Affiliate.Tracking.Validations.AffiliateSubmission
+namespace RP.GobalCore.Application.Validations.AffiliateSubmission
 {
     public class CreateAffiliateSubmissionCommandValidator : AbstractValidator<CreateAffiliateSubmissionCommand>
     {

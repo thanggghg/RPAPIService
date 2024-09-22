@@ -8,16 +8,17 @@ using RP.Library.Helpers;
 using RP.Library.Helpers.Service;
 using MediatR;
 using RP.GobalCore.Application.Commands.AuthenticateCommand;
+using RP.GobalCore.Application.Queries.Authenticate;
 
 namespace RP.GobalCore.Application.Handler.AuthenticateHandler
 {
     public class AuthenticateHandler(IMapper mapper,
                                           IBaseService baseService
-                                      ) : IRequestHandler<AuthenticateCommand, BaseResponseCode>
+                                      ) : IRequestHandler<AuthenticateLoginCommand, BaseResponseCode>
     {
         private readonly IMapper _mapper = mapper;
         private readonly IBaseService _baseService = baseService;
-        public async Task<BaseResponseCode> Handle(AuthenticateCommand request, CancellationToken cancellationToken)
+        public async Task<BaseResponseCode> Handle(AuthenticateLoginCommand request, CancellationToken cancellationToken)
         {
 
         }

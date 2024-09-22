@@ -80,16 +80,6 @@ internal static class Extensions
             .Get<JwtOptions>();
       
         services.AddSingleton<IDbConnection>(_ => new Npgsql.NpgsqlConnection($"{builder.Configuration.GetConnectionStringEnvironment("GoSellDB")};Include Error Detail=true;"));
-        services.AddSingleton<IDbConnection>(_ => new Npgsql.NpgsqlConnection($"{builder.Configuration.GetConnectionStringEnvironment("GatewayServicesConnection")};Include Error Detail=true;"));
-        services.AddSingleton<IDbConnection>(_ => new Npgsql.NpgsqlConnection($"{builder.Configuration.GetConnectionStringEnvironment("PaymentServicesConnection")};Include Error Detail=true;"));
-        services.AddSingleton<IDbConnection>(_ => new Npgsql.NpgsqlConnection($"{builder.Configuration.GetConnectionStringEnvironment("CashbookServicesConnection")};Include Error Detail=true;"));
-        services.AddSingleton<IDbConnection>(_ => new Npgsql.NpgsqlConnection($"{builder.Configuration.GetConnectionStringEnvironment("WareHouseDB")};Include Error Detail=true;"));
-        services.AddSingleton<IDbConnection>(_ => new Npgsql.NpgsqlConnection($"{builder.Configuration.GetConnectionStringEnvironment("CommonTicketServicesConnection")};Include Error Detail=true;"));
-        services.AddSingleton<IDbConnection>(_ => new Npgsql.NpgsqlConnection($"{builder.Configuration.GetConnectionStringEnvironment("EWarrantyServicesConnection")};Include Error Detail=true;"));
-        services.AddSingleton<IDbConnection>(_ => new Npgsql.NpgsqlConnection($"{builder.Configuration.GetConnectionStringEnvironment("AffiliateTrackingConnection")};Include Error Detail=true;"));
-        services.AddSingleton<IDbConnection>(_ => new Npgsql.NpgsqlConnection($"{builder.Configuration.GetConnectionStringEnvironment("CommentServiceConnection")};Include Error Detail=true;"));
-        services.AddSingleton<IDbConnection>(_ => new Npgsql.NpgsqlConnection($"{builder.Configuration.GetConnectionStringEnvironment("CommonHistoryConnection")};Include Error Detail=true;"));
-        services.AddSingleton<IDbConnection>(_ => new Npgsql.NpgsqlConnection($"{builder.Configuration.GetConnectionStringEnvironment("ForumServicesConnection")};Include Error Detail=true;"));
 
         services.AddSingleton(jwtOptions);
         services.AddCachesMemoryOrRedis();

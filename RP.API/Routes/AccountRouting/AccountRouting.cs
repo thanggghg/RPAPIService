@@ -1,4 +1,5 @@
 ﻿using RP.API.Routes;
+using RP.API.Service;
 using RP.Library.Utils;
 
 namespace RP.API.Routes.AccountRouting
@@ -7,7 +8,7 @@ namespace RP.API.Routes.AccountRouting
     {
         public static RouteGroupBuilder MapRPAuthencationApi(this RouteGroupBuilder app)
         {
-            app.MapPost("/sendOTPByPhoneNumber", AffiliateAuthenticationApi.AffiliateSendSMSOTPAsync)
+            app.MapPost("/sendOTPByPhoneNumber", AuthenticateService.AccountLoginAsync)
                 .WithTags(SwaggerConstants.RPAuthencation);
 
             //app.MapPost("/getuser-bylistusername", AffiliateAuthenticationApi.GetUserByListUserNamesAsync)

@@ -106,6 +106,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\RP.GobalCore\RP.GobalCore.csproj" />
     <ProjectReference Include="..\RP.Library\RP.Library.csproj" />
   </ItemGroup>
   

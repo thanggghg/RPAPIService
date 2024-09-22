@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json;
 
-namespace GoSell.SocialAuthentication.Model.Response
+namespace RP.GobalCore.ViewModels.Queries
 {
-    public class AppleAuthResponse
+    public class AuthenticateLoginResponse
     {
         [JsonProperty("access_token")]
         public string AccessToken { get; set; }

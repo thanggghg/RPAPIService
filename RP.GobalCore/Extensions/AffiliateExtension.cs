@@ -1,20 +1,6 @@
 ﻿using FluentValidation;
-using RP.Affiliate.Tracking.Commands;
-using RP.Affiliate.Tracking.Commands.AffiliateProduct;
 using RP.Affiliate.Tracking.Config;
 using RP.Affiliate.Tracking.Database;
-using RP.Affiliate.Tracking.Functions.Implementation;
-using RP.Affiliate.Tracking.Functions.Interface;
-using RP.Affiliate.Tracking.Queries;
-using RP.Affiliate.Tracking.Repositories;
-using RP.Affiliate.Tracking.Repositories.Interfaces;
-using RP.Affiliate.Tracking.Services;
-using RP.Affiliate.Tracking.Services.ExportAffiliateUrlReport;
-using RP.Affiliate.Tracking.Services.Interfaces;
-using RP.Affiliate.Tracking.Validations.AffiliateProduct;
-using RP.Affiliate.Tracking.Validations.AffiliateSubmission;
-using RP.Common.Enums;
-using RP.Common.Extension;
 using RP.Library.Db;
 using RP.Library.Extensions;
 using RP.Library.Utils;
@@ -37,10 +23,10 @@ public static class RPAPIExtension
            x => x.MigrationsHistoryTable("__MigrationsHistory", "affiliate-tracking-services"))
             );
         services.AddMigration<AffiliateContext>();
-        services.AddMediatR(cfg =>
-        {
-            cfg.RegisterServicesFromAssemblyContaining(typeof(CreateClickTrackingCommand));
-        });
+        //services.AddMediatR(cfg =>
+        //{
+        //    cfg.RegisterServicesFromAssemblyContaining(typeof(CreateClickTrackingCommand));
+        //});
         services.AddHttpClient(ApiNameConstants.AFFiLIAATE_TRACKING.ToString()).ConfigurePrimaryHttpMessageHandler(() => new HttpClientHandler
         {
             ClientCertificateOptions = ClientCertificateOption.Manual,
@@ -54,15 +40,15 @@ public static class RPAPIExtension
         builder.Services.AddHealthChecks()
                 .AddDbContextCheck<AffiliateContext>("AffiliateContext")
                 .AddCheck("AffiliateService", () => HealthCheckResult.Healthy());
-        services.AddScoped<ExportAffiliateUrlReportService>();
-        services.AddExportRequestHandler<ExportAffUrlReportQuery>();
-        services.AddExportCommonService<ExportAffUrlReportQuery>();
+        //services.AddScoped<ExportAffiliateUrlReportService>();
+        //services.AddExportRequestHandler<ExportAffUrlReportQuery>();
+        //services.AddExportCommonService<ExportAffUrlReportQuery>();
 
-        var serviceMappings = new Dictionary<string, Type>
-        {
-            { ExportCommonServiceType.affiliateUrlReport.ToString(), typeof(ExportAffiliateUrlReportService) },
-        };
+        //var serviceMappings = new Dictionary<string, Type>
+        //{
+        //    { ExportCommonServiceType.affiliateUrlReport.ToString(), typeof(ExportAffiliateUrlReportService) },
+        //};
 
-        services.AddDynamicExportDataMapperResolver<ExportAffUrlReportQuery>(serviceMappings);
+        //services.AddDynamicExportDataMapperResolver<ExportAffUrlReportQuery>(serviceMappings);
     }
 }

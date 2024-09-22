@@ -10,7 +10,7 @@ using RP.Affiliate.Tracking.Database;
 using RP.Affiliate.Tracking.Repositories;
 using RP.Library.Db;
 
-internal static class AffiliateExtension
+internal static class RPAPIExtension
 {
     public static void AddAffiliateTrackingServices(this IHostApplicationBuilder builder)
     {

@@ -36,12 +36,7 @@
     <PackageReference Include="LinqKit" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\GoSell.Affiliate.Authencation\GoSell.Affiliate.Authentication.csproj" />
-    <ProjectReference Include="..\GoSell.CommonHistory\GoSell.CommonHistory.csproj" />
-    <ProjectReference Include="..\GoSell.Common\GoSell.Common.csproj" />
-    <ProjectReference Include="..\GoSell.Library\GoSell.Library.csproj" />
-  </ItemGroup>
+
 
   <ItemGroup>
     <Folder Include="Mapper\" />

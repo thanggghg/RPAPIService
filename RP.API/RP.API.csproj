@@ -82,29 +82,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GoSell.Affiliate.PublisherGroupManagement\GoSell.Affiliate.PublisherGroupManagement.csproj" />
-    <ProjectReference Include="..\GoSell.Analysis\GoSell.Analysis.csproj" />
-    <ProjectReference Include="..\GoSell.Commissions\GoSell.Affiliate.Commissions.csproj" />
-    <ProjectReference Include="..\GoSell.Comments\GoSell.Comments.csproj" />
-    <ProjectReference Include="..\GoSell.Affiliate.Authencation\GoSell.Affiliate.Authentication.csproj" />
-    <ProjectReference Include="..\GoSell.Affiliate.PublisherManagement\GoSell.Affiliate.PublisherManagement.csproj" />
-    <ProjectReference Include="..\GoSell.CommonHistory\GoSell.CommonHistory.csproj" />
-    <ProjectReference Include="..\GoSell.CommonTicket\GoSell.CommonTicket.csproj" />
-    <ProjectReference Include="..\GoSell.Common\GoSell.Common.csproj" />
-    <ProjectReference Include="..\GoSell.EWarranty\GoSell.EWarranty.csproj" />
-    <ProjectReference Include="..\GoSell.Exports\GoSell.Exports.csproj" />
-    <ProjectReference Include="..\GoSell.Affiliate.Tracking\GoSell.Affiliate.Tracking.csproj" />
-    <ProjectReference Include="..\GoSell.FBBulkPosting\GoSell.FBBulkPosting.csproj" />
-    <ProjectReference Include="..\GoSell.Forum\GoSell.Forum.csproj" />
-    <ProjectReference Include="..\GoSell.Library\GoSell.Library.csproj" />
-    <ProjectReference Include="..\GoSell.Orders\GoSell.Orders.csproj" />
-    <ProjectReference Include="..\GoSell.Payments\GoSell.Payments.csproj" />
-    <ProjectReference Include="..\GoSell.SocialAuthentication\GoSell.SocialAuthentication.csproj" />
-    <ProjectReference Include="..\GoSell.SupportTicket\GoSell.SupportTicket.csproj" />
-    <ProjectReference Include="..\GoSell.EmailSender\GoSell.EmailSender.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="Templates\**">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.thymeleaf.org" th:lang="${#locale.language}" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="shortcut icon" href="${baseUrl}/favicon.ico"/>
+    <title>GÓI DIỄN ĐÀN SẮP HẾT HẠN</title>
+    <style>
+        ::-moz-selection {
+            background: #b3d4fc;
+            text-shadow: none;
+        }
+
+        ::selection {
+            background: #b3d4fc;
+            text-shadow: none;
+        }
+
+        html {
+            padding: 30px 10px;
+            font-size: 20px;
+            line-height: 1;
+            color: #737373;
+            background: rgb(162, 162, 192);
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+
+        html,
+        input {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+    </style>
+</head>
+<body style="max-width: 600px;_width: 500px;padding: 30px 20px 50px;border: 1px solid #b3b3b3;border-radius: 4px;margin: 0 auto;box-shadow: 0 1px 10px #a7a7a7, inset 0 1px 0 #fff;background: #fcfcfc;padding: 12px;">
+    <div align="center" style="background-color: rgb(0,0,85); text-align: center; min-height: 44px; color: #ffffff;">
+        <img style="max-height: 100px;height: 16vh;" src="https://dm4fv4ltmsvz0.cloudfront.net/logo_confirm_mail.png" />
+    </div>
+    <div style="max-width: 576px; _width: 380px; margin: 0 auto; text-align: center;">
+        <h2 style="font-family: Roboto; font-size: 20px; font-weight: 900; line-height: 28px; color: #30416F; transform: scale(1, 1.1); " th:text="#{email.aff.package_expiring.title}">GÓI DIỄN ĐÀN SẮP HẾT HẠN</h2>
+        <h3 style="font-family: Roboto; font-size: 14px; font-weight: 700; line-height: 20px; text-align: center; color: #283D5A; " th:text="#{email.aff.package_expiring.title.sub}">Xin chào {{shop_name}},</h3>
+        <div>
+        </div>
+        <h4 style="font-family: Roboto; font-size: 14px; font-weight: 400; line-height: 20px; text-align: center; color: #30416F; " th:utext="#{email.aff.package_expiring.description}">
+            Gói <b>Diễn đàn</b> của bạn sắp hết hạn, vui lòng bấm vào <a href="{{link_renew_on_dashboard}}">liên kết</a> để gia hạn và tiếp tục sử dụng dịch vụ.
+        </h4>
+        <div style="border: 1px solid rgb(0, 0, 140); border-radius: 20px; padding-top: 20px; padding-bottom: 20px; margin-top: 20px; margin-bottom: 20px; margin-left: auto; margin-right: auto; min-width: 200px; max-width: 70%; ">
+            <table style="border-collapse: collapse; color: black; margin: auto; align: center; text-align: center; font-size: 18px;">
+                <tbody style="display: flex; flex-direction: column; align-items: center">
+                    <tr>
+                        <th colspan="2" style="font-family: Roboto; font-size: 20px; font-weight: 700; line-height: 24px; text-align: center; color: #283D5A; " th:text="#{email.aff.package_expired.service_informtion}">THÔNG TIN DỊCH VỤ</th>
+                    </tr>
+                    <tr style="display: flex; flex-direction: row; margin-top: 12px;">
+                        <th style="font-family: Roboto; font-size: 14px; font-weight: 500; line-height: 20px; text-align: right; color: #30416F; " th:text="#{email.aff.package_expired.expired_date}">Ngày hết hạn: </th>
+                        <th style="font-family: Roboto; font-size: 14px; font-weight: 700; line-height: 20px; text-align: left; color: #30416F;  margin-left: 20px">{{expiry_date}}</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <span style="font-family: Roboto; font-size: 14px; font-weight: 400; line-height: 20px; text-align: center; color: #30416F; "
+              th:text="#{email.aff.footer.thanks}">Trân trọng,</span><br>
+        <span style="font-family: Roboto; font-size: 14px; font-weight: 700; line-height: 20px; text-align: center; color: #30416F; margin-bottom: 12px;" th:text="#{email.aff.footer.author}">Đội ngũ GoSELL</span>
+    </div>
+    <div style="font-family: Roboto; font-size: 14px; font-weight: 400; line-height: 20px; text-align: center; color: #AFAFAF; background: #000055; padding: 12px; margin-top: 12px; ">
+        <span th:text="#{email.template.guide1}">
+            Vui lòng không trả lời email này. Đây là email tự động với mục đích thông báo nên không có tính năng nhận email.
+            Nếu bạn cần bất kỳ sự hỗ trợ nào trong khi sử dụng dịch vụ, hãy liên hệ với Bộ Phận Chăm Sóc Khách Hàng của chúng tôi qua hộp thư:
+        </span>
+        <a style="font-weight: bold; color: #38A6F7; font-size: 14px !important;"
+           target="_top"
+           href="mailto:{{support_email}}?subject=Customer Enquiry">{{support_email}}</a>
+        <span th:text="#{email.template.guide3}">or Hotline: </span>
+        <a href="tel:02873030800"
+           style="font-weight: bold; color: #38A6F7; font-size: 14px !important; cursor: pointer">02873030800</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,10 @@
+version: '3.8'
+#For Affiliate Jobs
+services:
+  gosell-net-affiliate-schedulejobs:
+    build:
+      context: .
+      dockerfile: GoSell.Affiliate.ScheduleJobs\CA.Dockerfile
+    ports:
+      - "8090:8090"
+

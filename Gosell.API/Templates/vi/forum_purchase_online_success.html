@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.thymeleaf.org" th:lang="vi" lang="vi">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="shortcut icon" href="${baseUrl}/favicon.ico" />
+    <title>Xác nhận thanh toán thành công</title>
+    <style>
+        ::-moz-selection {
+            background: #b3d4fc;
+            text-shadow: none;
+        }
+
+        ::selection {
+            background: #b3d4fc;
+            text-shadow: none;
+        }
+
+        html {
+            padding: 30px 10px;
+            font-size: 20px;
+            line-height: 1;
+            color: #737373;
+            background: rgb(162, 162, 192);
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+
+        html,
+        input {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+    </style>
+</head>
+<body style="max-width: 600px;_width: 500px;padding: 30px 20px 50px;border: 1px solid #b3b3b3;border-radius: 4px;margin: 0 auto;box-shadow: 0 1px 10px #a7a7a7, inset 0 1px 0 #fff;background: #fcfcfc;padding: 12px;">
+
+    <div align="center" style="background-color: rgb(0,0,85); text-align: center; min-height: 44px; color: #ffffff;">
+        <img style="max-height: 100px;height: 16vh;" src="https://dm4fv4ltmsvz0.cloudfront.net/logo_confirm_mail.png" />
+    </div>
+
+    <div style="max-width: 576px;_width: 380px;margin: 0 auto;">
+
+        <h2 style="text-transform: uppercase; color: #30416F; transform: scale(1, 1.1); text-align: center; font-family: Roboto; font-size: 20px; font-weight: 900; line-height: 28px; "
+            th:text="#{email.aff.bank_transfer.success.text001}">
+            Xác nhận<br /> thanh toán thành công
+        </h2>
+
+        <hr style="width: 40%; border: 2px solid #f6ab2f">
+
+        <p style="color: #283D5A; font-family: Roboto; font-size: 14px; font-weight: 700; line-height: 20px; text-align: left; " th:text="#{email.aff.bank_transfer.success.text002(${shop_name})}">Xin chào {{shop_name}},</p>
+
+        <p style="color: #30416F; font-family: Roboto; font-size: 14px; font-weight: 400; line-height: 20px; text-align: left; " th:utext="#{email.aff.bank_transfer.success.text003}">
+            Bạn đã thanh toán thành công gói Diễn đàn của GoSELL. Vui lòng đăng nhập tại trang quản trị <a href="{{link_dashboard_admin}}">{{link_dashboard_admin}}</a> để sử dụng dịch vụ.
+        </p>
+
+        <h4 style="color: #283D5A; text-align: center; font-family: Roboto; font-size: 20px; font-weight: 700; line-height: 24px; text-align: left; margin-top: 20px; margin-bottom: 12px " th:text="#{email.aff.bank_transfer.success.text004}">THÔNG TIN ĐƠN HÀNG</h4>
+
+        <table style="width: 100%; color: #30416F;">
+            <tr style="width: 100%">
+                <td style="font-weight: bold; font-family: Roboto; font-size: 14px; font-weight: 500; line-height: 20px; text-align: left; " th:text="#{email.aff.bank_transfer.success.text005}">
+                    Mã đơn hàng:
+                </td>
+                <td style="font-family: Roboto; font-size: 14px; font-weight: 700; line-height: 20px; text-align: left; ">
+                    #{{order_id}}
+                </td>
+            </tr>
+            <tr style="width: 100%">
+                <td style="font-weight: bold; font-family: Roboto; font-size: 14px; font-weight: 500; line-height: 20px; text-align: left; " th:text="#{email.aff.bank_transfer.success.text008}">
+                    Ngày hết hạn:
+                </td>
+                <td style="font-family: Roboto; font-size: 14px; font-weight: 700; line-height: 20px; text-align: left; ">
+                    {{expiry_date}}
+                </td>
+            </tr>
+        </table>
+
+        <p style="color: #30416F; font-family: Roboto; font-size: 14px; font-weight: 400; text-align: left; margin-top: 20px; margin-bottom: 4px"
+           th:utext="#{email.branch.bank_transfer.remind.confirm.thankyou}">Trân trọng,</p>
+        <p style="color: #30416F; font-family: Roboto; font-size: 14px; font-weight: 700; text-align: left; margin: 0px">Đội ngũ GoSELL</p>
+
+        <div style="color: #AFAFAF; font-family: Roboto; font-size: 14px; font-weight: 400; line-height: 20px; text-align: left; ">
+            <p th:utext="#{email.branch.bank_transfer.remind.confirm.footer}">
+                Vui lòng không trả lời email này. Đây là email tự động với mục đích thông báo nên không có tính năng nhận email.
+                Nếu bạn cần bất kỳ sự hỗ trợ nào trong khi sử dụng dịch vụ, hãy liên hệ với Bộ Phận Chăm Sóc Khách Hàng của chúng tôi qua hộp thư: <a style="font-weight: bold; color: #38A6F7; font-size: 14px !important;" href="mailto:{{mail_support}}?subject=Customer Enquiry">{{mail_support}}</a> hoặc đường dây nóng:: <a style="font-weight: bold; color: #38A6F7; font-size: 14px !important;" href="tel:02873030800">02873030800</a>
+            </p>
+        </div>
+
+    </div>
+    <div align="center" style="background-color: rgb(0,0,85); text-align: center; min-height: 44px; color: #ffffff; padding-top: 22px">
+        <span th:text="#{email.gosell.vn}"><a style="text-decoration: unset; font-size: 14px; font-weight: 700; color: #FFFFFF;" href="gosell.vn">www.gosell.vn</a></span>
+    </div>
+</body>
+</html>
+

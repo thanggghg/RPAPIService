@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <WarningsNotAsErrors>NU1901;NU1902;NU1903;NU1904</WarningsNotAsErrors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aspire.Npgsql.EntityFrameworkCore.PostgreSQL" />
+    <PackageReference Include="EFCore.BulkExtensions.PostgreSql" />
+    <PackageReference Include="DocumentFormat.OpenXml" />
+    <PackageReference Include="EPPlus" />
+    <PackageReference Include="FluentValidation.AspNetCore" />
+    <PackageReference Include="JWT" />
+    <PackageReference Include="MediatR" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Http.Polly" />
+    <PackageReference Include="NEST" />
+    <PackageReference Include="Polly" />
+    <PackageReference Include="Serilog.Settings.Configuration" />
+    <PackageReference Include="Serilog.Sinks.Elasticsearch" />
+    <PackageReference Include="SixLabors.ImageSharp" />
+    <PackageReference Include="StackExchange.Redis" />
+    <PackageReference Include="StackExchange.Redis.Extensions.AspNetCore" />
+    <PackageReference Include="StackExchange.Redis.Extensions.Core" />
+    <PackageReference Include="StackExchange.Redis.Extensions.Newtonsoft" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" />
+    <PackageReference Include="LinqKit" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GoSell.Affiliate.Authencation\GoSell.Affiliate.Authentication.csproj" />
+    <ProjectReference Include="..\GoSell.CommonHistory\GoSell.CommonHistory.csproj" />
+    <ProjectReference Include="..\GoSell.Common\GoSell.Common.csproj" />
+    <ProjectReference Include="..\GoSell.Library\GoSell.Library.csproj" />
+  </ItemGroup>
+
+
+</Project>

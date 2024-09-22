@@ -1,0 +1,17 @@
+{
+    "TICKET.CONFIRMATIONEMAIL.NEW": "Ticket {{idOfTicket}} is created successfully",
+    "TICKET.CONFIRMATIONEMAIL.REOPENED": "Ticket {{idOfTicket}} is reopened successfully",
+    "TICKET.CONFIRMATIONEMAIL.STAFFANSWERED": "Ticket {{idOfTicket}} is updated.",
+    "TICKET.CONFIRMATIONEMAIL.CUSTOMERANSWERED": "Ticket {{idOfTicket}} is updated.",
+    "TICKET.CONFIRMATIONEMAIL.CLOSED": "Ticket {{idOfTicket}} is closed",
+    "TICKET.DEPARTMENT.IT": "IT",
+    "TICKET.DEPARTMENT.SALE": "Sale",
+    "TICKET.DEPARTMENT.ACCOUNTING": "Accounting",
+    "TICKET.DEPARTMENT.MARKETING": "Marketing",
+    "TICKET.DEPARTMENT.PRODUCTDEVELOPMENT": "Product Development",
+    "TICKET.DEPARTMENT.CUSTOMERSERVICE": "Customer Service",
+    "TICKET.DEPARTMENT.OTHER": "Other",
+    "TICKET.DEPARTMENT.PRODUCT": "Product",
+    "AFFILIATE.PARNER.REJECTMAIL": "Account registration rejection - {0}",
+    "AFFILIATE.PARNER.APPROVEMAIL": "Welcome to {0} - Account registration successful"
+}

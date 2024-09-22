@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.thymeleaf.org" th:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="shortcut icon" href="${baseUrl}/favicon.ico" />
+    <title th:text="#{email.branch.bank_transfer.remind.confirm}">Confirmation of information payment</title>
+    <style>
+        ::-moz-selection {
+            background: #b3d4fc;
+            text-shadow: none;
+        }
+
+        ::selection {
+            background: #b3d4fc;
+            text-shadow: none;
+        }
+
+        html {
+            padding: 30px 10px;
+            font-size: 18px;
+            line-height: 1;
+            color: #737373;
+            background: rgb(162, 162, 192);
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+
+        html,
+        input {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+    </style>
+</head>
+<body style="max-width: 600px;_width: 500px;padding: 30px 20px 50px;border: 1px solid #b3b3b3;border-radius: 4px;margin: 0 auto;box-shadow: 0 1px 10px #a7a7a7, inset 0 1px 0 #fff;background: #fcfcfc;padding: 12px;">
+
+    <div align="center" style="background-color: rgb(0,0,85); text-align: center; min-height: 44px; color: #ffffff;">
+        <img style="max-height: 100px;height: 16vh;" src="https://dm4fv4ltmsvz0.cloudfront.net/logo_confirm_mail.png" />
+    </div>
+
+    <div style="max-width: 576px;_width: 380px;margin: 0 auto;">
+
+        <h2 style="text-transform: uppercase; color: #30416F; transform: scale(1, 1.1); text-align: center; margin-top: 12px; margin-bottom: 12px; font-family: Roboto; font-size: 20px; font-weight: 900; line-height: 28px; "
+            th:text="#{email.branch.bank_transfer.remind.confirm}">
+            Confirmation<br /> of information payment
+        </h2>
+
+        <hr style="width: 40%; border: 2px solid #f6ab2f">
+
+        <p style="color: #283D5A; font-family: Roboto; font-size: 14px; font-weight: 700; line-height: 20px; " th:text="#{email.activation.greeting(${shop_name})}">Hi {{shop_name}},</p>
+
+        <p style="color: #30416F; font-family: Roboto; font-size: 14px; font-weight: 400; line-height: 20px; " th:text="#{email.branch.bank_transfer.remind.confirm.text01}">You have registered the GoSELL Forum . Please make payment by bank transfer to use the services.</p>
+
+        <h4 style="text-transform: uppercase; color: #283D5A; margin-bottom: 0px; font-family: Roboto; font-size: 20px; font-weight: 700; line-height: 24px; margin-top: 20px" th:text="#{email.branch.bank_transfer.remind.confirm.section.info.order}">ORDER INFORMATION</h4>
+
+        <table style="width: 100%; color: #30416F;">
+            <tr style="width: 100%">
+                <td style="width: 30%; text-align: left; font-weight: bold; font-family: Roboto; font-size: 14px; font-weight: 500; line-height: 20px; " th:text="#{email.branch.bank_transfer.remind.confirm.orderId}">
+                    Order ID:
+                </td>
+                <td style="font-family: Roboto; font-size: 14px; font-weight: 500; line-height: 20px; text-align: left;" th:text="|#${order_id}|">
+                    #{{order_id}}
+                </td>
+            </tr>
+        </table>
+
+        <h4 style="text-transform: uppercase; color: #283D5A; margin-bottom: 0px; font-family: Roboto; font-size: 20px; font-weight: 700; line-height: 24px; margin-top: 20px" th:text="#{email.branch.bank_transfer.remind.confirm.section.info.payment}">PAYMENT INFORMATION</h4>
+
+        <th:block th:switch="${currency_code}">
+            <th:block th:case="'VND'">
+                <table style="width: 100%; color: #30416F;">
+                    <tr style="width: 100%">
+                        <td style="width: 30%; font-family: Roboto; font-size: 14px; font-weight: 500; line-height: 20px; text-align: left; " th:text="#{email.payment.info.account.bank.label}">
+                            Bank Name:
+                        </td>
+                        <td style="font-family: Roboto; font-size: 14px; font-weight: 700; line-height: 20px; text-align: left; " th:text="#{email.payment.info.account.bank.text}">
+                            Maritime Bank
+                        </td>
+                    </tr>
+                    <tr style="width: 100%">
+                        <td style="width: 30%; font-family: Roboto; font-size: 14px; font-weight: 500; line-height: 20px; text-align: left;; vertical-align: text-top;" th:text="#{email.payment.info.account.name.label}">
+                            Account holder:
+                        </td>
+                        <td style="font-family: Roboto; font-size: 14px; font-weight: 700; line-height: 20px; text-align: left; " th:text="#{email.payment.info.account.name.text}">
+                            CÔNG TY TNHH MEDIASTEP SOFTWARE VIỆT NAM
+                        </td>
+                    </tr>
+                    <tr style="width: 100%">
+                        <td style="width: 30%; font-family: Roboto; font-size: 14px; font-weight: 500; line-height: 20px; text-align: left; " th:text="#{email.payment.info.account.number.label}">
+                            Account number:
+                        </td>
+                        <td style="font-family: Roboto; font-size: 14px; font-weight: 700; line-height: 20px; text-align: left; " th:text="#{email.payment.info.account.number.text}">
+                            04201015009138
+                        </td>
+                    </tr>
+                    <tr style="width: 100%">
+                        <td style="width: 30%; font-family: Roboto; font-size: 14px; font-weight: 500; line-height: 20px; text-align: left; " th:text="#{email.payment.info.account.bank.branch.label}">
+                            Branch:
+                        </td>
+                        <td style="font-family: Roboto; font-size: 14px; font-weight: 700; line-height: 20px; text-align: left; " th:text="#{email.payment.info.account.bank.branch.text}">
+                            Đô Thành
+                        </td>
+                    </tr>
+                    <tr style="width: 100%">
+                        <td style="width: 30%; font-family: Roboto; font-size: 14px; font-weight: 500; line-height: 20px; text-align: left; " th:text="#{email.payment.info.account.bank.transfer.content.label}">
+                            Content:
+                        </td>
+                        <td style="font-family: Roboto; font-size: 14px; font-weight: 700; line-height: 20px; text-align: left; " th:text="${content_text}">
+                            GoSell - {{order_id}} - {{store_phone_number}}
+                        </td>
+                    </tr>
+                    <tr style="width: 100%">
+                        <td style="width: 30%; font-family: Roboto; font-size: 14px; font-weight: 500; line-height: 20px; text-align: left; " th:text="#{email.payment.info.account.bank.total.label}">
+                            Total cost:
+                        </td>
+                        <td style="font-family: Roboto; font-size: 14px; font-weight: 700; line-height: 20px; text-align: left; " th:text="${total_payment}">
+                            {{order_total}} đ
+                        </td>
+                    </tr>
+                </table>
+            </th:block>
+        </th:block>
+
+        <p style="color: #30416F; font-family: Roboto; font-size: 14px; font-weight: 400; text-align: left; margin-top: 20px; margin-bottom: 4px"
+           th:utext="#{email.branch.bank_transfer.remind.confirm.thankyou}">Thank you and enjoy,</p>
+        <p style="color: #30416F; font-family: Roboto; font-size: 14px; font-weight: 700; text-align: left; margin: 0px">GoSELL Team</p>
+
+        <div style="color: #AFAFAF; font-family: Roboto; font-size: 14px; font-weight: 400; line-height: 20px; text-align: left; ">
+            <p th:utext="#{email.branch.bank_transfer.remind.confirm.footer}">
+                Please do not reply directly to this e-mail. This e-mail was sent from a notification-only address that cannot accept incoming e-mail.<br />
+                If you have questions or need assistance while using our service, please contact our Customer Support Center via email: <a style="font-weight: bold; color: #38A6F7; font-size: 14px !important;" href="mailto:{{mail_support}}?subject=Customer Enquiry">{{mail_support}}</a> or Hotline: <a style="font-weight: bold; color: #38A6F7; font-size: 14px !important;" href="tel:02873030800">02873030800</a>
+            </p>
+        </div>
+    </div>
+
+    <div align="center" style="background-color: rgb(0,0,85); text-align: center; min-height: 44px; color: #ffffff; padding-top: 22px">
+        <span th:text="#{email.gosell.vn}"><a style="text-decoration: unset; font-size: 14px; font-weight: 700; color: #FFFFFF;" href="gosell.vn">www.gosell.vn</a></span>
+    </div>
+</body>
+</html>

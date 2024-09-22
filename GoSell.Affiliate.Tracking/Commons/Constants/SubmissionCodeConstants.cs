@@ -1,0 +1,71 @@
+﻿namespace GoSell.Affiliate.Tracking.Commons.Constants
+{
+    public enum SubmissionCodeEnum
+    {
+        SUCCESS = 200,
+        HTTP_CLIENT_INTERNAL_SERVER_ERROR = 500,
+        BAD_REQUEST = 400,
+        INVALID_CONVERSION = 1,
+        EXSITED_CONVERSION = 2,
+        INVALID_TRACKING_IDS = 3,
+        INVALID_GROUP_ID = 4,
+        INVALID_ClICK_ID = 5,
+        INVALID_SUBMISSION_TYPE = 6,
+        INVALID_STATUS = 7,
+        INVALID_ORDER_ID = 8,
+        INVALID_PAYMENT_METHOD = 9,
+        INVALID_CREATED_SUBMISSION_TIME = 10,
+        INVALID_SUB_TOTAL_AMOUNT = 11,
+        INVALID_DISCOUNT_AMOUNT = 12,
+        INVALID_FEE_AMOUNT = 13,
+        INVALID_TAX_AMOUNT = 14,
+        INVALID_SHIPPPING_FEE = 15,
+        INVALID_TOTAL_AMOUNT = 16,
+        INVALID_PRODUCT_ID = 17,
+        INVALID_ITEM_NAME = 18,
+        INVALID_PRICE = 19,
+        INVALID_SALE_PRICE = 20,
+        INVALID_TOTAL_PRICE = 21,
+        INVALID_QUANTIFY = 22,
+        INVALID_API_KEY = 23,
+        ORDER_ID_EXISTED = 24,
+        INVALID_AFF_STORE_DOMAIN = 25,
+        INVALID_AFF_STORE_ID = 26,
+    }
+
+    public static class SubmissionMessengerDictionary
+    {
+        public static Dictionary<string, string> errorMessages = new Dictionary<string, string>()
+        {
+            { nameof(SubmissionCodeEnum.SUCCESS), "Success" },
+            { nameof(SubmissionCodeEnum.BAD_REQUEST), "Bad request" },
+            { nameof(SubmissionCodeEnum.HTTP_CLIENT_INTERNAL_SERVER_ERROR), "System error" },
+            { nameof(SubmissionCodeEnum.EXSITED_CONVERSION), "conversionId is existed" },
+            { nameof(SubmissionCodeEnum.INVALID_CONVERSION), "conversionId is invalid" },
+            { nameof(SubmissionCodeEnum.INVALID_TRACKING_IDS), "trackingIds is invalid"},
+            { nameof(SubmissionCodeEnum.INVALID_GROUP_ID), "groupId is invalid" },
+            { nameof(SubmissionCodeEnum.INVALID_ClICK_ID), "clickId is invalid" },
+            { nameof(SubmissionCodeEnum.INVALID_SUBMISSION_TYPE), "submissionType is invalid" },
+            { nameof(SubmissionCodeEnum.INVALID_STATUS), "status is invalid" },
+            { nameof(SubmissionCodeEnum.INVALID_ORDER_ID), "orderId is invalid" },
+            { nameof(SubmissionCodeEnum.INVALID_PAYMENT_METHOD), "paymentMethod is invalid or more than 200 characters" },
+            { nameof(SubmissionCodeEnum.INVALID_CREATED_SUBMISSION_TIME), "createdSubmissionTime is invalid" },
+            { nameof(SubmissionCodeEnum.INVALID_SUB_TOTAL_AMOUNT), "subTotalAmount is invalid"},
+            { nameof(SubmissionCodeEnum.INVALID_DISCOUNT_AMOUNT), "discountAmount is invalid"},
+            { nameof(SubmissionCodeEnum.INVALID_FEE_AMOUNT), "feeAmount is invalid"},
+            { nameof(SubmissionCodeEnum.INVALID_TAX_AMOUNT), "taxAmount is invalid"},
+            { nameof(SubmissionCodeEnum.INVALID_SHIPPPING_FEE), "shippingFee is invalid"},
+            { nameof(SubmissionCodeEnum.INVALID_TOTAL_AMOUNT), "totalAmount is invalid"},
+            { nameof(SubmissionCodeEnum.INVALID_PRODUCT_ID), "productId is invalid"},
+            { nameof(SubmissionCodeEnum.INVALID_ITEM_NAME), "itemName is invalid"},
+            { nameof(SubmissionCodeEnum.INVALID_PRICE), "price is invalid"},
+            { nameof(SubmissionCodeEnum.INVALID_SALE_PRICE), "salePrice is invalid"},
+            { nameof(SubmissionCodeEnum.INVALID_TOTAL_PRICE), "totalPrice is invalid"},
+            { nameof(SubmissionCodeEnum.INVALID_QUANTIFY), "quantify is invalid"},
+            { nameof(SubmissionCodeEnum.INVALID_API_KEY), "API-Key is invalid"},
+            { nameof(SubmissionCodeEnum.ORDER_ID_EXISTED), "orderId existed"},
+            { nameof(SubmissionCodeEnum.INVALID_AFF_STORE_DOMAIN), "affiliateStoreDomain is invalid"},
+            { nameof(SubmissionCodeEnum.INVALID_AFF_STORE_ID), "affiliateStoreId is invalid"},
+        };
+    }
+}

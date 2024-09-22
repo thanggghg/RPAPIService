@@ -1,0 +1,14 @@
+﻿global using MediatR;
+global using Microsoft.AspNetCore.Mvc;
+global using GoSell.API.Application.Commands;
+global using GoSell.API.Application.Models;
+global using GoSell.API.Infrastructure.Services;
+global using GoSell.Domain.AggregatesModel.BuyerAggregate;
+global using GoSell.Domain.Events;
+global using GoSell.Domain.Exceptions;
+global using GoSell.Domain.SeedWork;
+global using GoSell.Infrastructure.Idempotency;
+global using Microsoft.Extensions.Logging;
+global using NSubstitute;
+global using GoSell.UnitTests;
+global using Xunit;

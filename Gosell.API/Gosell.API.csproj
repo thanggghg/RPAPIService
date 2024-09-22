@@ -1,0 +1,183 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>GoSell.API</RootNamespace>
+    <UserSecretsId>7161b768-033d-41c7-bc5d-37528275e1f3</UserSecretsId>
+    <AssemblyVersion>1.0.0.1</AssemblyVersion>
+    <SolutionDir>$([System.IO.Path]::GetDirectoryName($(MSBuildProjectDirectory)))\</SolutionDir>
+    <SourceResourceFiles>$(SolutionDir)GoSell.Library\Resources</SourceResourceFiles>
+    <DestinationResourceFiles>$(MSBuildProjectDirectory)\Resources</DestinationResourceFiles>
+    <WarningsNotAsErrors>NU1901;NU1902;NU1903;NU1904</WarningsNotAsErrors>
+  </PropertyGroup>
+
+  <Target Name="CopyJsonResource" BeforeTargets="PreBuildEvent">
+    <ItemGroup>
+      <JsonResourcePreBuild Include="$(SourceResourceFiles)\*.*" />
+    </ItemGroup>
+    <Message Text="Performing pre-build event.." Importance="high" />
+    <Message Text="Copy Json Resources From $(SourceResourceFiles)" Importance="high" />
+    <Message Text="To $(DestinationResourceFiles)" Importance="high" />
+    <Message Text="$(SolutionDir)" Importance="high" />
+    <Copy SourceFiles="@(JsonResourcePreBuild)" DestinationFolder="$(DestinationResourceFiles)" />
+  </Target>
+
+  <Target AfterTargets="Build" Name="Copy">
+    <ItemGroup>
+      <JsonResourcePostBuild Include="$(SourceResourceFiles)\*.*" />
+    </ItemGroup>
+    <Copy SourceFiles="@(JsonResourcePostBuild)" DestinationFolder="$(DestinationResourceFiles)" />
+  </Target>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="Ordering.FunctionalTests" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aspire.Npgsql.EntityFrameworkCore.PostgreSQL" />
+    <PackageReference Include="AutoMapper" />
+    <PackageReference Include="Dapper" />
+    <PackageReference Include="DotNetEnv" />
+    <PackageReference Include="Elasticsearch.Net" />
+    <PackageReference Include="FluentValidation.AspNetCore" />
+    <PackageReference Include="JWT" />
+    <PackageReference Include="MediatR" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Http.Polly" />
+    <PackageReference Include="NEST" />
+    <PackageReference Include="Serilog.Settings.Configuration" />
+    <PackageReference Include="Serilog.Sinks.Elasticsearch" />
+    <PackageReference Include="StackExchange.Redis" />
+    <PackageReference Include="StackExchange.Redis.Extensions.AspNetCore" />
+    <PackageReference Include="StackExchange.Redis.Extensions.Core" />
+    <PackageReference Include="StackExchange.Redis.Extensions.Newtonsoft" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="appsettings.local.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Resources\en.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Resources\vi.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Application\Handle\" />
+    <Folder Include="Application\Queries\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GoSell.Affiliate.PublisherGroupManagement\GoSell.Affiliate.PublisherGroupManagement.csproj" />
+    <ProjectReference Include="..\GoSell.Analysis\GoSell.Analysis.csproj" />
+    <ProjectReference Include="..\GoSell.Commissions\GoSell.Affiliate.Commissions.csproj" />
+    <ProjectReference Include="..\GoSell.Comments\GoSell.Comments.csproj" />
+    <ProjectReference Include="..\GoSell.Affiliate.Authencation\GoSell.Affiliate.Authentication.csproj" />
+    <ProjectReference Include="..\GoSell.Affiliate.PublisherManagement\GoSell.Affiliate.PublisherManagement.csproj" />
+    <ProjectReference Include="..\GoSell.CommonHistory\GoSell.CommonHistory.csproj" />
+    <ProjectReference Include="..\GoSell.CommonTicket\GoSell.CommonTicket.csproj" />
+    <ProjectReference Include="..\GoSell.Common\GoSell.Common.csproj" />
+    <ProjectReference Include="..\GoSell.EWarranty\GoSell.EWarranty.csproj" />
+    <ProjectReference Include="..\GoSell.Exports\GoSell.Exports.csproj" />
+    <ProjectReference Include="..\GoSell.Affiliate.Tracking\GoSell.Affiliate.Tracking.csproj" />
+    <ProjectReference Include="..\GoSell.FBBulkPosting\GoSell.FBBulkPosting.csproj" />
+    <ProjectReference Include="..\GoSell.Forum\GoSell.Forum.csproj" />
+    <ProjectReference Include="..\GoSell.Library\GoSell.Library.csproj" />
+    <ProjectReference Include="..\GoSell.Orders\GoSell.Orders.csproj" />
+    <ProjectReference Include="..\GoSell.Payments\GoSell.Payments.csproj" />
+    <ProjectReference Include="..\GoSell.SocialAuthentication\GoSell.SocialAuthentication.csproj" />
+    <ProjectReference Include="..\GoSell.SupportTicket\GoSell.SupportTicket.csproj" />
+    <ProjectReference Include="..\GoSell.EmailSender\GoSell.EmailSender.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Templates\**">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Database\**" />
+    <Compile Remove="Routes\Auth\**" />
+    <Compile Remove="wwwroot\**" />
+    <Content Remove="Database\**" />
+    <Content Remove="Routes\Auth\**" />
+    <Content Remove="wwwroot\**" />
+    <EmbeddedResource Remove="Database\**" />
+    <EmbeddedResource Remove="Routes\Auth\**" />
+    <EmbeddedResource Remove="wwwroot\**" />
+    <EntityDeploy Remove="Database\**" />
+    <EntityDeploy Remove="Routes\Auth\**" />
+    <EntityDeploy Remove="wwwroot\**" />
+    <None Remove="Database\**" />
+    <None Remove="Routes\Auth\**" />
+    <None Remove="wwwroot\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Templates\en\warrantyEmail.cshtml" />
+    <Content Remove="Templates\vi\warrantyEmail.cshtml" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <None Remove="Templates\en\affiliate-payment-information-template-import_EN.xlsx" />
+    <None Remove="Templates\vi\affiliate-payment-information-template-import_VI.xlsx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Templates\en\affiliate-payment-information-template-import_EN.xlsx">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Templates\vi\affiliate-payment-information-template-import_VI.xlsx">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <None Update="Templates\vi\closeTicketEmail.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Templates\vi\createTicketEmail.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Templates\vi\reopenTicketEmail.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Templates\vi\updateTicketEmail.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Templates\en\welcomeEmail.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Templates\en\welcomeEmailGoSell.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Templates\vi\welcomeEmail.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Templates\vi\welcomeEmailGoSell.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Templates\welcomeEmailGoSellPublisher.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Templates\welcomeEmailGoSellBuyer.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>

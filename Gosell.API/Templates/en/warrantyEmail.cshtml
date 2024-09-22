@@ -1,0 +1,63 @@
+﻿<div style="background:#f9f9f9;font:13px/20px arial">
+	<table width="800" align="center">
+		<tbody>
+			<tr>
+				<td style="background:#fff;margin:0px auto;border:solid 1px #ccc;padding:10px">
+					<table style="width:100%;vertical-align:top">
+						<tbody>
+							<tr style="position: relative;
+                                 text-align: center;
+                                 color: white;">
+								<td>
+									<img src="https://dm4fv4ltmsvz0.cloudfront.net/CreateTicketEmailBanner.png"
+										 style="height: 100px;">
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<table style="padding:1.5rem 2rem;width:100%">
+						<tbody>
+							<tr>
+								<td style="font:700 1.25rem/1.75rem Roboto;vertical-align:text-top;width:160px;text-align:center"><b>Dear @Model.CustomerInfor.Value,</b></td>
+							</tr>
+							<tr>
+								<td style="font:700 1.25rem/1.75rem Roboto;vertical-align:text-top;width:160px;text-align:center"><b>YOUR CARD HAS BEEN ACTIVATED SUCCESSFULLY</b></td>
+							</tr>
+						</tbody>
+					</table>
+					<table style="padding:2rem;padding-bottom:0;width:100%">
+						<tbody>
+							<tr>
+								<td style="font:700 1.5rem/2rem Roboto;text-align:center">WARRANTY INFORMATION</td>
+							</tr>
+						</tbody>
+					</table>
+					<div style="border:1px solid #556CE7;border-radius:1rem;margin:1rem 2rem;padding:1rem">
+						@{
+							<p style="font:400 1rem/1.5rem Roboto">1. Card ID: @Model.CardInfor.CardNumber</p>
+							var index = 2;
+							foreach (var item in Model.Fields)
+							{
+								<p style="font:400 1rem/1.5rem Roboto">@($"{@index}. {@item.Title}: {@item.Value}")</p>
+								index++;
+							}
+						}
+					</div>
+					<div style="color:#141F2E;font:1rem/1.5rem Roboto;margin: 0 2rem 1rem">
+						When a warranty need arises, please contact the staff through the phone number : @Model.ContactNumber and provide your name with the purchased registration phone number (@Model.PhoneNumber) for support.
+					</div>
+					<hr style="height:2px;background-color:#435DE4;margin:0 2rem">
+					<div style="color:#141F2E;font:700 18px/24px Roboto;text-align:center;margin:1rem 2rem 2rem">
+						Thank you for choosing our service.
+					</div>
+					<div style="text-align:center; padding:2rem;font:400 0.75rem/1rem Roboto;color:#999999">
+						<p>Copyright © 2024</p>
+						<p>Your company  Rewards & Recognition.</p>
+						<p>A better company begins with a personalised employee experience.</p>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table><div class="yj6qo"></div><div class="adL">
+	</div>
+</div>

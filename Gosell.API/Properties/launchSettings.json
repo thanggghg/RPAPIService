@@ -1,0 +1,14 @@
+{
+  "profiles": {
+    "local": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "applicationUrl": "http://localhost:5442",
+      "environmentVariables": {
+        "API_BASE_URL": "https://dev-api.mediastep.com",
+        "ASPNETCORE_ENVIRONMENT": "Local",
+      }
+    }
+   
+  }
+}

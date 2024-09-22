@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using AutoMapper;
-using RP.Affiliate.Tracking.Commands.AffiliateCampaign;
 using RP.Affiliate.Tracking.Commons.Constants;
 using RP.Affiliate.Tracking.Commons.Enums;
 using RP.Affiliate.Tracking.Database;
@@ -8,8 +7,9 @@ using RP.Affiliate.Tracking.Entities;
 using RP.Library.Helpers;
 using RP.Library.Helpers.Service;
 using MediatR;
+using RP.GobalCore.Application.Commands.AuthenticateCommand;
 
-namespace RP.Affiliate.Tracking.Handler.AffiliateCampaignHandler
+namespace RP.GobalCore.Application.Handler.AuthenticateHandler
 {
     public class AuthenticateHandler(IMapper mapper,
                                           IBaseService baseService
@@ -22,6 +22,6 @@ namespace RP.Affiliate.Tracking.Handler.AffiliateCampaignHandler
 
         }
 
-       
+
     }
 }

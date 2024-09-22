@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace RP.Affiliate.Tracking.Commands.AffiliateCampaign
+namespace RP.GobalCore.Application.Commands.AuthenticateCommand
 {
     public class AuthenticateCommand : IRequest<GenericResponse<>>
     {

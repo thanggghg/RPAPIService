@@ -2,7 +2,7 @@
 {
     public class SwaggerConstants
     {
-        public static string AffiliateTrackingApi { get; set; } = "Affiliate tracking API";
+        public static string SwaggerTitle { get; set; } = "RP API";
 
     }
 }

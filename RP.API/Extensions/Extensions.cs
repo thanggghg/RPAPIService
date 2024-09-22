@@ -1,38 +1,13 @@
 ﻿using System.Reflection;
-using GoSell.API.Exceptions;
-using GoSell.Comments.Repositories.Implements;
-using GoSell.Comments.Repositories.Interfaces;
-using GoSell.Commissions.Extensions;
-using GoSell.Common.Constants;
-using GoSell.Common.Services.Implements;
-using GoSell.Common.Services.Implements.Facebook;
-using GoSell.Common.Services.Interfaces;
-using GoSell.CommonHistory.Extensions;
-using GoSell.CommonTicket.Extensions;
-using GoSell.EWarranty.Extensions;
-using GoSell.FBBulkPosting.Extension;
-using GoSell.Forum.Extensions;
-using GoSell.Library.Db;
-using GoSell.Library.Extensions;
-using GoSell.Library.Extensions.JWT;
-using GoSell.Library.Extensions.Permission;
-using GoSell.Library.Extensions.Social;
-using GoSell.Library.Helpers;
-using GoSell.Library.Helpers.Api;
-using GoSell.Library.Helpers.Service;
-using GoSell.Library.Utils;
-using GoSell.Payments.Extension;
-using GoSell.SocialAuthentication.Application.Queries;
-using GoSell.SocialAuthentication.Infrastructure.Persistence.Repositories;
-using GoSell.SocialAuthentication.Infrastructure.Persistence.Repositories.Interfaces;
-using GoSell.SupportTicket.Extension;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.OpenApi.Models;
-using ProxyClient.Helpers;
-using ProxyClient.Services;
+using RP.API.Exceptions;
+using RP.Library.Db;
+using RP.Library.Extensions;
+using RP.Library.Extensions.JWT;
+using RP.Library.Utils;
 using Serilog;
 using Serilog.Sinks.Elasticsearch;
-using static GoSell.Common.Services.DelegateService;
 
 internal static class Extensions
 {
@@ -103,22 +78,7 @@ internal static class Extensions
         var jwtOptions = configuration
             .GetSectionWithEnvironment("JwtOptions")
             .Get<JwtOptions>();
-        var authorizationConstants = configuration
-            .GetSectionWithEnvironment("AuthorizationConstants")
-            .Get<AuthorizationConstants>();
-
-        // Add the Apple social options
-        var appleSocialSettings = builder.Configuration.GetSection("Socials:Apple:Settings").Get<AppleSocialSettings>();
-        services.AddSingleton(appleSocialSettings);
-
-        // Add the Google social options
-        var googleSocialSettings = builder.Configuration.GetSection("Socials:Google:Settings").Get<GoogleSocialSettings>();
-        services.AddSingleton(googleSocialSettings);
-
-        // Add the Facebook social options
-        var facebookSocialSettings = builder.Configuration.GetSection("Socials:Facebook:Settings").Get<FacebookConfiguration>();
-        services.AddSingleton(facebookSocialSettings);
-
+      
         services.AddSingleton<IDbConnection>(_ => new Npgsql.NpgsqlConnection($"{builder.Configuration.GetConnectionStringEnvironment("GoSellDB")};Include Error Detail=true;"));
         services.AddSingleton<IDbConnection>(_ => new Npgsql.NpgsqlConnection($"{builder.Configuration.GetConnectionStringEnvironment("GatewayServicesConnection")};Include Error Detail=true;"));
         services.AddSingleton<IDbConnection>(_ => new Npgsql.NpgsqlConnection($"{builder.Configuration.GetConnectionStringEnvironment("PaymentServicesConnection")};Include Error Detail=true;"));
@@ -130,73 +90,24 @@ internal static class Extensions
         services.AddSingleton<IDbConnection>(_ => new Npgsql.NpgsqlConnection($"{builder.Configuration.GetConnectionStringEnvironment("CommentServiceConnection")};Include Error Detail=true;"));
         services.AddSingleton<IDbConnection>(_ => new Npgsql.NpgsqlConnection($"{builder.Configuration.GetConnectionStringEnvironment("CommonHistoryConnection")};Include Error Detail=true;"));
         services.AddSingleton<IDbConnection>(_ => new Npgsql.NpgsqlConnection($"{builder.Configuration.GetConnectionStringEnvironment("ForumServicesConnection")};Include Error Detail=true;"));
-        services.AddScoped<IUsersRepository, UsersRepository>();
 
         services.AddSingleton(jwtOptions);
-        services.AddSingleton(authorizationConstants);
         services.AddCachesMemoryOrRedis();
-        services.AddJiraConfiguration();
         services.AddMailClientConfiguration();
         services.AddHttpContextAccessor();
         // Configure mediatR
         services.AddMediatR(cfg =>
         {
             cfg.RegisterServicesFromAssemblyContaining(typeof(Program));
-            cfg.RegisterServicesFromAssemblyContaining(typeof(PaymentExtension)); // note inject mediatR\
-            cfg.RegisterServicesFromAssemblyContaining(typeof(SignInQueries)); cfg.AddOpenBehavior(typeof(LoggingBehavior<,>));
-            cfg.RegisterServicesFromAssemblyContaining(typeof(WarrantyExtension)); // note inject mediatR
-            cfg.RegisterServicesFromAssemblyContaining(typeof(AnalysisExtension)); // note inject mediatR
-            cfg.RegisterServicesFromAssemblyContaining(typeof(CommissionExtension)); // note inject mediatR
-            cfg.RegisterServicesFromAssemblyContaining(typeof(CommentsExtensions));
-            cfg.RegisterServicesFromAssemblyContaining(typeof(ForumExtension));
-            cfg.RegisterServicesFromAssemblyContaining(typeof(AffiliateAuthenticationExtension)); // note inject mediatR
-            cfg.RegisterServicesFromAssemblyContaining(typeof(SupportTicketExtension));
-            cfg.RegisterServicesFromAssemblyContaining(typeof(CommonTicketExtension));
-            cfg.RegisterServicesFromAssemblyContaining(typeof(CommonHistoryExtension));
-            cfg.RegisterServicesFromAssemblyContaining(typeof(FBBulkPostingExtension));
             cfg.AddOpenBehavior(typeof(LoggingBehavior<,>));
             cfg.AddBehavior(typeof(IPipelineBehavior<,>), typeof(ValidatorBehavior<,>));
             cfg.AddOpenBehavior(typeof(TransactionBehavior<,>));
         });
         //JWT Authorization role ADMIN
         services.AddAuthentication();
-        services.AddAuthorization(o =>
-        {
-            o.AddPolicy(AuthoritiesConstants.ADMIN, p => p.AddRequirements(new JWTTokenRequirement(AuthoritiesConstants.ADMIN)));
-            o.AddPolicy(AuthoritiesConstants.STORE, p => p.AddRequirements(new JWTTokenRequirement(AuthoritiesConstants.STORE)));
-            o.AddPolicy(AuthoritiesConstants.USER, p => p.AddRequirements(new JWTTokenRequirement(AuthoritiesConstants.USER)));
-            o.AddPolicy(AuthoritiesConstants.AFFILIATE, o => o.AddRequirements(new JWTTokenRequirement(AuthoritiesConstants.AFFILIATE)));
-            o.AddPolicy(AuthoritiesConstants.AFFILIATE_PROFILE, o => o.AddRequirements(new JWTTokenRequirement(AuthoritiesConstants.AFFILIATE_PROFILE)));
-            o.AddPolicy(AuthoritiesConstants.DEFAULT, o => o.AddRequirements(new JWTTokenRequirement(AuthoritiesConstants.DEFAULT)));
-            o.AddPolicy(AuthoritiesConstants.GUEST, o => o.AddRequirements(new JWTTokenRequirement(AuthoritiesConstants.GUEST)));
-            o.AddPolicy(AuthoritiesConstants.GUEST_CHECKOUT, o => o.AddRequirements(new JWTTokenRequirement(AuthoritiesConstants.GUEST_CHECKOUT)));
-
-        });
+      
         services.AddTransient(typeof(IPipelineBehavior<,>), typeof(TransactionBehavior<,>));
         services.AddSingleton<IAuthorizationHandler, JWTTokenRequirementHandle>();
-        services.AddSingleton<IAuthorizationHandler, StaffPermissionRequirementHandle>();
-        services.AddSingleton<IOauthClientDetailsService, OauthClientDetailsService>();
-        services.AddTransient<IHttpClientHelper, HttpClientHelper>();
-        services.AddScoped<ICommentsRepository, CommentsRepository>();
-        services.AddScoped<IUserRepository, UserRepository>();
-        services.AddScoped<IUserDomainRepository, UserDomainRepository>();
-        services.AddScoped<IUserAuthorityRepository, UserAuthorityRepository>();
-        services.AddScoped<ISocialUserConnectionRepository, SocialUserConnectionRepository>();
-        services.AddScoped<IOauthClientDetailRepository, OauthClientDetailRepository>();
-        services.AddScoped<IBaseApi, BaseApi>();
-        services.AddScoped<IBaseService, BaseService>();
-
-        //Service common
-        services.AddScoped<GoogleServices>();
-        services.AddScoped<AppleServices>();
-        services.AddScoped<FacebookService>();
-        services.AddScoped<SocialServiceResolver<IProviderSocialServices>>(serviceProvider => key =>
-        {
-            if (key == SocialConstant.Google) return serviceProvider.GetService<GoogleServices>();
-            if (key == SocialConstant.Apple) return serviceProvider.GetService<AppleServices>();
-            if (key == SocialConstant.Facebook) return serviceProvider.GetService<FacebookService>();
-            throw new KeyNotFoundException();
-        });
 
         //Proxy client
         services.RegisterProxyClientService();
@@ -208,21 +119,13 @@ internal static class Extensions
             .WriteTo.Elasticsearch(ConfigureElasticSink(root))
             .ReadFrom.Configuration(configuration)
             .CreateLogger();
-        builder.AddElasticClient();
         services.AddSingleton(Log.Logger);
 
     }
 
     public static void RegisterProxyClientService(this IServiceCollection services)
     {
-        services.AddScoped<IBeehiveService, BeehiveService>();
-        services.AddScoped<IAffiliateService, AffiliateService>();
-        services.AddScoped<IHttpClientFactoryHelper, HttpClientFactoryHelper>();
-        services.AddScoped<IUserService, UserService>();
-        services.AddScoped<IStoreService, StoreService>();
-        services.AddScoped<IMediaService, MediaService>();
-        services.AddScoped<IAffiliateTrackingService, AffiliateTrackingService>();
-        services.AddScoped<IGatewayService, GatewayService>();
+        
     }
 
     public static void AddAppConfigure(this WebApplication app)

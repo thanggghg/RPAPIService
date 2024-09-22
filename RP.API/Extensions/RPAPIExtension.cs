@@ -1,6 +1,6 @@
 ﻿internal static class RPAPIExtension
 {
-    public static void AddAffiliateTrackingServices(this IHostApplicationBuilder builder)
+    public static void RPExtension(this IHostApplicationBuilder builder)
     {
         var services = builder.Services;
         var configuration = builder.Configuration;

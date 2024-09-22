@@ -5,12 +5,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 //Add Services
 builder.AddApplicationServices();
-builder.RPAPIExtension();
+builder.RPExtension();
 
 //Builder build
 var app = builder.Build();
 app.AddAppConfigure();
-app.AddLocalizationConfigure();
 
 app.UseExceptionHandler(new ExceptionHandlerOptions()
 {

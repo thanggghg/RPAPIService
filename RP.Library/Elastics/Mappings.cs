@@ -1,6 +1,6 @@
 ﻿using Nest;
 
-namespace GoSell.Library.Elastics
+namespace RP.Library.Elastics
 {
     public static class Mappings
     {

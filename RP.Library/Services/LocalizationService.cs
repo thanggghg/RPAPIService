@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Localization;
 
-namespace GoSell.Library.Services
+namespace RP.Library.Services
 {
     public partial class LocalizationService : ILocalizationService
     {

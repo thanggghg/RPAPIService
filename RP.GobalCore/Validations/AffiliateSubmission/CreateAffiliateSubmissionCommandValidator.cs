@@ -1,9 +1,9 @@
 ﻿using FluentValidation;
-using GoSell.Affiliate.Tracking.Commands;
-using GoSell.Affiliate.Tracking.Commons.Constants;
-using GoSell.Affiliate.Tracking.Commons.Enums;
+using RP.Affiliate.Tracking.Commands;
+using RP.Affiliate.Tracking.Commons.Constants;
+using RP.Affiliate.Tracking.Commons.Enums;
 
-namespace GoSell.Affiliate.Tracking.Validations.AffiliateSubmission
+namespace RP.Affiliate.Tracking.Validations.AffiliateSubmission
 {
     public class CreateAffiliateSubmissionCommandValidator : AbstractValidator<CreateAffiliateSubmissionCommand>
     {

@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using GoSell.Affiliate.Tracking.Entities;
-using GoSell.Library.Seedwork;
+using RP.Affiliate.Tracking.Entities;
+using RP.Library.Seedwork;
 
-namespace GoSell.Affiliate.Tracking.Database.Entities
+namespace RP.Affiliate.Tracking.Database.Entities
 {
     [Table("affiliate_store", Schema = "affiliate-tracking-services")]
     public class AffiliateStore : Entity, IAggregateRoot

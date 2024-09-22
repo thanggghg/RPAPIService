@@ -1,12 +1,12 @@
 ﻿using AutoMapper;
-using GoSell.Affiliate.Tracking.Queries.AffiliateCampaign;
-using GoSell.Affiliate.Tracking.Repositories.Interfaces;
-using GoSell.Affiliate.Tracking.ViewModels;
-using GoSell.Library.Helpers.Pagination;
+using RP.Affiliate.Tracking.Queries.AffiliateCampaign;
+using RP.Affiliate.Tracking.Repositories.Interfaces;
+using RP.Affiliate.Tracking.ViewModels;
+using RP.Library.Helpers.Pagination;
 using MediatR;
 using Serilog;
 
-namespace GoSell.Affiliate.Tracking.Handler.AffiliateCampaignHandler
+namespace RP.Affiliate.Tracking.Handler.AffiliateCampaignHandler
 {
     public class GetAllAffiliateCampaignByStoreIdQueryHandler : IRequestHandler<GetAllAffiliateCampaignByStoreIdQuery, PagingItems<AffiliateCampaignViewModel>>
     {

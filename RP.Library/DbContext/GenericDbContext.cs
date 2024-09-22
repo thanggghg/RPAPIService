@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace GoSell.Library.Db
+namespace RP.Library.Db
 
 {
     public class GenericDbContext<T> : IGenericDbContext<T> where T : BaseContext

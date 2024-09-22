@@ -1,7 +1,7 @@
-﻿using GoSell.Library.Helpers;
+﻿using RP.Library.Helpers;
 using MediatR;
 
-namespace GoSell.Affiliate.Tracking.Commands.AffiliateCategory
+namespace RP.Affiliate.Tracking.Commands.AffiliateCategory
 {
     public class ChangeStatusAffiliateCategoryCommand : IRequest<BaseResponse>
     {

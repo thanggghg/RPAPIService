@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace GoSell.Library.Utils
+namespace RP.Library.Utils
 {
     public enum ApiNameConstants
     {

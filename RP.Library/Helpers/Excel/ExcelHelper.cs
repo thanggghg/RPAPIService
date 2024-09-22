@@ -5,7 +5,7 @@ using DocumentFormat.OpenXml.Spreadsheet;
 using Microsoft.AspNetCore.Http;
 using Serilog;
 
-namespace GoSell.Library.Helpers.Excel
+namespace RP.Library.Helpers.Excel
 {
     public static class ExcelHelper
     {

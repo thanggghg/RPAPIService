@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
-using GoSell.Affiliate.Tracking.Commons.Enums;
-namespace GoSell.Affiliate.Tracking.Commons.Constants
+using RP.Affiliate.Tracking.Commons.Enums;
+namespace RP.Affiliate.Tracking.Commons.Constants
 {
     public static class UtilsConstants
     {

@@ -1,28 +1,28 @@
-﻿using GoSell.API.Routes.AffiliatePublisherGroupManagement;
-using GoSell.API.Routes.AffiliatePublisherManagement;
-using GoSell.API.Routes.AffliateTracking;
-using GoSell.API.Routes.Analysis;
-using GoSell.API.Routes.Comments;
-using GoSell.API.Routes.Commission;
-using GoSell.API.Routes.CommissionPayments;
-using GoSell.API.Routes.CommonHistory;
-using GoSell.API.Routes.CommonTicket;
-using GoSell.API.Routes.Exports;
-using GoSell.API.Routes.FBBulkPosting;
-using GoSell.API.Routes.Forums;
-using GoSell.API.Routes.Getaways;
-using GoSell.API.Routes.MposDevices;
-using GoSell.API.Routes.Orders;
-using GoSell.API.Routes.Payments;
-using GoSell.API.Routes.SigninAffiliate;
-using GoSell.API.Routes.SocialSignin;
-using GoSell.API.Routes.SupportTicket;
-using GoSell.API.Routes.Warranties;
-using GoSell.Library.Extensions.JWT;
-using GoSell.Library.Utils;
-using GoSell.Ordering.API.Extensions;
+﻿using RP.API.Routes.AffiliatePublisherGroupManagement;
+using RP.API.Routes.AffiliatePublisherManagement;
+using RP.API.Routes.AffliateTracking;
+using RP.API.Routes.Analysis;
+using RP.API.Routes.Comments;
+using RP.API.Routes.Commission;
+using RP.API.Routes.CommissionPayments;
+using RP.API.Routes.CommonHistory;
+using RP.API.Routes.CommonTicket;
+using RP.API.Routes.Exports;
+using RP.API.Routes.FBBulkPosting;
+using RP.API.Routes.Forums;
+using RP.API.Routes.Getaways;
+using RP.API.Routes.MposDevices;
+using RP.API.Routes.Orders;
+using RP.API.Routes.Payments;
+using RP.API.Routes.SigninAffiliate;
+using RP.API.Routes.SocialSignin;
+using RP.API.Routes.SupportTicket;
+using RP.API.Routes.Warranties;
+using RP.Library.Extensions.JWT;
+using RP.Library.Utils;
+using RP.Ordering.API.Extensions;
 
-namespace GoSell.API.Routes
+namespace RP.API.Routes
 {
     public static class ApiRouting
     {
@@ -74,7 +74,7 @@ namespace GoSell.API.Routes
 
             app.MapGet("/", async context =>
             {
-                await context.Response.WriteAsync($"Welcome Go Sell .NET! Version: {typeof(GoSell.API.Routes.ApiRouting).Assembly.GetName().Version}");
+                await context.Response.WriteAsync($"Welcome Go Sell .NET! Version: {typeof(RP.API.Routes.ApiRouting).Assembly.GetName().Version}");
             });
         }
         public static void RegisterConnect(this WebApplication app)

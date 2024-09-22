@@ -1,7 +1,7 @@
 ﻿using System.Security.Cryptography;
 using System.Text.RegularExpressions;
 
-namespace GoSell.Affiliate.Tracking.Utils
+namespace RP.Affiliate.Tracking.Utils
 {
     public static class CommonFunction
     {

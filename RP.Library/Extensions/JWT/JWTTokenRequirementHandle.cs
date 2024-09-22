@@ -1,10 +1,10 @@
 using System.Text.Json;
-using GoSell.Library.Exceptions;
+using RP.Library.Exceptions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.OpenApi.Interfaces;
 
-namespace GoSell.Library.Extensions.JWT
+namespace RP.Library.Extensions.JWT
 {
     public class JWTTokenRequirementHandle : AuthorizationHandler<JWTTokenRequirement>
     {

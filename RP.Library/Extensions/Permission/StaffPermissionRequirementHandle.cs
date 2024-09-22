@@ -1,12 +1,12 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
-using GoSell.Library.Constants;
-using GoSell.Library.Enums;
-using GoSell.Library.Exceptions;
+using RP.Library.Constants;
+using RP.Library.Enums;
+using RP.Library.Exceptions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 
-namespace GoSell.Library.Extensions.Permission
+namespace RP.Library.Extensions.Permission
 {
     public class StaffPermissionRequirementHandle : AuthorizationHandler<StaffPermissionRequirement>
     {

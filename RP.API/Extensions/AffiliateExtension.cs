@@ -1,14 +1,14 @@
-﻿using GoSell.Affiliate.PublisherManagement.Commands;
-using GoSell.Affiliate.PublisherManagement.Commons;
-using GoSell.Affiliate.PublisherManagement.Database;
-using GoSell.Affiliate.PublisherManagement.Queries;
-using GoSell.Affiliate.PublisherManagement.Repositories;
-using GoSell.Affiliate.PublisherManagement.Services.Email;
-using GoSell.Affiliate.PublisherManagement.Services.OrderPackage;
-using GoSell.Affiliate.Tracking.Commands;
-using GoSell.Affiliate.Tracking.Database;
-using GoSell.Affiliate.Tracking.Repositories;
-using GoSell.Library.Db;
+﻿using RP.Affiliate.PublisherManagement.Commands;
+using RP.Affiliate.PublisherManagement.Commons;
+using RP.Affiliate.PublisherManagement.Database;
+using RP.Affiliate.PublisherManagement.Queries;
+using RP.Affiliate.PublisherManagement.Repositories;
+using RP.Affiliate.PublisherManagement.Services.Email;
+using RP.Affiliate.PublisherManagement.Services.OrderPackage;
+using RP.Affiliate.Tracking.Commands;
+using RP.Affiliate.Tracking.Database;
+using RP.Affiliate.Tracking.Repositories;
+using RP.Library.Db;
 
 internal static class AffiliateExtension
 {

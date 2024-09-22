@@ -1,9 +1,9 @@
 ﻿using System.Text.RegularExpressions;
-using GoSell.Library.Exceptions;
+using RP.Library.Exceptions;
 using Microsoft.AspNetCore.Diagnostics;
 using Serilog;
 
-namespace GoSell.API.Exceptions
+namespace RP.API.Exceptions
 {
     public class CustomExceptionHandler : IExceptionHandler
     {

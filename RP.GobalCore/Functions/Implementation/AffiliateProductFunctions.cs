@@ -1,22 +1,22 @@
 ﻿using System.Data.Entity;
 using System.Net;
 using AutoMapper;
-using GoSell.Affiliate.Tracking.Commands;
-using GoSell.Affiliate.Tracking.Commands.AffiliateProduct;
-using GoSell.Affiliate.Tracking.Commons.Constants;
-using GoSell.Affiliate.Tracking.Database;
-using GoSell.Affiliate.Tracking.Entities;
-using GoSell.Affiliate.Tracking.Functions.Interface;
-using GoSell.Affiliate.Tracking.Models.Requests;
-using GoSell.Affiliate.Tracking.Queries.AffiliateProduct;
-using GoSell.Affiliate.Tracking.Repositories.Interfaces;
-using GoSell.Affiliate.Tracking.ViewModels;
-using GoSell.Library.Db;
-using GoSell.Library.Helpers;
-using GoSell.Library.Helpers.Api;
-using GoSell.Library.Helpers.Pagination;
-using GoSell.Library.Helpers.Service;
-using GoSell.Library.Seedwork;
+using RP.Affiliate.Tracking.Commands;
+using RP.Affiliate.Tracking.Commands.AffiliateProduct;
+using RP.Affiliate.Tracking.Commons.Constants;
+using RP.Affiliate.Tracking.Database;
+using RP.Affiliate.Tracking.Entities;
+using RP.Affiliate.Tracking.Functions.Interface;
+using RP.Affiliate.Tracking.Models.Requests;
+using RP.Affiliate.Tracking.Queries.AffiliateProduct;
+using RP.Affiliate.Tracking.Repositories.Interfaces;
+using RP.Affiliate.Tracking.ViewModels;
+using RP.Library.Db;
+using RP.Library.Helpers;
+using RP.Library.Helpers.Api;
+using RP.Library.Helpers.Pagination;
+using RP.Library.Helpers.Service;
+using RP.Library.Seedwork;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -26,7 +26,7 @@ using SixLabors.ImageSharp.Processing;
 
 
 
-namespace GoSell.Affiliate.Tracking.Functions.Implementation
+namespace RP.Affiliate.Tracking.Functions.Implementation
 {
     public class AffiliateProductFunctions : IAffiliateProductFunctions
     {

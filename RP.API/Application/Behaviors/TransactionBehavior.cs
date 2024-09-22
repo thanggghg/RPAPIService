@@ -1,4 +1,4 @@
-﻿namespace GoSell.API.Application.Behaviors;
+﻿namespace RP.API.Application.Behaviors;
 
 using Microsoft.Extensions.Logging;
 

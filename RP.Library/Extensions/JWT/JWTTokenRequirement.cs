@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 
-namespace GoSell.Library.Extensions.JWT
+namespace RP.Library.Extensions.JWT
 {
     public class JWTTokenRequirement : IAuthorizationRequirement
     {

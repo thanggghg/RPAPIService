@@ -1,4 +1,4 @@
-namespace GoSell.Library.Extensions.MailClient
+namespace RP.Library.Extensions.MailClient
 {
     public class MailClientConfiguration
     {

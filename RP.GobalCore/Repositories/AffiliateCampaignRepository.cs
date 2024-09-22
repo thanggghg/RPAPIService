@@ -1,16 +1,16 @@
 ﻿using System.Linq.Expressions;
-using GoSell.Affiliate.Tracking.Commons.Constants;
-using GoSell.Affiliate.Tracking.Database;
-using GoSell.Affiliate.Tracking.Entities;
-using GoSell.Affiliate.Tracking.Models.Requests;
-using GoSell.Affiliate.Tracking.Queries.AffiliateCampaign;
-using GoSell.Affiliate.Tracking.Repositories.Interfaces;
-using GoSell.Affiliate.Tracking.ViewModels;
-using GoSell.Library.Seedwork;
-using GoSell.Library.Utils;
+using RP.Affiliate.Tracking.Commons.Constants;
+using RP.Affiliate.Tracking.Database;
+using RP.Affiliate.Tracking.Entities;
+using RP.Affiliate.Tracking.Models.Requests;
+using RP.Affiliate.Tracking.Queries.AffiliateCampaign;
+using RP.Affiliate.Tracking.Repositories.Interfaces;
+using RP.Affiliate.Tracking.ViewModels;
+using RP.Library.Seedwork;
+using RP.Library.Utils;
 using Microsoft.EntityFrameworkCore;
 
-namespace GoSell.Affiliate.Tracking.Repositories
+namespace RP.Affiliate.Tracking.Repositories
 {
     public class AffiliateCampaignRepository(AffiliateContext context) : IAffiliateCampaignRepository
     {

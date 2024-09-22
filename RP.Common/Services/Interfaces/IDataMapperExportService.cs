@@ -1,7 +1,7 @@
-﻿using GoSell.Common.Models.Requests;
-using GoSell.Common.Queries;
+﻿using RP.Common.Models.Requests;
+using RP.Common.Queries;
 
-namespace GoSell.Common.Services.Interfaces
+namespace RP.Common.Services.Interfaces
 {
     public interface IDataMapperExportService<T> where T : class
     {

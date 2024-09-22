@@ -1,10 +1,10 @@
-﻿using GoSell.Affiliate.Tracking.Commands.AffiliateProduct;
-using GoSell.Affiliate.Tracking.Functions.Interface;
-using GoSell.Library.Helpers;
+﻿using RP.Affiliate.Tracking.Commands.AffiliateProduct;
+using RP.Affiliate.Tracking.Functions.Interface;
+using RP.Library.Helpers;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 
-namespace GoSell.Affiliate.Tracking.Handler.AffiliateProductHandler
+namespace RP.Affiliate.Tracking.Handler.AffiliateProductHandler
 {
     public class ResizeImageCommandHandler : IRequestHandler<ResizeImageCommand, byte[]>
     {

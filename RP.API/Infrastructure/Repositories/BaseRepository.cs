@@ -1,7 +1,7 @@
 ﻿using System.Linq.Expressions;
-using GoSell.Library.Db;
+using RP.Library.Db;
 
-namespace GoSell.API.Infrastructure.Repositories.Comments
+namespace RP.API.Infrastructure.Repositories.Comments
 {
     public class BaseRepository<T>(BaseContext context) : IBaseRepository<T> where T : class
     {

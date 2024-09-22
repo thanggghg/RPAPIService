@@ -1,7 +1,7 @@
 ﻿using System.Globalization;
 using Microsoft.AspNetCore.Http;
 
-namespace GoSell.Library.Extensions.Localization
+namespace RP.Library.Extensions.Localization
 {
     public class LocalizationMiddleware : IMiddleware
     {

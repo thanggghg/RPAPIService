@@ -1,11 +1,11 @@
 ﻿using System.Linq.Expressions;
-using GoSell.Affiliate.Tracking.Database;
-using GoSell.Affiliate.Tracking.Database.Entities;
-using GoSell.Affiliate.Tracking.Repositories.Interfaces;
-using GoSell.Library.Seedwork;
+using RP.Affiliate.Tracking.Database;
+using RP.Affiliate.Tracking.Database.Entities;
+using RP.Affiliate.Tracking.Repositories.Interfaces;
+using RP.Library.Seedwork;
 using Microsoft.EntityFrameworkCore;
 
-namespace GoSell.Affiliate.Tracking.Repositories
+namespace RP.Affiliate.Tracking.Repositories
 {
     public class AffiliateCategoryRepository : IAffiliateCategoryRepository
     {

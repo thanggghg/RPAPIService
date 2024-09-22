@@ -1,10 +1,10 @@
 ﻿using System.Linq.Expressions;
-using GoSell.Affiliate.Tracking.Database;
-using GoSell.Library.Seedwork;
+using RP.Affiliate.Tracking.Database;
+using RP.Library.Seedwork;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query;
 
-namespace GoSell.Affiliate.Tracking.Repositories
+namespace RP.Affiliate.Tracking.Repositories
 {
     public class AffiliateRepository<TEntity> : IAffiliateRepository<TEntity>
         where TEntity : class

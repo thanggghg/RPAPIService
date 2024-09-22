@@ -1,13 +1,13 @@
-﻿using GoSell.Common.Handlers;
-using GoSell.Common.Models.Responses;
-using GoSell.Common.Queries;
-using GoSell.Common.Services.Implements.ExportCommon;
-using GoSell.Common.Services.Interfaces;
+﻿using RP.Common.Handlers;
+using RP.Common.Models.Responses;
+using RP.Common.Queries;
+using RP.Common.Services.Implements.ExportCommon;
+using RP.Common.Services.Interfaces;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
-using static GoSell.Common.Services.DelegateService;
+using static RP.Common.Services.DelegateService;
 
-namespace GoSell.Common.Extension
+namespace RP.Common.Extension
 {
     public static class ExportServiceCollectionExtensions
     {

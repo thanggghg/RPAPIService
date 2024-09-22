@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 
-namespace GoSell.Library.Extensions
+namespace RP.Library.Extensions
 {
     public static class HttpRequestExtension
     {

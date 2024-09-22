@@ -1,10 +1,10 @@
-﻿using GoSell.Library.Constants;
-using GoSell.Library.Db;
-using GoSell.Library.Helpers.Service.Model;
-using GoSell.Library.Utils;
+﻿using RP.Library.Constants;
+using RP.Library.Db;
+using RP.Library.Helpers.Service.Model;
+using RP.Library.Utils;
 using Microsoft.Extensions.Configuration;
 
-namespace GoSell.Library.Helpers.Service
+namespace RP.Library.Helpers.Service
 {
     public class BaseService(IHttpClientHelper httpClientHelper
                           , IConfiguration configuration) : IBaseService

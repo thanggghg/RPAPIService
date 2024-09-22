@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace GoSell.Library.Seedwork
+namespace RP.Library.Seedwork
 {
     public interface IDeletedEntity
     {

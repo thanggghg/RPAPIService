@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using GoSell.Library.Seedwork;
+using RP.Library.Seedwork;
 using Newtonsoft.Json;
 
-namespace GoSell.Affiliate.Tracking.Entities
+namespace RP.Affiliate.Tracking.Entities
 {
     [Table("affiliate_click_tracking", Schema = "affiliate-tracking-services")]
     public class AffiliateClickTracking : Entity, IAggregateRoot

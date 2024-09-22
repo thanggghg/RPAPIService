@@ -1,4 +1,4 @@
-﻿namespace GoSell.Library.Seedwork;
+﻿namespace RP.Library.Seedwork;
 
 public interface IRepository<T> where T : IAggregateRoot
 {

@@ -1,9 +1,9 @@
 ﻿using System.Runtime.Serialization;
-using GoSell.Affiliate.Tracking.ViewModels;
+using RP.Affiliate.Tracking.ViewModels;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 
-namespace GoSell.Affiliate.Tracking.Commands.AffiliateProduct
+namespace RP.Affiliate.Tracking.Commands.AffiliateProduct
 {
     public class ImportAffiliateProductCommand(IFormFile file, string langKey, long affiliateStoreId, long storeId) : IRequest<ImportAffiliateProductResult>
     {

@@ -1,14 +1,14 @@
 ﻿using System.Net;
-using GoSell.Affiliate.Tracking.Commands.AffiliateCampaign;
-using GoSell.Affiliate.Tracking.Commons.Enums;
-using GoSell.Affiliate.Tracking.Functions.Interface;
-using GoSell.Affiliate.Tracking.Repositories;
-using GoSell.Affiliate.Tracking.Repositories.Interfaces;
-using GoSell.Affiliate.Tracking.ViewModels;
-using GoSell.Library.Helpers;
+using RP.Affiliate.Tracking.Commands.AffiliateCampaign;
+using RP.Affiliate.Tracking.Commons.Enums;
+using RP.Affiliate.Tracking.Functions.Interface;
+using RP.Affiliate.Tracking.Repositories;
+using RP.Affiliate.Tracking.Repositories.Interfaces;
+using RP.Affiliate.Tracking.ViewModels;
+using RP.Library.Helpers;
 using MediatR;
 
-namespace GoSell.Affiliate.Tracking.Handler.AffiliateProductHandler
+namespace RP.Affiliate.Tracking.Handler.AffiliateProductHandler
 {
     public class CronJobUpdateAllExpriredCampaignHandler : IRequestHandler<UpdateAllExpriredCampaignCommand, GenericResponse<int>>
     {

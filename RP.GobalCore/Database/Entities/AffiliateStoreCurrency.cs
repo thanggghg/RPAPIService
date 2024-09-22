@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using GoSell.Library.Seedwork;
+using RP.Library.Seedwork;
 
-namespace GoSell.Affiliate.Tracking.Database.Entities
+namespace RP.Affiliate.Tracking.Database.Entities
 {
     [Table("affiliate_store_currency", Schema = "affiliate-tracking-services")]
     public class AffiliateStoreCurrency: Entity, IAggregateRoot

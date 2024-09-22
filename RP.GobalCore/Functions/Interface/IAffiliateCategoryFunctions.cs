@@ -1,10 +1,10 @@
-﻿using GoSell.Affiliate.Tracking.Commands;
-using GoSell.Affiliate.Tracking.Commands.AffiliateCategory;
-using GoSell.Affiliate.Tracking.ViewModels;
-using GoSell.Affiliate.Tracking.Queries.AffiliateCategory;
-using GoSell.Library.Helpers;
+﻿using RP.Affiliate.Tracking.Commands;
+using RP.Affiliate.Tracking.Commands.AffiliateCategory;
+using RP.Affiliate.Tracking.ViewModels;
+using RP.Affiliate.Tracking.Queries.AffiliateCategory;
+using RP.Library.Helpers;
 
-namespace GoSell.Affiliate.Tracking.Functions.Interface
+namespace RP.Affiliate.Tracking.Functions.Interface
 {
     public interface  IAffiliateCategoryFunctions
     {

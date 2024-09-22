@@ -1,7 +1,7 @@
-﻿using GoSell.Library.Seedwork;
+﻿using RP.Library.Seedwork;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace GoSell.Affiliate.Tracking.Entities
+namespace RP.Affiliate.Tracking.Entities
 {
     [Table("affiliate_campaign_product", Schema = "affiliate-tracking-services")]
     public class AffiliateCampaignProduct : Entity, IAggregateRoot

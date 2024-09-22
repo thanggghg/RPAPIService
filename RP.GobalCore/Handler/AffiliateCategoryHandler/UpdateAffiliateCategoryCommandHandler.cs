@@ -1,18 +1,18 @@
 ﻿using System.Net;
 using AutoMapper;
-using GoSell.Affiliate.Tracking.Commands;
-using GoSell.Affiliate.Tracking.Commands.AffiliateCategory;
-using GoSell.Affiliate.Tracking.Database;
-using GoSell.Affiliate.Tracking.Functions.Interface;
-using GoSell.Affiliate.Tracking.Repositories.Interfaces;
-using GoSell.Library.Helpers;
-using GoSell.Library.Helpers.Api;
-using GoSell.Library.Helpers.Service;
-using GoSell.Library.Seedwork;
+using RP.Affiliate.Tracking.Commands;
+using RP.Affiliate.Tracking.Commands.AffiliateCategory;
+using RP.Affiliate.Tracking.Database;
+using RP.Affiliate.Tracking.Functions.Interface;
+using RP.Affiliate.Tracking.Repositories.Interfaces;
+using RP.Library.Helpers;
+using RP.Library.Helpers.Api;
+using RP.Library.Helpers.Service;
+using RP.Library.Seedwork;
 using LinqKit;
 using MediatR;
 
-namespace GoSell.Affiliate.Tracking.Handler.AffiliateCategoryHandler
+namespace RP.Affiliate.Tracking.Handler.AffiliateCategoryHandler
 {
     public class UpdateAffiliateCategoryCommandHandler : IRequestHandler<UpdateAffiliateCategoryCommand, BaseResponse>
     {

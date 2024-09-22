@@ -1,4 +1,4 @@
-namespace GoSell.Common.Constants
+namespace RP.Common.Constants
 {
     public class RegexValidation
     {

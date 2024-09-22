@@ -3,7 +3,7 @@ using Microsoft.Extensions.Localization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace GoSell.Library.Extensions.Localization
+namespace RP.Library.Extensions.Localization
 {
     public class JsonStringLocalizer : IStringLocalizer
     {

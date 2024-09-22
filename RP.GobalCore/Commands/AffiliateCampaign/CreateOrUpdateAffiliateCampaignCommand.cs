@@ -1,8 +1,8 @@
-﻿using GoSell.Affiliate.Tracking.Models.Requests;
-using GoSell.Library.Helpers;
+﻿using RP.Affiliate.Tracking.Models.Requests;
+using RP.Library.Helpers;
 using MediatR;
 
-namespace GoSell.Affiliate.Tracking.Commands.AffiliateCampaign
+namespace RP.Affiliate.Tracking.Commands.AffiliateCampaign
 {
     public class CreateOrUpdateAffiliateCampaignCommand : AffiliateCampaignRequest, IRequest<BaseResponseCode>
     {

@@ -1,22 +1,22 @@
 ﻿using System.Net;
-using GoSell.Affiliate.Authentication.Application.Commands;
-using GoSell.Affiliate.Authentication.Application.Contracts;
-using GoSell.Affiliate.Authentication.Application.Handler;
-using GoSell.Affiliate.Authentication.Application.Queries;
-using GoSell.Affiliate.Authentication.Models;
-using GoSell.Affiliate.PublisherManagement.Commands;
-using GoSell.Affiliate.PublisherManagement.Queries;
-using GoSell.Common.Enums;
-using GoSell.Common.Models;
-using GoSell.Common.Utils;
-using GoSell.Library.Enums.SocialAuthen;
-using GoSell.Library.Helpers;
-using GoSell.Library.Helpers.Api;
-using GoSell.SocialAuthentication.Services.Implementation;
+using RP.Affiliate.Authentication.Application.Commands;
+using RP.Affiliate.Authentication.Application.Contracts;
+using RP.Affiliate.Authentication.Application.Handler;
+using RP.Affiliate.Authentication.Application.Queries;
+using RP.Affiliate.Authentication.Models;
+using RP.Affiliate.PublisherManagement.Commands;
+using RP.Affiliate.PublisherManagement.Queries;
+using RP.Common.Enums;
+using RP.Common.Models;
+using RP.Common.Utils;
+using RP.Library.Enums.SocialAuthen;
+using RP.Library.Helpers;
+using RP.Library.Helpers.Api;
+using RP.SocialAuthentication.Services.Implementation;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Serilog;
 
-namespace GoSell.API.Service
+namespace RP.API.Service
 {
     public static class AffiliateAuthenticationApi
     {

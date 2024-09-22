@@ -1,11 +1,11 @@
 ﻿using System.Net.Http.Headers;
 using System.Text;
-using GoSell.Library.Extensions.JWT;
-using GoSell.Library.Utils;
+using RP.Library.Extensions.JWT;
+using RP.Library.Utils;
 using Newtonsoft.Json;
 using Serilog;
 
-namespace GoSell.Library.Helpers
+namespace RP.Library.Helpers
 {
     public class HttpClientHelper : IHttpClientHelper
     {

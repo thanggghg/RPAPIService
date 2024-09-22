@@ -1,9 +1,9 @@
-﻿using GoSell.Affiliate.Tracking.Database.Entities;
-using GoSell.Affiliate.Tracking.Entities;
-using GoSell.Library.Db;
+﻿using RP.Affiliate.Tracking.Database.Entities;
+using RP.Affiliate.Tracking.Entities;
+using RP.Library.Db;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-namespace GoSell.Affiliate.Tracking.Database
+namespace RP.Affiliate.Tracking.Database
 {
     public class AffiliateContext : BaseContext
     {

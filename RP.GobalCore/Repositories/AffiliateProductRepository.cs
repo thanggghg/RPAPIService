@@ -1,17 +1,17 @@
 ﻿using System.Linq.Expressions;
 using EFCore.BulkExtensions;
-using GoSell.Affiliate.Tracking.Commons.Constants;
-using GoSell.Affiliate.Tracking.Database;
-using GoSell.Affiliate.Tracking.Entities;
-using GoSell.Affiliate.Tracking.Queries.AffiliateProduct;
-using GoSell.Affiliate.Tracking.Repositories.Interfaces;
-using GoSell.Affiliate.Tracking.ViewModels;
-using GoSell.Library.Helpers.Pagination;
-using GoSell.Library.Seedwork;
+using RP.Affiliate.Tracking.Commons.Constants;
+using RP.Affiliate.Tracking.Database;
+using RP.Affiliate.Tracking.Entities;
+using RP.Affiliate.Tracking.Queries.AffiliateProduct;
+using RP.Affiliate.Tracking.Repositories.Interfaces;
+using RP.Affiliate.Tracking.ViewModels;
+using RP.Library.Helpers.Pagination;
+using RP.Library.Seedwork;
 using LinqKit;
 using Microsoft.EntityFrameworkCore;
 
-namespace GoSell.Affiliate.Tracking.Repositories
+namespace RP.Affiliate.Tracking.Repositories
 {
     public class AffiliateProductRepository : IAffiliateProductRepository
     {

@@ -1,9 +1,9 @@
-﻿using GoSell.Affiliate.Tracking.Commands;
-using GoSell.Affiliate.Tracking.Entities;
-using GoSell.Affiliate.Tracking.Queries;
-using GoSell.Affiliate.Tracking.ViewModels;
+﻿using RP.Affiliate.Tracking.Commands;
+using RP.Affiliate.Tracking.Entities;
+using RP.Affiliate.Tracking.Queries;
+using RP.Affiliate.Tracking.ViewModels;
 
-namespace GoSell.Affiliate.Tracking.Services.Interfaces
+namespace RP.Affiliate.Tracking.Services.Interfaces
 {
     public interface IAffiliateTrackingServices
     {

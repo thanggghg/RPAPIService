@@ -4,14 +4,14 @@ using Google.Apis.Auth.OAuth2.Flows;
 using Google.Apis.Auth.OAuth2.Responses;
 using Google.Apis.Oauth2.v2;
 using Google.Apis.Services;
-using GoSell.Library.Enums.SocialAuthen;
-using GoSell.Library.Extensions.Social;
+using RP.Library.Enums.SocialAuthen;
+using RP.Library.Extensions.Social;
 using MediatR;
 using Microsoft.Extensions.Logging;
-using GoSell.Common.Services.Interfaces;
-using GoSell.Common.Models;
+using RP.Common.Services.Interfaces;
+using RP.Common.Models;
 
-namespace GoSell.Common.Services.Implements
+namespace RP.Common.Services.Implements
 {
     public class GoogleServices : IProviderSocialServices
     {

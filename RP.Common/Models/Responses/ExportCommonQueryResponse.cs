@@ -1,4 +1,4 @@
-﻿namespace GoSell.Common.Models.Responses
+﻿namespace RP.Common.Models.Responses
 {
     public class ExportCommonQueryResponse
     {

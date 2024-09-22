@@ -1,10 +1,10 @@
-﻿using GoSell.Library.Db;
-using GoSell.Library.Extensions.MailClient;
-using GoSell.Library.Helpers;
+﻿using RP.Library.Db;
+using RP.Library.Extensions.MailClient;
+using RP.Library.Helpers;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace GoSell.Library.Extensions
+namespace RP.Library.Extensions
 {
     public static class MailClientExtension
     {

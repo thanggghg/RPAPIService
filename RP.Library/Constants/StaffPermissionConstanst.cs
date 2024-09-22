@@ -1,6 +1,6 @@
-﻿using GoSell.Library.Enums;
+﻿using RP.Library.Enums;
 
-namespace GoSell.Library.Constants
+namespace RP.Library.Constants
 {
     public class StaffPermission
     {

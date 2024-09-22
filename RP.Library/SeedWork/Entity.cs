@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using MediatR;
 
-namespace GoSell.Library.Seedwork;
+namespace RP.Library.Seedwork;
 
 public abstract class Entity
 {

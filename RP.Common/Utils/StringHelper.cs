@@ -1,7 +1,7 @@
 ﻿using System.Text.RegularExpressions;
-using GoSell.Common.Constants;
+using RP.Common.Constants;
 
-namespace GoSell.Common.Utils
+namespace RP.Common.Utils
 {
     public static class StringHelper
     {

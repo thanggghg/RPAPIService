@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Http;
 
-namespace GoSell.Affiliate.Tracking.Commands.AffiliateProduct
+namespace RP.Affiliate.Tracking.Commands.AffiliateProduct
 {
     public class ResizeImageCommand : IRequest<byte[]>
     {

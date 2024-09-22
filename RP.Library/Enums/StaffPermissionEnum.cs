@@ -1,4 +1,4 @@
-﻿namespace GoSell.Library.Enums
+﻿namespace RP.Library.Enums
 {
     public enum StaffPermissionEnum
     {

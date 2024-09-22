@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
-using GoSell.Comments.Application.Queries.Comments;
-using GoSell.Comments.Database.Entities.Comments;
-using GoSell.Commissions.Application.Queries;
-using GoSell.Commissions.Models.Entities;
+using RP.Comments.Application.Queries.Comments;
+using RP.Comments.Database.Entities.Comments;
+using RP.Commissions.Application.Queries;
+using RP.Commissions.Models.Entities;
 
-namespace GoSell.API.Domains.Models
+namespace RP.API.Domains.Models
 {
     public class Mapping : Profile
     {
@@ -13,7 +13,7 @@ namespace GoSell.API.Domains.Models
             CreateMap<CreateCommentsModelQuery, Comment>();
             CreateMap<EditCommentsModelQuery, Comment>();
 
-            CreateMap<CommentMedia, GoSell.Comments.Application.Queries.Comments.Media>()
+            CreateMap<CommentMedia, RP.Comments.Application.Queries.Comments.Media>()
             .ForMember(dest => dest.OriginFileName, opt => opt.MapFrom(src => src.Name))
             .ForMember(dest => dest.FullPath, opt => opt.MapFrom(src => $"{src.Path}/{src.MediaUuid}.{src.Extension}"))
             .ForMember(dest => dest.ImageUUID, opt => opt.MapFrom(src => src.MediaUuid));

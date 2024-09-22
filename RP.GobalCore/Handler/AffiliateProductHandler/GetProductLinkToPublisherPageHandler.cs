@@ -1,10 +1,10 @@
-﻿using GoSell.Affiliate.Tracking.Commands;
-using GoSell.Affiliate.Tracking.Functions.Interface;
-using GoSell.Affiliate.Tracking.Queries.AffiliateProduct;
-using GoSell.Library.Helpers;
+﻿using RP.Affiliate.Tracking.Commands;
+using RP.Affiliate.Tracking.Functions.Interface;
+using RP.Affiliate.Tracking.Queries.AffiliateProduct;
+using RP.Library.Helpers;
 using MediatR;
 
-namespace GoSell.Affiliate.Tracking.Handler.AffiliateProductHandler
+namespace RP.Affiliate.Tracking.Handler.AffiliateProductHandler
 {
     public class GetProductLinkToPublisherPageHandler : IRequestHandler<GetProductLinkQuery, GenericResponse<string>>
     {

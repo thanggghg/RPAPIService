@@ -1,13 +1,13 @@
 ﻿using System.Net;
-using GoSell.Affiliate.Tracking.Queries.AffiliateCampaign;
-using GoSell.Affiliate.Tracking.Repositories.Interfaces;
-using GoSell.Affiliate.Tracking.ViewModels;
-using GoSell.Library.Helpers;
-using GoSell.Library.Helpers.Service;
+using RP.Affiliate.Tracking.Queries.AffiliateCampaign;
+using RP.Affiliate.Tracking.Repositories.Interfaces;
+using RP.Affiliate.Tracking.ViewModels;
+using RP.Library.Helpers;
+using RP.Library.Helpers.Service;
 using MediatR;
 using Serilog;
 
-namespace GoSell.Affiliate.Tracking.Handler.AffiliateCampaignHandler
+namespace RP.Affiliate.Tracking.Handler.AffiliateCampaignHandler
 {
     public class GetSpecificAffiliateCampaignQueryHandler(IAffiliateCampaignRepository affiliateCampaignRepository,
                                         IBaseService baseService) : IRequestHandler<GetSpecificAffiliateCampaignQuery, GenericResponse<AffiliateCampaignDetailViewModel>>

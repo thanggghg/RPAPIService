@@ -1,7 +1,7 @@
-﻿using GoSell.Library.Enums.SocialAuthen;
-using GoSell.Common.Models;
+﻿using RP.Library.Enums.SocialAuthen;
+using RP.Common.Models;
 
-namespace GoSell.Common.Services.Interfaces
+namespace RP.Common.Services.Interfaces
 {
     public interface IProviderSocialServices
     {

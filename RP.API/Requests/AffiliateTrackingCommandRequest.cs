@@ -1,4 +1,4 @@
-﻿namespace GoSell.API.Requests
+﻿namespace RP.API.Requests
 {
     public record CreateAffiliateLinkRequest(long CampaignId,
                                              List<string> OriginLinks,

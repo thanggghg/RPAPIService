@@ -1,6 +1,6 @@
-﻿using GoSell.Common.Models;
+﻿using RP.Common.Models;
 
-namespace GoSell.Affiliate.Tracking.Extensions
+namespace RP.Affiliate.Tracking.Extensions
 {
     public static class PagingExtension<T> where T : class
     {

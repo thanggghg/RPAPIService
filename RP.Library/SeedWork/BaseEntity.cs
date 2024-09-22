@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace GoSell.Library.Seedwork
+namespace RP.Library.Seedwork
 {
     public abstract class BaseEntity
     {

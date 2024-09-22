@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Text.RegularExpressions;
 
-namespace GoSell.Library.Utils
+namespace RP.Library.Utils
 {
     public static class EnumExtension
     {

@@ -1,9 +1,9 @@
-﻿using GoSell.Common.Enums;
-using GoSell.Common.Models.Requests;
-using GoSell.Common.Models.Responses;
+﻿using RP.Common.Enums;
+using RP.Common.Models.Requests;
+using RP.Common.Models.Responses;
 using MediatR;
 
-namespace GoSell.Common.Queries
+namespace RP.Common.Queries
 {
     public class ExportCommonQuery<T> : IRequest<ExportCommonQueryResponse> where T : class
     {

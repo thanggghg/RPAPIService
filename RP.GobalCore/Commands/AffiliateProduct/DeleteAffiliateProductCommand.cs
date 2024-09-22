@@ -1,8 +1,8 @@
 ﻿using System.Runtime.Serialization;
-using GoSell.Library.Helpers;
+using RP.Library.Helpers;
 using MediatR;
 
-namespace GoSell.Affiliate.Tracking.Commands.AffiliateProduct
+namespace RP.Affiliate.Tracking.Commands.AffiliateProduct
 {
     public class DeleteAffiliateProductCommand : IRequest<BaseResponse>
     {

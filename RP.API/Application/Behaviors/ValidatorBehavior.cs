@@ -1,6 +1,6 @@
-using ValidationException = GoSell.API.Exceptions.ValidationException;
+using ValidationException = RP.API.Exceptions.ValidationException;
 
-namespace GoSell.API.Application.Behaviors;
+namespace RP.API.Application.Behaviors;
 
 public class ValidatorBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> where TRequest : IRequest<TResponse>
 {

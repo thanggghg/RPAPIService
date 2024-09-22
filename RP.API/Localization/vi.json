@@ -1,17 +1,3 @@
 {
-    "TICKET.CONFIRMATIONEMAIL.NEW": "Yêu cầu hỗ trợ {{idOfTicket}} được tạo thành công",
-    "TICKET.CONFIRMATIONEMAIL.REOPENED": "Yêu cầu hỗ trợ {{idOfTicket}} được mở lại thành công",
-    "TICKET.CONFIRMATIONEMAIL.STAFFANSWERED": "Yêu cầu hỗ trợ {{idOfTicket}} đã được cập nhật",
-    "TICKET.CONFIRMATIONEMAIL.CUSTOMERANSWERED": "Yêu cầu hỗ trợ {{idOfTicket}} đã được cập nhật",
-    "TICKET.CONFIRMATIONEMAIL.CLOSED": "Yêu cầu hỗ trợ {{idOfTicket}} đã kết thúc",
-    "TICKET.DEPARTMENT.IT": "Công nghê thông tin",
-    "TICKET.DEPARTMENT.SALE": "Bán hàng",
-    "TICKET.DEPARTMENT.ACCOUNTING": "Kế toán",
-    "TICKET.DEPARTMENT.MARKETING": "Tiếp thị",
-    "TICKET.DEPARTMENT.PRODUCTDEVELOPMENT": "Phát triển sản phẩm",
-    "TICKET.DEPARTMENT.CUSTOMERSERVICE": "Chăm sóc khách hàng",
-    "TICKET.DEPARTMENT.OTHER": "Khác",
-    "TICKET.DEPARTMENT.PRODUCT": "Sản phẩm",
-    "AFFILIATE.PARNER.REJECTMAIL": "Thông báo từ chối đăng ký tài khoản - {0}",
-    "AFFILIATE.PARNER.APPROVEMAIL": "Chào mừng bạn đến với {0} - Đăng ký tài khoản thành công"
+
 }

@@ -1,7 +1,7 @@
-﻿using GoSell.Library.Extensions.JWT;
+﻿using RP.Library.Extensions.JWT;
 using Microsoft.AspNetCore.Http;
 
-namespace GoSell.Library.Helpers.Api
+namespace RP.Library.Helpers.Api
 {
     public interface IBaseApi
     {

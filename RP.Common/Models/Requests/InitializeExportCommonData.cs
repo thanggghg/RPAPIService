@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace GoSell.Common.Models.Requests
+namespace RP.Common.Models.Requests
 {
     public class InitializeExportCommonData
     {

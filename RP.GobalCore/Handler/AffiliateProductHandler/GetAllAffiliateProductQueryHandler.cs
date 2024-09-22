@@ -1,26 +1,26 @@
 ﻿using System.Globalization;
 using AutoMapper;
-using GoSell.Affiliate.Tracking.Commons.Constants;
-using GoSell.Affiliate.Tracking.Database.Entities;
-using GoSell.Affiliate.Tracking.Entities;
-using GoSell.Affiliate.Tracking.Queries.AffiliateProduct;
-using GoSell.Affiliate.Tracking.Repositories.Interfaces;
-using GoSell.Affiliate.Tracking.Services.Interfaces;
-using GoSell.Affiliate.Tracking.ViewModels;
-using GoSell.Library.Constants;
-using GoSell.Library.Helpers.Api;
-using GoSell.Library.Helpers.Pagination;
-using GoSell.Library.Helpers.Service;
+using RP.Affiliate.Tracking.Commons.Constants;
+using RP.Affiliate.Tracking.Database.Entities;
+using RP.Affiliate.Tracking.Entities;
+using RP.Affiliate.Tracking.Queries.AffiliateProduct;
+using RP.Affiliate.Tracking.Repositories.Interfaces;
+using RP.Affiliate.Tracking.Services.Interfaces;
+using RP.Affiliate.Tracking.ViewModels;
+using RP.Library.Constants;
+using RP.Library.Helpers.Api;
+using RP.Library.Helpers.Pagination;
+using RP.Library.Helpers.Service;
 using LinqKit;
 using MediatR;
 using Nest;
 using Serilog;
-using GoSell.Common.Helpers;
+using RP.Common.Helpers;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Extensions;
-using GoSell.Affiliate.Tracking.Utils;
+using RP.Affiliate.Tracking.Utils;
 
-namespace GoSell.Affiliate.Tracking.Handler.AffiliateProductHandler
+namespace RP.Affiliate.Tracking.Handler.AffiliateProductHandler
 {
     public class GetAllAffiliateProductQueryHandler : IRequestHandler<GetAllAffiliateProductQuery, PagingItems<AffiliateProductViewModel>>
     {

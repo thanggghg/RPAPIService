@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace GoSell.Affiliate.Tracking.Commons.Enums
+namespace RP.Affiliate.Tracking.Commons.Enums
 {
     public enum PlatformEnum
     {

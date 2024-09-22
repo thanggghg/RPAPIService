@@ -1,7 +1,7 @@
-﻿using GoSell.Library.Helpers;
+﻿using RP.Library.Helpers;
 using MediatR;
 
-namespace GoSell.Affiliate.Tracking.Commands.AffiliateCampaign
+namespace RP.Affiliate.Tracking.Commands.AffiliateCampaign
 {
     public class DeleteAffiliateCampaignCommand(long id, long storeId) : IRequest<BaseResponse>
     {

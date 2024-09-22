@@ -78,6 +78,7 @@
   <ItemGroup>
     <Folder Include="Application\Handle\" />
     <Folder Include="Application\Queries\" />
+    <Folder Include="Templates\en\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -126,57 +127,9 @@
     <None Remove="Routes\Auth\**" />
     <None Remove="wwwroot\**" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Content Remove="Templates\en\warrantyEmail.cshtml" />
-    <Content Remove="Templates\vi\warrantyEmail.cshtml" />
-  </ItemGroup>
   
   <ItemGroup>
-    <None Remove="Templates\en\affiliate-payment-information-template-import_EN.xlsx" />
-    <None Remove="Templates\vi\affiliate-payment-information-template-import_VI.xlsx" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="Templates\en\affiliate-payment-information-template-import_EN.xlsx">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="Templates\vi\affiliate-payment-information-template-import_VI.xlsx">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-  </ItemGroup>
-  
-  <ItemGroup>
-    <None Update="Templates\vi\closeTicketEmail.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Templates\vi\createTicketEmail.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Templates\vi\reopenTicketEmail.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Templates\vi\updateTicketEmail.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Templates\en\welcomeEmail.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Templates\en\welcomeEmailGoSell.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Templates\vi\welcomeEmail.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Templates\vi\welcomeEmailGoSell.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Update="Templates\welcomeEmailGoSellPublisher.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Templates\welcomeEmailGoSellBuyer.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

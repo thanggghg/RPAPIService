@@ -1,9 +1,9 @@
-﻿using GoSell.Affiliate.Tracking.Commands.AffiliateProduct;
-using GoSell.Affiliate.Tracking.Functions.Interface;
-using GoSell.Affiliate.Tracking.ViewModels;
+﻿using RP.Affiliate.Tracking.Commands.AffiliateProduct;
+using RP.Affiliate.Tracking.Functions.Interface;
+using RP.Affiliate.Tracking.ViewModels;
 using MediatR;
 
-namespace GoSell.Affiliate.Tracking.Handler.AffiliateProductHandler
+namespace RP.Affiliate.Tracking.Handler.AffiliateProductHandler
 {
     public class ImportAffiliateProductCommandHandler(IImportAffiliateProductFunctions affiliateImportProductFunctions) : IRequestHandler<ImportAffiliateProductCommand, ImportAffiliateProductResult>
     {

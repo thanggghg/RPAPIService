@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace GoSell.Affiliate.Tracking.Database.Entities
+namespace RP.Affiliate.Tracking.Database.Entities
 {
     [Table("affiliate_color_default", Schema = "affiliate-tracking-services")]
     public class AffiliateColorDefault

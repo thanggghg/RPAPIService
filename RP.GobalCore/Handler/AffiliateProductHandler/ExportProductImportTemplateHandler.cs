@@ -1,10 +1,10 @@
-﻿using GoSell.Affiliate.Tracking.Functions.Interface;
-using GoSell.Affiliate.Tracking.Queries.AffiliateProduct;
+﻿using RP.Affiliate.Tracking.Functions.Interface;
+using RP.Affiliate.Tracking.Queries.AffiliateProduct;
 using MediatR;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace GoSell.Affiliate.Tracking.Handler.AffiliateProductHandler
+namespace RP.Affiliate.Tracking.Handler.AffiliateProductHandler
 {
     public class ExportProductImportTemplateHandler : IRequestHandler<ExportProductImportTemplateQuery, byte[]>
     {

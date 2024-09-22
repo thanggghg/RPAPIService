@@ -1,4 +1,4 @@
-﻿namespace GoSell.Library.Helpers.Pagination
+﻿namespace RP.Library.Helpers.Pagination
 {
     public class SearchPagingAndSortingRequest : PagingAndSortingRequest
     {

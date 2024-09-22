@@ -1,10 +1,10 @@
-﻿using GoSell.Affiliate.Tracking.Commands.AffiliateCampaign;
-using GoSell.Affiliate.Tracking.Functions.Interface;
-using GoSell.Library.Helpers;
-using GoSell.Library.Helpers.Service;
+﻿using RP.Affiliate.Tracking.Commands.AffiliateCampaign;
+using RP.Affiliate.Tracking.Functions.Interface;
+using RP.Library.Helpers;
+using RP.Library.Helpers.Service;
 using MediatR;
 
-namespace GoSell.Affiliate.Tracking.Handler.AffiliateProductHandler
+namespace RP.Affiliate.Tracking.Handler.AffiliateProductHandler
 {
     public class DeleteAffiliateCampaignCommandHandler : IRequestHandler<DeleteAffiliateCampaignCommand, BaseResponse>
     {

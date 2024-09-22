@@ -1,9 +1,9 @@
-﻿using GoSell.Affiliate.Tracking.Commands;
-using GoSell.Affiliate.Tracking.Functions.Interface;
-using GoSell.Library.Helpers;
+﻿using RP.Affiliate.Tracking.Commands;
+using RP.Affiliate.Tracking.Functions.Interface;
+using RP.Library.Helpers;
 using MediatR;
 
-namespace GoSell.Affiliate.Tracking.Handler.AffiliateCategoryHandler
+namespace RP.Affiliate.Tracking.Handler.AffiliateCategoryHandler
 {
     public class CheckDuplicateNameAffilliateQueryHandle : IRequestHandler<CheckDuplicateNameAffilliateQuery, BaseResponse>
     {       

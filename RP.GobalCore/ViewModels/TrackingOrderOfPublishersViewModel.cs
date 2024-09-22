@@ -1,6 +1,6 @@
-﻿using GoSell.Affiliate.Tracking.Commons.Enums;
+﻿using RP.Affiliate.Tracking.Commons.Enums;
 
-namespace GoSell.Affiliate.Tracking.ViewModels
+namespace RP.Affiliate.Tracking.ViewModels
 {
     public class TrackingOrderOfPublishersViewModel
     {

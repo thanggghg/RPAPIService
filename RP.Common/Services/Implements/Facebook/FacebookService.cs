@@ -1,12 +1,12 @@
-﻿using GoSell.Common.Enums;
-using GoSell.Common.Models;
-using GoSell.Common.Services.Interfaces;
-using GoSell.Library.Enums.SocialAuthen;
-using GoSell.Library.Extensions.Social;
+﻿using RP.Common.Enums;
+using RP.Common.Models;
+using RP.Common.Services.Interfaces;
+using RP.Library.Enums.SocialAuthen;
+using RP.Library.Extensions.Social;
 using Microsoft.Extensions.Logging;
 using ProxyClient.Helpers;
 
-namespace GoSell.Common.Services.Implements.Facebook;
+namespace RP.Common.Services.Implements.Facebook;
 
 public class FacebookService : IProviderSocialServices
 {

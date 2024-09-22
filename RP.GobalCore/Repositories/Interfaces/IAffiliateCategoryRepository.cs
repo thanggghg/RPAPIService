@@ -1,8 +1,8 @@
 ﻿using System.Linq.Expressions;
-using GoSell.Affiliate.Tracking.Database.Entities;
-using GoSell.Library.Seedwork;
+using RP.Affiliate.Tracking.Database.Entities;
+using RP.Library.Seedwork;
 
-namespace GoSell.Affiliate.Tracking.Repositories.Interfaces
+namespace RP.Affiliate.Tracking.Repositories.Interfaces
 {
     public interface IAffiliateCategoryRepository : IRepository<AffiliateCategory>
     {

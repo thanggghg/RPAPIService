@@ -1,27 +1,27 @@
 ﻿using System.Net;
 using DocumentFormat.OpenXml.Spreadsheet;
-using GoSell.Affiliate.Tracking.Commands.AffiliateCampaign;
-using GoSell.Affiliate.Tracking.Commons.Constants;
-using GoSell.Affiliate.Tracking.Commons.Enums;
-using GoSell.Affiliate.Tracking.Database;
-using GoSell.Affiliate.Tracking.Entities;
-using GoSell.Affiliate.Tracking.Functions.Interface;
-using GoSell.Affiliate.Tracking.Queries.AffiliateCampaign;
-using GoSell.Affiliate.Tracking.Repositories.Interfaces;
-using GoSell.Common.Models;
-using GoSell.CommonHistory.Commons.Enums;
-using GoSell.Library.Db;
-using GoSell.Library.Helpers;
-using GoSell.Library.Helpers.Api;
-using GoSell.Library.Helpers.Service;
-using GoSell.Library.Utils;
+using RP.Affiliate.Tracking.Commands.AffiliateCampaign;
+using RP.Affiliate.Tracking.Commons.Constants;
+using RP.Affiliate.Tracking.Commons.Enums;
+using RP.Affiliate.Tracking.Database;
+using RP.Affiliate.Tracking.Entities;
+using RP.Affiliate.Tracking.Functions.Interface;
+using RP.Affiliate.Tracking.Queries.AffiliateCampaign;
+using RP.Affiliate.Tracking.Repositories.Interfaces;
+using RP.Common.Models;
+using RP.CommonHistory.Commons.Enums;
+using RP.Library.Db;
+using RP.Library.Helpers;
+using RP.Library.Helpers.Api;
+using RP.Library.Helpers.Service;
+using RP.Library.Utils;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using Serilog;
 
-namespace GoSell.Affiliate.Tracking.Functions.Implementation
+namespace RP.Affiliate.Tracking.Functions.Implementation
 {
     public class AffiliateCampaignFunctions(IAffiliateCampaignRepository affiliateCampaignRepository, IBaseApi baseApi, IBaseService baseService, AffiliateContext affiliateContext, IHttpContextAccessor httpContextAccessor, IHttpClientHelper httpClientHelper, IConfiguration configuration) : IAffiliateCampaignFunctions
     {

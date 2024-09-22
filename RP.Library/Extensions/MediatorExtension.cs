@@ -1,8 +1,8 @@
-﻿using GoSell.Library.Db;
-using GoSell.Library.Seedwork;
+﻿using RP.Library.Db;
+using RP.Library.Seedwork;
 using MediatR;
 
-namespace GoSell.Library.Extensions;
+namespace RP.Library.Extensions;
 
 static class MediatorExtension
 {

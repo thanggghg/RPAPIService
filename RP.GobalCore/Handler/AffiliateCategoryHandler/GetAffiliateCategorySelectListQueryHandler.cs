@@ -1,16 +1,16 @@
 ﻿using AutoMapper;
-using GoSell.Affiliate.Tracking.Commons.Constants;
-using GoSell.Affiliate.Tracking.Database.Entities;
-using GoSell.Affiliate.Tracking.Queries.AffiliateCategory;
-using GoSell.Affiliate.Tracking.Repositories.Interfaces;
-using GoSell.Affiliate.Tracking.ViewModels;
-using GoSell.Library.Helpers.Api;
-using GoSell.Library.Helpers.Pagination;
+using RP.Affiliate.Tracking.Commons.Constants;
+using RP.Affiliate.Tracking.Database.Entities;
+using RP.Affiliate.Tracking.Queries.AffiliateCategory;
+using RP.Affiliate.Tracking.Repositories.Interfaces;
+using RP.Affiliate.Tracking.ViewModels;
+using RP.Library.Helpers.Api;
+using RP.Library.Helpers.Pagination;
 using LinqKit;
 using MediatR;
 using Serilog;
 
-namespace GoSell.Affiliate.Tracking.Handler.AffiliateCategoryHandler
+namespace RP.Affiliate.Tracking.Handler.AffiliateCategoryHandler
 {
     public class GetAffiliateCategorySelectListQueryHandler : IRequestHandler<GetAffiliateCategorySelectListQuery, PagingItems<AffiliateCategoryViewModel>>
     {

@@ -1,12 +1,12 @@
 ﻿using System.Data;
-using GoSell.Library.Extensions;
-using GoSell.Library.Seedwork;
+using RP.Library.Extensions;
+using RP.Library.Seedwork;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 using OpenTelemetry;
 
-namespace GoSell.Library.Db;
+namespace RP.Library.Db;
 public class BaseContext : DbContext, IUnitOfWork
 {
 

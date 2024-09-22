@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Localization;
 
-namespace GoSell.Library.Extensions.Localization
+namespace RP.Library.Extensions.Localization
 {
     public class JsonStringLocalizerFactory : IStringLocalizerFactory
     {

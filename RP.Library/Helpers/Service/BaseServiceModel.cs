@@ -1,4 +1,4 @@
-﻿namespace GoSell.Library.Helpers.Service.Model
+﻿namespace RP.Library.Helpers.Service.Model
 {
     public class AffililateStoreReponse
     {

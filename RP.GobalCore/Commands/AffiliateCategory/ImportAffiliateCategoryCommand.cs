@@ -1,9 +1,9 @@
 ﻿using System.Runtime.Serialization;
-using GoSell.Affiliate.Tracking.ViewModels;
+using RP.Affiliate.Tracking.ViewModels;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 
-namespace GoSell.Affiliate.Tracking.Commands.AffiliateCategory
+namespace RP.Affiliate.Tracking.Commands.AffiliateCategory
 {
     public class ImportAffiliateCategoryCommand(IFormFile file, long affiliateStoreId, string langKey) : IRequest<ImportAffiliateCategoryResponse>
     {

@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
-using GoSell.Common.Enums;
+using RP.Common.Enums;
 
-namespace GoSell.Common.Helpers
+namespace RP.Common.Helpers
 {
     public static class OrderHelper
     {

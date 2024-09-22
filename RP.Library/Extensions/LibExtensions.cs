@@ -1,7 +1,7 @@
 ﻿using System.Text.RegularExpressions;
 using Microsoft.Extensions.Configuration;
 
-namespace GoSell.Library.Db
+namespace RP.Library.Db
 {
     public static class LibExtensions
     {

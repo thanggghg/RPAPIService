@@ -1,4 +1,4 @@
-﻿namespace GoSell.Library.Extensions.Jira
+﻿namespace RP.Library.Extensions.Jira
 {
     public record class JiraConfiguration
     {

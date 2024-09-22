@@ -1,13 +1,13 @@
 ﻿using AutoMapper;
-using GoSell.Affiliate.Tracking.Commands.AffiliateProduct;
-using GoSell.Affiliate.Tracking.Entities;
-using GoSell.Affiliate.Tracking.Repositories.Interfaces;
-using GoSell.Library.Helpers.Api;
+using RP.Affiliate.Tracking.Commands.AffiliateProduct;
+using RP.Affiliate.Tracking.Entities;
+using RP.Affiliate.Tracking.Repositories.Interfaces;
+using RP.Library.Helpers.Api;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 
-namespace GoSell.Affiliate.Tracking.Handler.AffiliateProductHandler
+namespace RP.Affiliate.Tracking.Handler.AffiliateProductHandler
 {
     public class GetAffiliatesProductByIdsHandler : IRequestHandler<GetAffiliateProductsByIdsCommand, List<AffiliateProduct>>
     {

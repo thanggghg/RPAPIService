@@ -1,7 +1,7 @@
 ﻿using System.Net.Http.Headers;
-using GoSell.Library.Utils;
+using RP.Library.Utils;
 
-namespace GoSell.Library.Helpers
+namespace RP.Library.Helpers
 {
     public interface IHttpClientHelper
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GoSell.Affiliate.Tracking.Commons.Constants
+namespace RP.Affiliate.Tracking.Commons.Constants
 {
     public static class AffiliateCategorySearchType
     {

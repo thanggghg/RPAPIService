@@ -1,4 +1,4 @@
-namespace GoSell.Library.Exceptions;
+namespace RP.Library.Exceptions;
 public class JWTException : Exception
 {
     public JWTException()

@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace GoSell.Library.Db;
+namespace RP.Library.Db;
 public interface IGenericDbContext<T> where T : DbContext
 {
     DatabaseFacade Database { get; }

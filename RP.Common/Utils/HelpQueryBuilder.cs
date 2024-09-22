@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GoSell.Common.Utils
+namespace RP.Common.Utils
 {
     public class HelpQueryBuilder
     {

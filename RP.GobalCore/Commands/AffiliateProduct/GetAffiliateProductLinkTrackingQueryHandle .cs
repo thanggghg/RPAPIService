@@ -1,21 +1,21 @@
 ﻿
 using System.Net;
-using GoSell.Affiliate.Authentication.Domain.Entities.Affiliate;
-using GoSell.Affiliate.Authentication.Domain.Repositories;
-using GoSell.Affiliate.Tracking.Entities;
-using GoSell.Affiliate.Tracking.Queries.AffiliateProduct;
-using GoSell.Affiliate.Tracking.Repositories;
-using GoSell.Affiliate.Tracking.Repositories.Interfaces;
-using GoSell.Affiliate.Tracking.Services.Interfaces;
-using GoSell.Common.Enums;
-using GoSell.Library.Helpers;
-using GoSell.Library.Helpers.Api;
-using GoSell.Library.Helpers.Service;
+using RP.Affiliate.Authentication.Domain.Entities.Affiliate;
+using RP.Affiliate.Authentication.Domain.Repositories;
+using RP.Affiliate.Tracking.Entities;
+using RP.Affiliate.Tracking.Queries.AffiliateProduct;
+using RP.Affiliate.Tracking.Repositories;
+using RP.Affiliate.Tracking.Repositories.Interfaces;
+using RP.Affiliate.Tracking.Services.Interfaces;
+using RP.Common.Enums;
+using RP.Library.Helpers;
+using RP.Library.Helpers.Api;
+using RP.Library.Helpers.Service;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 
-namespace GoSell.Affiliate.Tracking.Handler.AffiliateProductHandler
+namespace RP.Affiliate.Tracking.Handler.AffiliateProductHandler
 {
     public class GetAffiliateProductLinkTrackingQueryHandle : IRequestHandler<GetAffiliateProductLinkTrackingQuery, GenericResponse<string>>
     {

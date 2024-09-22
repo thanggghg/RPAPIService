@@ -1,9 +1,9 @@
 ﻿using System.Globalization;
 using System.Linq.Expressions;
 using System.Reflection;
-using GoSell.Library.Constants;
+using RP.Library.Constants;
 
-namespace GoSell.Common.Helpers
+namespace RP.Common.Helpers
 {
     public static class Helpers
     {

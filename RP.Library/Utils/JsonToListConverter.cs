@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-namespace GoSell.Library.Utils;
+namespace RP.Library.Utils;
 
 public class JsonToListConverter<T> : CustomCreationConverter<IList<T>>
 {

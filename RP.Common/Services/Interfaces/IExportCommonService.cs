@@ -1,7 +1,7 @@
-﻿using GoSell.Common.Models.Responses;
-using GoSell.Common.Queries;
+﻿using RP.Common.Models.Responses;
+using RP.Common.Queries;
 
-namespace GoSell.Common.Services.Interfaces
+namespace RP.Common.Services.Interfaces
 {
     public interface IExportCommonService<T> where T : class
     {

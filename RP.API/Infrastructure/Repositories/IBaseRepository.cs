@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
 
-namespace GoSell.API.Infrastructure.Repositories
+namespace RP.API.Infrastructure.Repositories
 {
     public interface IBaseRepository<T> where T : class
     {

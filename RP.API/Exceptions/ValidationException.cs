@@ -1,6 +1,6 @@
 ﻿using FluentValidation.Results;
 
-namespace GoSell.API.Exceptions
+namespace RP.API.Exceptions
 {
     public class ValidationException : Exception
     {

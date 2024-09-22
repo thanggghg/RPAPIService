@@ -1,10 +1,10 @@
-﻿using GoSell.Library.Db;
-using GoSell.Library.Extensions.Jira;
-using GoSell.Library.Helpers.Jira;
+﻿using RP.Library.Db;
+using RP.Library.Extensions.Jira;
+using RP.Library.Helpers.Jira;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace GoSell.Library.Extensions
+namespace RP.Library.Extensions
 {
     public static class JiraExtension
     {

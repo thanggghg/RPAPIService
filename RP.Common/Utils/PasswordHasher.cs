@@ -1,4 +1,4 @@
-﻿namespace GoSell.Common.Utils
+﻿namespace RP.Common.Utils
 {
     public class PasswordHasher
     {

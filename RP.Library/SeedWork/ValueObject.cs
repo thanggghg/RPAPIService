@@ -1,4 +1,4 @@
-﻿namespace GoSell.Library.SeedWork;
+﻿namespace RP.Library.SeedWork;
 
 public abstract class ValueObject
 {

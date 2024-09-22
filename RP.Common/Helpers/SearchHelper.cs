@@ -1,7 +1,7 @@
 ﻿using System.Linq.Expressions;
 using System.Reflection;
 
-namespace GoSell.Common.Helpers
+namespace RP.Common.Helpers
 {
     public static class SearchHelper<T>
     {

@@ -1,4 +1,4 @@
-﻿namespace GoSell.Common.Services
+﻿namespace RP.Common.Services
 {
     public class DelegateService
     {

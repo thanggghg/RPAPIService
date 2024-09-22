@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace GoSell.Library.Extensions.Permission
+namespace RP.Library.Extensions.Permission
 {
     public class StaffPermissionsModel
     {

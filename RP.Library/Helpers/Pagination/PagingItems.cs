@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace GoSell.Library.Helpers.Pagination
+namespace RP.Library.Helpers.Pagination
 {
     public class PagingItems<T> where T : class
     {

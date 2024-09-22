@@ -1,22 +1,22 @@
 ﻿using System.Linq.Expressions;
 using System.Web;
-using GoSell.Affiliate.Tracking.Commands;
-using GoSell.Affiliate.Tracking.Database;
-using GoSell.Affiliate.Tracking.Entities;
-using GoSell.Affiliate.Tracking.Handler;
-using GoSell.Affiliate.Tracking.Queries;
-using GoSell.Affiliate.Tracking.Repositories;
-using GoSell.Affiliate.Tracking.Services.Interfaces;
-using GoSell.Affiliate.Tracking.Utils;
-using GoSell.Affiliate.Tracking.ViewModels;
-using GoSell.Common.Constants;
-using GoSell.Common.Utils;
+using RP.Affiliate.Tracking.Commands;
+using RP.Affiliate.Tracking.Database;
+using RP.Affiliate.Tracking.Entities;
+using RP.Affiliate.Tracking.Handler;
+using RP.Affiliate.Tracking.Queries;
+using RP.Affiliate.Tracking.Repositories;
+using RP.Affiliate.Tracking.Services.Interfaces;
+using RP.Affiliate.Tracking.Utils;
+using RP.Affiliate.Tracking.ViewModels;
+using RP.Common.Constants;
+using RP.Common.Utils;
 using LinqKit;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Serilog;
 
-namespace GoSell.Affiliate.Tracking.Services
+namespace RP.Affiliate.Tracking.Services
 {
     public class AffiliateTrackingServices : IAffiliateTrackingServices
     {

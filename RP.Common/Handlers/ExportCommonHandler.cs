@@ -1,10 +1,10 @@
-﻿using GoSell.Common.Models.Responses;
-using GoSell.Common.Queries;
-using GoSell.Common.Services.Interfaces;
+﻿using RP.Common.Models.Responses;
+using RP.Common.Queries;
+using RP.Common.Services.Interfaces;
 using MediatR;
 using Serilog;
 
-namespace GoSell.Common.Handlers
+namespace RP.Common.Handlers
 {
     public class ExportCommonHandler<T> : IRequestHandler<ExportCommonQuery<T>, ExportCommonQueryResponse> where T : class
     {

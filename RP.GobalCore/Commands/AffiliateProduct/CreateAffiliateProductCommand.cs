@@ -1,9 +1,9 @@
 ﻿using System.Runtime.Serialization;
 using MediatR;
-using GoSell.Affiliate.Tracking.Models.Requests;
-using GoSell.Library.Helpers;
+using RP.Affiliate.Tracking.Models.Requests;
+using RP.Library.Helpers;
 
-namespace GoSell.Affiliate.Tracking.Commands.AffiliateProduct
+namespace RP.Affiliate.Tracking.Commands.AffiliateProduct
 {
     [DataContract]
     public class CreateAffiliateProductCommand : AffiliateProductRequest, IRequest<BaseResponse>

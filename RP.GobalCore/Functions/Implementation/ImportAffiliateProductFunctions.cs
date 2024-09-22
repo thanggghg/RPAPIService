@@ -3,19 +3,19 @@ using System.Globalization;
 using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
-using GoSell.Affiliate.Tracking.Commands.AffiliateProduct;
-using GoSell.Affiliate.Tracking.Commons.Constants;
-using GoSell.Affiliate.Tracking.Database;
-using GoSell.Affiliate.Tracking.Entities;
-using GoSell.Affiliate.Tracking.Functions.Interface;
-using GoSell.Affiliate.Tracking.Repositories.Interfaces;
-using GoSell.Affiliate.Tracking.ViewModels;
-using GoSell.Library.Helpers.Service;
+using RP.Affiliate.Tracking.Commands.AffiliateProduct;
+using RP.Affiliate.Tracking.Commons.Constants;
+using RP.Affiliate.Tracking.Database;
+using RP.Affiliate.Tracking.Entities;
+using RP.Affiliate.Tracking.Functions.Interface;
+using RP.Affiliate.Tracking.Repositories.Interfaces;
+using RP.Affiliate.Tracking.ViewModels;
+using RP.Library.Helpers.Service;
 using Microsoft.AspNetCore.Http;
 using Serilog;
 using Color = DocumentFormat.OpenXml.Spreadsheet.Color;
 
-namespace GoSell.Affiliate.Tracking.Functions.Implementation
+namespace RP.Affiliate.Tracking.Functions.Implementation
 {
     public class ImportAffiliateProductFunctions(
         IAffiliateProductRepository affiliateProductRepository,

@@ -1,10 +1,10 @@
 ﻿using System.Net;
-using GoSell.Affiliate.Tracking.Commands.AffiliateCategory;
-using GoSell.Affiliate.Tracking.Functions.Interface;
-using GoSell.Affiliate.Tracking.ViewModels;
+using RP.Affiliate.Tracking.Commands.AffiliateCategory;
+using RP.Affiliate.Tracking.Functions.Interface;
+using RP.Affiliate.Tracking.ViewModels;
 using MediatR;
 
-namespace GoSell.Affiliate.Tracking.Handler.AffiliateCategoryHandler
+namespace RP.Affiliate.Tracking.Handler.AffiliateCategoryHandler
 {
     public class ImportAffiliateCategoryCommandHandler(IAffiliateCategoryFunctions affiliateCategoryFunctions) : IRequestHandler<ImportAffiliateCategoryCommand, ImportAffiliateCategoryResponse>
     {

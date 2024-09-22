@@ -1,4 +1,4 @@
-﻿namespace GoSell.Library.Utils
+﻿namespace RP.Library.Utils
 {
     public class SwaggerConstants
     {

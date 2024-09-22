@@ -1,7 +1,7 @@
-﻿using GoSell.API.Service;
-using GoSell.Library.Utils;
+﻿using RP.API.Service;
+using RP.Library.Utils;
 
-namespace GoSell.API.Routes.AffliateTracking
+namespace RP.API.Routes.AffliateTracking
 {
     public static class AffliateTrackingRouting
     {

@@ -1,13 +1,13 @@
-﻿using GoSell.Affiliate.Tracking.Commands;
-using GoSell.Affiliate.Tracking.Commands.AffiliateProduct;
-using GoSell.Affiliate.Tracking.Models.Requests;
-using GoSell.Affiliate.Tracking.Queries.AffiliateProduct;
-using GoSell.Affiliate.Tracking.ViewModels;
-using GoSell.Library.Helpers;
-using GoSell.Library.Helpers.Pagination;
+﻿using RP.Affiliate.Tracking.Commands;
+using RP.Affiliate.Tracking.Commands.AffiliateProduct;
+using RP.Affiliate.Tracking.Models.Requests;
+using RP.Affiliate.Tracking.Queries.AffiliateProduct;
+using RP.Affiliate.Tracking.ViewModels;
+using RP.Library.Helpers;
+using RP.Library.Helpers.Pagination;
 using Microsoft.AspNetCore.Http;
 
-namespace GoSell.Affiliate.Tracking.Functions.Interface
+namespace RP.Affiliate.Tracking.Functions.Interface
 {
     public interface IAffiliateProductFunctions
     {

@@ -2,23 +2,23 @@
 using System.Net;
 using AutoMapper;
 using DocumentFormat.OpenXml;
-using GoSell.Affiliate.Tracking.Commands;
-using GoSell.Affiliate.Tracking.Commands.AffiliateCategory;
-using GoSell.Affiliate.Tracking.Database.Entities;
-using GoSell.Affiliate.Tracking.Functions.Interface;
-using GoSell.Affiliate.Tracking.Handler.AffiliateCategoryHandler;
-using GoSell.Affiliate.Tracking.Queries.AffiliateCategory;
-using GoSell.Affiliate.Tracking.Repositories.Interfaces;
-using GoSell.Affiliate.Tracking.ViewModels;
-using GoSell.Library.Helpers;
-using GoSell.Library.Helpers.Api;
-using GoSell.Library.Helpers.Excel;
-using GoSell.Library.Helpers.Service;
+using RP.Affiliate.Tracking.Commands;
+using RP.Affiliate.Tracking.Commands.AffiliateCategory;
+using RP.Affiliate.Tracking.Database.Entities;
+using RP.Affiliate.Tracking.Functions.Interface;
+using RP.Affiliate.Tracking.Handler.AffiliateCategoryHandler;
+using RP.Affiliate.Tracking.Queries.AffiliateCategory;
+using RP.Affiliate.Tracking.Repositories.Interfaces;
+using RP.Affiliate.Tracking.ViewModels;
+using RP.Library.Helpers;
+using RP.Library.Helpers.Api;
+using RP.Library.Helpers.Excel;
+using RP.Library.Helpers.Service;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Logging;
 using Serilog;
 
-namespace GoSell.Affiliate.Tracking.Functions.Implementation
+namespace RP.Affiliate.Tracking.Functions.Implementation
 {
     public class AffiliateCategoryFunctions : IAffiliateCategoryFunctions
     {

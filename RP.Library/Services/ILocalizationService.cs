@@ -1,4 +1,4 @@
-﻿namespace GoSell.Library.Services
+﻿namespace RP.Library.Services
 {
     public partial interface ILocalizationService
     {

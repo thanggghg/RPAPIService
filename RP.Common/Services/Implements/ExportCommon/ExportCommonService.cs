@@ -1,15 +1,15 @@
 ﻿using System.Globalization;
-using GoSell.Common.Constants;
-using GoSell.Common.Models.Requests;
-using GoSell.Common.Models.Responses;
-using GoSell.Common.Queries;
-using GoSell.Common.Services.Interfaces;
+using RP.Common.Constants;
+using RP.Common.Models.Requests;
+using RP.Common.Models.Responses;
+using RP.Common.Queries;
+using RP.Common.Services.Interfaces;
 using OfficeOpenXml;
 using OfficeOpenXml.Style;
 using Serilog;
-using static GoSell.Common.Services.DelegateService;
+using static RP.Common.Services.DelegateService;
 
-namespace GoSell.Common.Services.Implements.ExportCommon
+namespace RP.Common.Services.Implements.ExportCommon
 {
     public class ExportCommonService<T> : IExportCommonService<T> where T : class
     {

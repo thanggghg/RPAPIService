@@ -1,11 +1,11 @@
 ﻿using System.Linq.Expressions;
-using GoSell.Affiliate.Tracking.Entities;
-using GoSell.Affiliate.Tracking.Queries.AffiliateProduct;
-using GoSell.Affiliate.Tracking.ViewModels;
-using GoSell.Library.Helpers.Pagination;
-using GoSell.Library.Seedwork;
+using RP.Affiliate.Tracking.Entities;
+using RP.Affiliate.Tracking.Queries.AffiliateProduct;
+using RP.Affiliate.Tracking.ViewModels;
+using RP.Library.Helpers.Pagination;
+using RP.Library.Seedwork;
 
-namespace GoSell.Affiliate.Tracking.Repositories.Interfaces
+namespace RP.Affiliate.Tracking.Repositories.Interfaces
 {
     public interface IAffiliateProductRepository : IRepository<AffiliateProduct>
     {

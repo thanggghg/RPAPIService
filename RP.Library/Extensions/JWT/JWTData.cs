@@ -1,7 +1,7 @@
-﻿using GoSell.Library.Enums;
-using GoSell.Library.Utils;
+﻿using RP.Library.Enums;
+using RP.Library.Utils;
 
-namespace GoSell.Library.Extensions.JWT
+namespace RP.Library.Extensions.JWT
 {
     public class ResultJWTVerify
     {

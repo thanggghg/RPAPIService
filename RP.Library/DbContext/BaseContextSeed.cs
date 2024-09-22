@@ -1,6 +1,6 @@
-﻿using GoSell.Library.Extensions;
+﻿using RP.Library.Extensions;
 
-namespace GoSell.Library.Db
+namespace RP.Library.Db
 {
     public class BaseContextSeed : IDbSeeder<BaseContext>
     {

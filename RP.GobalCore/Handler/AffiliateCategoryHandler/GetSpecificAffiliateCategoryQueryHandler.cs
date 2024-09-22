@@ -1,16 +1,16 @@
 ﻿using AutoMapper;
-using GoSell.Affiliate.Tracking.Database.Entities;
-using GoSell.Affiliate.Tracking.Entities;
-using GoSell.Affiliate.Tracking.Queries;
-using GoSell.Affiliate.Tracking.Repositories;
-using GoSell.Affiliate.Tracking.Repositories.Interfaces;
-using GoSell.Affiliate.Tracking.ViewModels;
-using GoSell.Library.Helpers.Api;
+using RP.Affiliate.Tracking.Database.Entities;
+using RP.Affiliate.Tracking.Entities;
+using RP.Affiliate.Tracking.Queries;
+using RP.Affiliate.Tracking.Repositories;
+using RP.Affiliate.Tracking.Repositories.Interfaces;
+using RP.Affiliate.Tracking.ViewModels;
+using RP.Library.Helpers.Api;
 using MediatR;
 using Microsoft.Extensions.Logging;
 using Serilog;
 
-namespace GoSell.Affiliate.Tracking.Handler.AffiliateCategoryHandler
+namespace RP.Affiliate.Tracking.Handler.AffiliateCategoryHandler
 {
     public class GetSpecificAffiliateCategoryQueryHandler : IRequestHandler<GetSpecificAffiliateCategoryQuery, AffiliateCategoryViewModel>
     {

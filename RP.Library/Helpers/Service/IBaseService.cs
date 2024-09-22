@@ -1,6 +1,6 @@
-﻿using GoSell.Library.Helpers.Service.Model;
+﻿using RP.Library.Helpers.Service.Model;
 
-namespace GoSell.Library.Helpers.Service
+namespace RP.Library.Helpers.Service
 {
     public interface IBaseService
     {

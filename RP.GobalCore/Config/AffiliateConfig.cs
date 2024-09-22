@@ -1,4 +1,4 @@
-﻿namespace GoSell.Affiliate.Tracking.Config
+﻿namespace RP.Affiliate.Tracking.Config
 {
     public class AffiliateConfig
     {

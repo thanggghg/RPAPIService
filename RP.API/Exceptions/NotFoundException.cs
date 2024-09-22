@@ -1,4 +1,4 @@
-﻿namespace GoSell.API.Exceptions
+﻿namespace RP.API.Exceptions
 {
     public class NotFoundException : Exception
     {

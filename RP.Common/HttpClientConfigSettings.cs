@@ -1,4 +1,4 @@
-﻿namespace GoSell.Common
+﻿namespace RP.Common
 {
     public class HttpClientConfigSettings
     {

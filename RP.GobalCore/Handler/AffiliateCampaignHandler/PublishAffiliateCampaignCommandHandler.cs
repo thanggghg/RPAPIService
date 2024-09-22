@@ -1,10 +1,10 @@
-﻿using GoSell.Affiliate.Tracking.Commands.AffiliateCampaign;
-using GoSell.Affiliate.Tracking.Functions.Interface;
-using GoSell.Affiliate.Tracking.ViewModels;
-using GoSell.Library.Helpers;
+﻿using RP.Affiliate.Tracking.Commands.AffiliateCampaign;
+using RP.Affiliate.Tracking.Functions.Interface;
+using RP.Affiliate.Tracking.ViewModels;
+using RP.Library.Helpers;
 using MediatR;
 
-namespace GoSell.Affiliate.Tracking.Handler.AffiliateProductHandler
+namespace RP.Affiliate.Tracking.Handler.AffiliateProductHandler
 {
     public class PublishAffiliateCampaignCommandHandler : IRequestHandler<PublishAffiliateCampaignCommand, GenericResponse<int>>
     {

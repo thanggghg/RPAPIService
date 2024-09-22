@@ -1,6 +1,6 @@
 ﻿using System.Net;
 
-namespace GoSell.Library.Helpers
+namespace RP.Library.Helpers
 {
     public class BaseResponse
     {

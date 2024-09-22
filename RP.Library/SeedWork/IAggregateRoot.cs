@@ -1,4 +1,4 @@
-﻿namespace GoSell.Library.Seedwork;
+﻿namespace RP.Library.Seedwork;
 
 public interface IAggregateRoot { }
 

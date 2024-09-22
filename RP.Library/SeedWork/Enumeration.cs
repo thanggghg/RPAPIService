@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Reflection;
 
-namespace GoSell.Library.SeedWork;
+namespace RP.Library.SeedWork;
 
 public abstract class Enumeration : IComparable
 {

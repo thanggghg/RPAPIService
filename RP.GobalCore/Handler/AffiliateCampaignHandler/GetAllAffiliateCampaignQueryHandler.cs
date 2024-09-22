@@ -1,16 +1,16 @@
-﻿using GoSell.Affiliate.Tracking.Commons.Constants;
-using GoSell.Affiliate.Tracking.Entities;
-using GoSell.Affiliate.Tracking.Queries.AffiliateCampaign;
-using GoSell.Affiliate.Tracking.Repositories.Interfaces;
-using GoSell.Affiliate.Tracking.ViewModels;
-using GoSell.Library.Helpers.Pagination;
-using GoSell.Library.Helpers.Service;
+﻿using RP.Affiliate.Tracking.Commons.Constants;
+using RP.Affiliate.Tracking.Entities;
+using RP.Affiliate.Tracking.Queries.AffiliateCampaign;
+using RP.Affiliate.Tracking.Repositories.Interfaces;
+using RP.Affiliate.Tracking.ViewModels;
+using RP.Library.Helpers.Pagination;
+using RP.Library.Helpers.Service;
 using LinqKit;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 
-namespace GoSell.Affiliate.Tracking.Handler.AffiliateCampaignHandler
+namespace RP.Affiliate.Tracking.Handler.AffiliateCampaignHandler
 {
     public class GetAllAffiliateCampaignQueryHandler : IRequestHandler<GetAllAffiliateCampaignQuery, PagingItems<AffiliateCampaignViewModel>>
     {

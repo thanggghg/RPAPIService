@@ -1,4 +1,4 @@
-﻿namespace GoSell.Common.Enums
+﻿namespace RP.Common.Enums
 {
     public enum LoginMethod
     {

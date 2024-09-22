@@ -2,7 +2,7 @@
 using StackExchange.Redis;
 using StackExchange.Redis.Extensions.Core.Abstractions;
 
-namespace GoSell.Library.Extensions
+namespace RP.Library.Extensions
 {
     public class RedisCache : IDistributedCache
     {

@@ -1,14 +1,14 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
 using System.Security.Cryptography;
 using System.Text;
-using GoSell.Library.Exceptions;
-using GoSell.Library.Extensions.Social;
+using RP.Library.Exceptions;
+using RP.Library.Extensions.Social;
 using Microsoft.AspNetCore.Http;
 using Microsoft.IdentityModel.JsonWebTokens;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
 
-namespace GoSell.Library.Extensions.JWT
+namespace RP.Library.Extensions.JWT
 {
     public record class JwtOptions(
      string Issuer,

@@ -1,7 +1,7 @@
 ﻿
 using Microsoft.Extensions.Hosting;
 
-namespace GoSell.Library.Elastics
+namespace RP.Library.Elastics
 {
     public abstract class BackgroundService : IHostedService, IDisposable
     {

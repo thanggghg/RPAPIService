@@ -4,7 +4,7 @@ using System.Text;
 using System.Text.Json;
 using Microsoft.IdentityModel.Tokens;
 
-namespace GoSell.Common.Utils
+namespace RP.Common.Utils
 {
     public class JwtTokenUtil
     {

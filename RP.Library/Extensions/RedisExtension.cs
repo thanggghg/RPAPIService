@@ -1,4 +1,4 @@
-﻿using GoSell.Library.Db;
+﻿using RP.Library.Db;
 using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -9,7 +9,7 @@ using StackExchange.Redis.Extensions.Core.Configuration;
 using StackExchange.Redis.Extensions.Core.Implementations;
 using StackExchange.Redis.Extensions.Newtonsoft;
 
-namespace GoSell.Library.Extensions
+namespace RP.Library.Extensions
 {
     public static class RedisExtension
     {

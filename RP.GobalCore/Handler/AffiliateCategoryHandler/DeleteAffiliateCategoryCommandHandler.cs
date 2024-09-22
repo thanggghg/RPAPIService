@@ -1,12 +1,12 @@
 ﻿using System.Net;
-using GoSell.Affiliate.Tracking.Commands.AffiliateCategory;
-using GoSell.Affiliate.Tracking.Repositories.Interfaces;
-using GoSell.Library.Helpers;
-using GoSell.Library.Helpers.Api;
-using GoSell.Library.Helpers.Service;
+using RP.Affiliate.Tracking.Commands.AffiliateCategory;
+using RP.Affiliate.Tracking.Repositories.Interfaces;
+using RP.Library.Helpers;
+using RP.Library.Helpers.Api;
+using RP.Library.Helpers.Service;
 using MediatR;
 
-namespace GoSell.Affiliate.Tracking.Handler.AffiliateCategoryHandler
+namespace RP.Affiliate.Tracking.Handler.AffiliateCategoryHandler
 {
     public class DeleteAffiliateCategoryCommandHandler(IAffiliateCategoryRepository AffiliateCategoryRepository,
                                               IBaseApi baseApi,

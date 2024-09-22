@@ -2,7 +2,7 @@
 using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 
-namespace GoSell.Library.Helpers.Pagination
+namespace RP.Library.Helpers.Pagination
 {
     public static class QueryableExtensions
     {

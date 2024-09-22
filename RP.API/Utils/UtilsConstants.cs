@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel;
-namespace GoSell.API.Utils
+namespace RP.API.Utils
 {
     public static class UtilsConstants
     {

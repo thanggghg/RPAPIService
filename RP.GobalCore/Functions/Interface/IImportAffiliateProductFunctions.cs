@@ -1,7 +1,7 @@
-﻿using GoSell.Affiliate.Tracking.Commands.AffiliateProduct;
-using GoSell.Affiliate.Tracking.ViewModels;
+﻿using RP.Affiliate.Tracking.Commands.AffiliateProduct;
+using RP.Affiliate.Tracking.ViewModels;
 
-namespace GoSell.Affiliate.Tracking.Functions.Interface
+namespace RP.Affiliate.Tracking.Functions.Interface
 {
     public interface IImportAffiliateProductFunctions
     {

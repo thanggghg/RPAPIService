@@ -1,6 +1,6 @@
-﻿using GoSell.Common.Enums;
+﻿using RP.Common.Enums;
 
-namespace GoSell.Common.Models
+namespace RP.Common.Models
 {
     public class AffiliateUserStoreModelRespone
     {

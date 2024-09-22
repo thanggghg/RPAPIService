@@ -1,14 +1,14 @@
 ﻿using System.Net;
-using GoSell.Affiliate.Tracking.Queries.AffiliateProduct;
-using GoSell.Affiliate.Tracking.Repositories.Interfaces;
-using GoSell.Affiliate.Tracking.ViewModels;
-using GoSell.Library.Helpers;
-using GoSell.Library.Helpers.Pagination;
-using GoSell.Library.Helpers.Service;
+using RP.Affiliate.Tracking.Queries.AffiliateProduct;
+using RP.Affiliate.Tracking.Repositories.Interfaces;
+using RP.Affiliate.Tracking.ViewModels;
+using RP.Library.Helpers;
+using RP.Library.Helpers.Pagination;
+using RP.Library.Helpers.Service;
 using MediatR;
 using Serilog;
 
-namespace GoSell.Affiliate.Tracking.Handler.AffiliateProductHandler
+namespace RP.Affiliate.Tracking.Handler.AffiliateProductHandler
 {
     public class GetProductsAddCampaignQueryHandler(IAffiliateProductRepository affiliateProductRepository,
                                                     IBaseService baseService) 

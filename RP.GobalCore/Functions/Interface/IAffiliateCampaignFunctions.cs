@@ -1,9 +1,9 @@
-﻿using GoSell.Affiliate.Tracking.Commands.AffiliateCampaign;
-using GoSell.Affiliate.Tracking.Queries.AffiliateCampaign;
-using GoSell.Affiliate.Tracking.ViewModels;
-using GoSell.Library.Helpers;
+﻿using RP.Affiliate.Tracking.Commands.AffiliateCampaign;
+using RP.Affiliate.Tracking.Queries.AffiliateCampaign;
+using RP.Affiliate.Tracking.ViewModels;
+using RP.Library.Helpers;
 
-namespace GoSell.Affiliate.Tracking.Functions.Interface
+namespace RP.Affiliate.Tracking.Functions.Interface
 {
     public interface IAffiliateCampaignFunctions
     {

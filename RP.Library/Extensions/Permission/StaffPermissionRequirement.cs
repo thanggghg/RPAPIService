@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using GoSell.Library.Enums;
-namespace GoSell.Library.Extensions.Permission
+using RP.Library.Enums;
+namespace RP.Library.Extensions.Permission
 {
     public class StaffPermissionRequirement : IAuthorizationRequirement
     {

@@ -1,19 +1,19 @@
 ﻿using System.Security.Cryptography;
 using System.Text.Json;
-using GoSell.Common.Enums;
-using GoSell.Library.Enums.SocialAuthen;
-using GoSell.Library.Exceptions;
-using GoSell.Library.Extensions.JWT;
-using GoSell.Library.Extensions.Social;
+using RP.Common.Enums;
+using RP.Library.Enums.SocialAuthen;
+using RP.Library.Exceptions;
+using RP.Library.Extensions.JWT;
+using RP.Library.Extensions.Social;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.JsonWebTokens;
 using Microsoft.IdentityModel.Tokens;
 using ProxyClient.Helpers;
-using GoSell.Common.Services.Interfaces;
-using GoSell.Common.Models;
-using GoSell.Common.Constants;
+using RP.Common.Services.Interfaces;
+using RP.Common.Models;
+using RP.Common.Constants;
 
-namespace GoSell.Common.Services.Implements
+namespace RP.Common.Services.Implements
 {
     public class AppleServices : IProviderSocialServices
     {

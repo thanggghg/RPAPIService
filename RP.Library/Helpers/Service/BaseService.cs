@@ -78,25 +78,5 @@ namespace RP.Library.Helpers.Service
             return result;
         }
 
-        private bool? GetAffiliateStoreFilterStatus(string status)
-        {
-            switch (status)
-            {
-                case AffiliateStoreFilterStatus.ACTIVE:
-                    return false;
-                case AffiliateStoreFilterStatus.DELETED: 
-                    return true;
-                case AffiliateStoreFilterStatus.ALL: 
-                    return null;
-                default:
-                    return null;
-            }
-        }
-
-        public async Task<List<long>> FilterGetAffiliateStoreByIds(long storeId, string filterStatus)
-        {
-            var isDelete = GetAffiliateStoreFilterStatus(filterStatus);
-            return await GetAffiliateStoreByIdForFilter(storeId, isDelete);
-        }
     }
 }

@@ -2,7 +2,6 @@
 using System.Security.Cryptography;
 using System.Text;
 using RP.Library.Exceptions;
-using RP.Library.Extensions.Social;
 using Microsoft.AspNetCore.Http;
 using Microsoft.IdentityModel.JsonWebTokens;
 using Microsoft.IdentityModel.Tokens;
@@ -224,46 +223,46 @@ namespace RP.Library.Extensions.JWT
             return (null, null);
         }
 
-        public static string AppleEncodeJwtToken(AppleSocialSettings appleSocialSettings)
-        {
-            if (appleSocialSettings == null)
-                return null;
+        //public static string AppleEncodeJwtToken(AppleSocialSettings appleSocialSettings)
+        //{
+        //    if (appleSocialSettings == null)
+        //        return null;
 
-            try
-            {
-                var iss = appleSocialSettings.TeamId;
-                var aud = appleSocialSettings.Audience;
-                int expiredDays = JWT_EXPIRED_TIME;
-                var ecdsa = ECDsa.Create();
-                ecdsa?.ImportPkcs8PrivateKey(Convert.FromBase64String(appleSocialSettings.PrivateKey), out _);
-                long timestampIat = ((DateTimeOffset)DateTime.UtcNow).ToUnixTimeSeconds();
-                long timestampExp = ((DateTimeOffset)DateTime.UtcNow.AddDays(expiredDays)).ToUnixTimeSeconds();
-                var claims = new Dictionary<string, object> {
-                    { "iss", iss },
-                    { "aud", aud },
-                    { "sub", appleSocialSettings.ClientId },
-                    { "iat", timestampIat },
-                    { "exp", timestampExp }
-                };
+        //    try
+        //    {
+        //        var iss = appleSocialSettings.TeamId;
+        //        var aud = appleSocialSettings.Audience;
+        //        int expiredDays = JWT_EXPIRED_TIME;
+        //        var ecdsa = ECDsa.Create();
+        //        ecdsa?.ImportPkcs8PrivateKey(Convert.FromBase64String(appleSocialSettings.PrivateKey), out _);
+        //        long timestampIat = ((DateTimeOffset)DateTime.UtcNow).ToUnixTimeSeconds();
+        //        long timestampExp = ((DateTimeOffset)DateTime.UtcNow.AddDays(expiredDays)).ToUnixTimeSeconds();
+        //        var claims = new Dictionary<string, object> {
+        //            { "iss", iss },
+        //            { "aud", aud },
+        //            { "sub", appleSocialSettings.ClientId },
+        //            { "iat", timestampIat },
+        //            { "exp", timestampExp }
+        //        };
 
-                var now = DateTime.UtcNow;
-                var handler = new JsonWebTokenHandler();
-                return handler.CreateToken(new SecurityTokenDescriptor
-                {
-                    Issuer = iss,
-                    Audience = aud,
-                    Claims = claims,
-                    Expires = now.AddDays(expiredDays),
-                    IssuedAt = now,
-                    NotBefore = now,
-                    SigningCredentials = new SigningCredentials(new ECDsaSecurityKey(ecdsa), SecurityAlgorithms.EcdsaSha256)
-                });
-            }
-            catch (Exception ex)
-            {
-                throw new JWTException($"Apple Encode Jwt Token failure", ex);
-            }
-        }
+        //        var now = DateTime.UtcNow;
+        //        var handler = new JsonWebTokenHandler();
+        //        return handler.CreateToken(new SecurityTokenDescriptor
+        //        {
+        //            Issuer = iss,
+        //            Audience = aud,
+        //            Claims = claims,
+        //            Expires = now.AddDays(expiredDays),
+        //            IssuedAt = now,
+        //            NotBefore = now,
+        //            SigningCredentials = new SigningCredentials(new ECDsaSecurityKey(ecdsa), SecurityAlgorithms.EcdsaSha256)
+        //        });
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw new JWTException($"Apple Encode Jwt Token failure", ex);
+        //    }
+        //}
 
         private string SignJwt(string payload, string secretKey)
         {

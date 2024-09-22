@@ -47,4 +47,10 @@
   </ItemGroup>
 
 
+
+  <ItemGroup>
+    <ProjectReference Include="..\RP.Library\RP.Library.csproj" />
+  </ItemGroup>
+
+
 </Project>

@@ -1,20 +1,21 @@
 ﻿using RP.API.Routes;
+using RP.Library.Utils;
 
-namespace GoSell.API.Routes.AccountRouting
+namespace RP.API.Routes.AccountRouting
 {
     public static class AccountRouting
     {
-        public static void AddRegisterAccountRoutes(this WebApplication app)
+        public static RouteGroupBuilder MapRPAuthencationApi(this RouteGroupBuilder app)
         {
-            app.RegisterDefault();
-        }
-        public static void RegisterDefault(this WebApplication app)
-        {
+            app.MapPost("/sendOTPByPhoneNumber", AffiliateAuthenticationApi.AffiliateSendSMSOTPAsync)
+                .WithTags(SwaggerConstants.RPAuthencation);
 
-            app.MapGet("/", async context =>
-            {
-                await context.Response.WriteAsync($"Welcome Go Sell .NET! Version: {typeof(RP.API.Routes.ApiRouting).Assembly.GetName().Version}");
-            });
+            //app.MapPost("/getuser-bylistusername", AffiliateAuthenticationApi.GetUserByListUserNamesAsync)
+            //    .AddRequireAuthorizationJWTToken(AuthoritiesConstants.USER)
+            //    .WithTags(SwaggerConstants.AffiliateAuthencationApi);
+
+            return app;
         }
+
     }
 }

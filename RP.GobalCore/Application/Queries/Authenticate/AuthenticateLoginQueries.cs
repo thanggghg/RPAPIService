@@ -9,7 +9,7 @@ using System.Text;
 
 namespace RP.GobalCore.Application.Queries.Authenticate
 {
-    public class AuthenticateLoginCommand : IRequest<GenericResponse<>>
+    public class AuthenticateLoginQueries : IRequest<GenericResponse<>>
     {
         public virtual string UserName { get; set; }
         public string SupervisorName { get; set; }

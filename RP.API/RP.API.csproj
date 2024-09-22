@@ -104,6 +104,10 @@
     <None Remove="Routes\Auth\**" />
     <None Remove="wwwroot\**" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RP.Library\RP.Library.csproj" />
+  </ItemGroup>
   
   <ItemGroup>
     <None Update="Templates\welcomeEmailGoSellPublisher.html">

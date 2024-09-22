@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GoSell.Library\GoSell.Library.csproj" />
+    <ProjectReference Include="..\RP.Library\RP.Library.csproj" />
   </ItemGroup>
 
 </Project>

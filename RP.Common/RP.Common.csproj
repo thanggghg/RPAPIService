@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GoSell.Library\GoSell.Library.csproj" />
+    <ProjectReference Include="..\RP.Library\RP.Library.csproj" />
     <ProjectReference Include="..\ProxyClient\ProxyClient.csproj" />
   </ItemGroup>
 

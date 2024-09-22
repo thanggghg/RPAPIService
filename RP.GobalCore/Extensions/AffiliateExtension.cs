@@ -25,7 +25,7 @@ using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Hosting;
 using Polly;
 
-public static class AffiliateExtension
+public static class RPAPIExtension
 {
     public static void AddAffiliateTrackingExtension(this IHostApplicationBuilder builder)
     {
@@ -41,28 +41,6 @@ public static class AffiliateExtension
         {
             cfg.RegisterServicesFromAssemblyContaining(typeof(CreateClickTrackingCommand));
         });
-        services.AddTransient<IAffiliateProductFunctions, AffiliateProductFunctions>();
-        services.AddTransient<IAffiliateCategoryFunctions, AffiliateCategoryFunctions>();
-        services.AddTransient<IImportAffiliateProductFunctions, ImportAffiliateProductFunctions>();
-        services.AddTransient<IAffiliateCampaignFunctions, AffiliateCampaignFunctions>();
-        services.AddScoped(typeof(IAffiliateRepository<>), implementationType: typeof(AffiliateRepository<>));
-        services.AddScoped<IAffiliateProductRepository, AffiliateProductRepository>();
-        services.AddScoped<IAffiliateCategoryRepository, AffiliateCategoryRepository>();
-        services.AddScoped<IAffiliateCampaignRepository, AffiliateCampaignRepository>();
-        services.AddScoped<IAffiliateCampaignProductRepository, AffiliateCampaignProductRepository>();
-
-        services.AddSingleton<FluentValidation.IValidator<CreateAffiliateSubmissionCommand>, CreateAffiliateSubmissionCommandValidator>();
-        services.AddScoped<IAffiliateTrackingServices, AffiliateTrackingServices>();
-        services.AddScoped<IAffiliateStoreServices, AffiliateStoreServices>();
-        services.AddScoped<IAffiliateSubmissionServices, AffiliateSubmissionServices>();
-        services.AddScoped<IAffiliatePartnerServices, AffiliatePartnerServices>();
-        services.AddScoped<IAffiliateMappingServices, AffiliateMappingServices>();
-
-
-        services.AddSingleton<IValidator<CreateAffiliateSubmissionCommand>, CreateAffiliateSubmissionCommandValidator>();
-        services.AddSingleton<IValidator<CreateAffiliateProductCommand>, CreateAffiliateProductCommandValidator>();
-        services.AddSingleton<IValidator<UpdateAffiliateProductCommand>, UpdateAffiliateProductCommandValidator>();
-        services.AddSingleton<IValidator<ImportAffiliateProductCommand>, ImportAffiliateProductCommandValidator>();
         services.AddHttpClient(ApiNameConstants.AFFiLIAATE_TRACKING.ToString()).ConfigurePrimaryHttpMessageHandler(() => new HttpClientHandler
         {
             ClientCertificateOptions = ClientCertificateOption.Manual,

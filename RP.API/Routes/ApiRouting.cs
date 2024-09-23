@@ -14,7 +14,7 @@ namespace RP.API.Routes
 
             app.MapGet("/", async context =>
             {
-                await context.Response.WriteAsync($"Welcome Go Sell .NET! Version: {typeof(RP.API.Routes.ApiRouting).Assembly.GetName().Version}");
+                await context.Response.WriteAsync($"Welcome RP .NET! Version: {typeof(RP.API.Routes.ApiRouting).Assembly.GetName().Version}");
             });
         }
 

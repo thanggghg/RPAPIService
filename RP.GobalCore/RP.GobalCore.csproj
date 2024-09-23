@@ -50,6 +50,7 @@
 
 
   <ItemGroup>
+    <ProjectReference Include="..\RP.Common\RP.Common.csproj" />
     <ProjectReference Include="..\RP.Library\RP.Library.csproj" />
   </ItemGroup>
 

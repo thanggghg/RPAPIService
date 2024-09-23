@@ -80,8 +80,7 @@ internal static class Extensions
         services.AddSingleton<IDbConnection>(_ => new Npgsql.NpgsqlConnection($"{builder.Configuration.GetConnectionStringEnvironment("SQLDB")};Include Error Detail=true;"));
 
         services.AddSingleton(jwtOptions);
-        services.AddCachesMemoryOrRedis();
-        services.AddMailClientConfiguration();
+        //services.AddMailClientConfiguration();
         services.AddHttpContextAccessor();
         // Configure mediatR
         services.AddMediatR(cfg =>
@@ -101,13 +100,13 @@ internal static class Extensions
         services.RegisterProxyClientService();
 
         var root = builder.Configuration.Build();
-        Log.Logger = new LoggerConfiguration()
-            .Enrich.WithProperty("app_name", Assembly.GetEntryAssembly().GetName().Name)
-            .Enrich.WithProperty("app_port", Environment.GetEnvironmentVariable("APP_PORT") ?? string.Empty)
-            .WriteTo.Elasticsearch(ConfigureElasticSink(root))
-            .ReadFrom.Configuration(configuration)
-            .CreateLogger();
-        services.AddSingleton(Log.Logger);
+        //Log.Logger = new LoggerConfiguration()
+        //    .Enrich.WithProperty("app_name", Assembly.GetEntryAssembly().GetName().Name)
+        //    .Enrich.WithProperty("app_port", Environment.GetEnvironmentVariable("APP_PORT") ?? string.Empty)
+        //    .WriteTo.Elasticsearch(ConfigureElasticSink(root))
+        //    .ReadFrom.Configuration(configuration)
+        //    .CreateLogger();
+        //services.AddSingleton(Log.Logger);
 
     }
 

@@ -1,5 +1,4 @@
-﻿using RP.Affiliate.Tracking.Entities;
-using RP.Affiliate.Tracking.ViewModels;
+﻿
 using RP.GobalCore.Application.Queries.Authenticate;
 using RP.GobalCore.ViewModels.Queries;
 

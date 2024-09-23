@@ -2,7 +2,6 @@
 using System.Web;
 using RP.Affiliate.Tracking.Services.Interfaces;
 using RP.Affiliate.Tracking.Utils;
-using RP.Affiliate.Tracking.ViewModels;
 using LinqKit;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -13,6 +12,8 @@ using RP.GobalCore.Database;
 using RP.GobalCore.Database.Entities;
 using RP.API.Service;
 using RP.Library.Exceptions;
+using RP.Common.Models;
+using System.Data.Entity;
 
 namespace RP.Affiliate.Tracking.Services
 {
@@ -50,19 +51,27 @@ namespace RP.Affiliate.Tracking.Services
                     query = query.Where(u => u.UsersWebPwd == request.Password.Trim());
                 }
 
-                var user = query.FirstOrDefault();
+                var user = await query.FirstOrDefaultAsync();
 
                 if (user == null)
                 {
                     throw new JWTException("User not found or invalid credentials.");
                 }
 
+                var userDto = new UserDto
+                {
+                    UserName = user.UsersID,  
+                    Token = Guid.NewGuid().ToString(),
+                    Email = user.UsersEmail,
+                    SupervisorName = user.UserSupervisorID 
+                };
+
                 var response = new AuthenticateLoginResponse
                 {
-                    AccessToken = _jwtTokenService.CreateAccessToken(user),  
+                    AccessToken = _jwtTokenService.CreateAccessToken(userDto),  
                     TokenType = "Bearer",
                     ExpiresIn = 3600,
-                    RefreshToken = _jwtTokenService.CreateRefreshToken(user),
+                    RefreshToken = _jwtTokenService.CreateAccessToken(userDto),
                 };
 
                 return response;

@@ -18,7 +18,7 @@ namespace RP.API.Service
 
         public interface IJwtTokenService
         {
-            string CreateToken(UserDto userDto);
+            string CreateAccessToken(UserDto userDto);
         }
 
         public class JwtTokenService : IJwtTokenService
@@ -88,7 +88,7 @@ namespace RP.API.Service
             //    return secret != null ? Convert.ToBase64String(secret) : throw new Exception($"Cannot get client secret");
             //}
 
-        public string CreateToken(UserDto userDto)
+        public string CreateAccessToken(UserDto userDto)
         {
             try
             {

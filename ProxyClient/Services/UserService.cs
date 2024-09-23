@@ -1,9 +1,7 @@
-﻿using GoSell.Library.Helpers;
-using GoSell.Library.Utils;
-using ProxyClient.Constants.Uri;
+﻿using ProxyClient.Constants.Uri;
 using ProxyClient.Helpers;
-using ProxyClient.Models.Responses.Store;
 using ProxyClient.Models.Responses.User;
+using RP.Library.Helpers;
 
 namespace ProxyClient.Services
 {
@@ -16,7 +14,6 @@ namespace ProxyClient.Services
         /// <param name="baseUrl"></param>
         /// <param name="userId">Format ex: 1040,1182 id is long and separated by commas</param>
         /// <returns></returns>
-        Task<List<UserModel>> GetUserByIds(string baseUrl, string userIds);
     }
 
     public class UserService : IUserService
@@ -41,14 +38,6 @@ namespace ProxyClient.Services
             return await _httpClientFactoryHelper.SendGetAsync<Dictionary<string, object>>(nameof(GetAllBcUserSettingValues), uri, jwtToken);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="baseUrl"></param>
-        /// <returns></returns>
-        public async Task<List<UserModel>> GetUserByIds(string baseUrl, string userIds)
-        {
-            return await _httpClientHelper.SendServiceApiGetAsync<List<UserModel>>(baseUrl, string.Format(UserEndpointConstants.GET_USER_BY_IDs, userIds), ApiNameConstants.HISTORY_SERVICE);
-        }
+        
     }
 }

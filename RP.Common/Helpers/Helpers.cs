@@ -146,26 +146,6 @@ namespace RP.Common.Helpers
             return time.Ticks / TimeSpan.TicksPerMillisecond;
         }
 
-        public static string FormatCurrency(decimal currencyValue, string currencyCode, string currencySymbol)
-        {
-            var returnValue = string.Empty;
-            var defaultValue = currencyCode != CurrencyCodes.VND ? currencySymbol + "0" : "0" + currencySymbol;
-            if (currencyValue == decimal.Zero) return defaultValue;
-            if (currencyCode != CurrencyCodes.VND)
-            {
-                var culture = new CultureInfo("en-US");
-                culture.NumberFormat.NumberDecimalSeparator = ".";
-                culture.NumberFormat.NumberGroupSeparator = ",";
-
-                returnValue = currencySymbol + Math.Round(currencyValue, 2, MidpointRounding.AwayFromZero).ToString("#,##0.00", culture);
-            }
-            else
-            {
-                var culture = new CultureInfo("vi-VN");
-                culture.NumberFormat.NumberGroupSeparator = ",";
-                returnValue = Math.Round(currencyValue).ToString("#,###", culture.NumberFormat) + currencySymbol;
-            }
-            return returnValue;
-        }
+        
     }
 }

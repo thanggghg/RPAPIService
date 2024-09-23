@@ -227,32 +227,32 @@ namespace RP.Library.Extensions.JWT
             return (null, null);
         }
 
-        private string CreateToken(string payload, string secretKey)
-        {
+        //private string CreateToken(string payload, string secretKey)
+        //{
            
-                var claims = new[] {
-                        new Claim(JwtRegisteredClaimNames.Sub, _configuration["Jwt:Subject"]),
-                        new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                        new Claim(JwtRegisteredClaimNames.Iat, DateTime.UtcNow.ToString()),
-                        new Claim(GeneralCode.CLAIMS_USER_NAME_KEY, AESEncryption.Encrypt(account.UserName)),
-                        new Claim(GeneralCode.CLAIMS_DATABASE_KEY, AESEncryption.Encrypt(JsonConvert.SerializeObject(database))),
-                        new Claim("UserName", account.UserName),
-                        new Claim("TokenType",tokenType),
-                        new Claim("TokenSession",account.Token),
-                        new Claim("Email", account.Email),
-                        new Claim("SupervisorName", account.SupervisorName)
-                    };
-                var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
-                var signIn = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-                var token = new JwtSecurityToken(
-                    _configuration["Jwt:Issuer"],
-                    _configuration["Jwt:Audience"],
-                    claims,
-                    expires: DateTime.UtcNow.AddHours(12),
-                    signingCredentials: signIn);
-                return new JwtSecurityTokenHandler().WriteToken(token);
-            return string.Empty;
-        }
+        //        var claims = new[] {
+        //                new Claim(JwtRegisteredClaimNames.Sub, _configuration["Jwt:Subject"]),
+        //                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+        //                new Claim(JwtRegisteredClaimNames.Iat, DateTime.UtcNow.ToString()),
+        //                new Claim(GeneralCode.CLAIMS_USER_NAME_KEY, AESEncryption.Encrypt(account.UserName)),
+        //                new Claim(GeneralCode.CLAIMS_DATABASE_KEY, AESEncryption.Encrypt(JsonConvert.SerializeObject(database))),
+        //                new Claim("UserName", account.UserName),
+        //                new Claim("TokenType",tokenType),
+        //                new Claim("TokenSession",account.Token),
+        //                new Claim("Email", account.Email),
+        //                new Claim("SupervisorName", account.SupervisorName)
+        //            };
+        //        var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
+        //        var signIn = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+        //        var token = new JwtSecurityToken(
+        //            _configuration["Jwt:Issuer"],
+        //            _configuration["Jwt:Audience"],
+        //            claims,
+        //            expires: DateTime.UtcNow.AddHours(12),
+        //            signingCredentials: signIn);
+        //        return new JwtSecurityTokenHandler().WriteToken(token);
+        //    return string.Empty;
+        //}
 
 
         private string SignJwt(string payload, string secretKey)

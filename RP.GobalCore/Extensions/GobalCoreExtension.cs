@@ -1,6 +1,5 @@
 ﻿using FluentValidation;
 using RP.Affiliate.Tracking.Config;
-using RP.Affiliate.Tracking.Database;
 using RP.Library.Db;
 using RP.Library.Extensions;
 using RP.Library.Utils;
@@ -10,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Hosting;
 using Polly;
+using RP.GobalCore.Database;
 
 public static class RPAPIExtension
 {
@@ -32,10 +32,10 @@ public static class RPAPIExtension
             ClientCertificateOptions = ClientCertificateOption.Manual,
             ServerCertificateCustomValidationCallback = (httpRequestMessage, cert, cetChain, policyErrors) => true
         }).SetHandlerLifetime(TimeSpan.FromMinutes(5)).AddTransientHttpErrorPolicy(p => p.WaitAndRetryAsync(5, _ => TimeSpan.FromSeconds(5)));
-        var affiliateConfig = configuration
-            .GetSectionWithEnvironment("AffConfig")
-            .Get<AffiliateConfig>();
-        services.AddSingleton(affiliateConfig);
+        //var affiliateConfig = configuration
+        //    .GetSectionWithEnvironment("AffConfig")
+        //    .Get<AffiliateConfig>();
+        //services.AddSingleton(affiliateConfig);
 
         builder.Services.AddHealthChecks()
                 .AddDbContextCheck<ERPOutsourceContext>("AffiliateContext")

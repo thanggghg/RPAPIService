@@ -1,9 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using AutoMapper;
-using RP.Affiliate.Tracking.Commons.Constants;
-using RP.Affiliate.Tracking.Commons.Enums;
-using RP.Affiliate.Tracking.Database;
-using RP.Affiliate.Tracking.Entities;
 using RP.Library.Helpers;
 using RP.Library.Helpers.Service;
 using MediatR;

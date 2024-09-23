@@ -5,10 +5,14 @@
       "launchBrowser": true,
       "applicationUrl": "http://localhost:5442",
       "environmentVariables": {
-        "API_BASE_URL": "https://dev-api.mediastep.com",
+        "API_BASE_URL": "http://localhost:5442",
         "ASPNETCORE_ENVIRONMENT": "Local",
+        "PR_DBPORT": "2433",
+        "PR_DB": "210.2.68.52",
+        "PR_DBUSERNAME": "ossa",
+        "PR_DBPASSWORD": "mLXIbrot7"
       }
     }
-   
+
   }
 }

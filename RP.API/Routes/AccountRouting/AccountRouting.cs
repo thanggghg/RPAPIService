@@ -11,10 +11,6 @@ namespace RP.API.Routes.AccountRouting
             app.MapPost("/Authenticate/login", AuthenticateService.AccountLoginAsync)
                 .WithTags(SwaggerConstants.RPAuthencation);
 
-            //app.MapPost("/getuser-bylistusername", AffiliateAuthenticationApi.GetUserByListUserNamesAsync)
-            //    .AddRequireAuthorizationJWTToken(AuthoritiesConstants.USER)
-            //    .WithTags(SwaggerConstants.AffiliateAuthencationApi);
-
             return app;
         }
 

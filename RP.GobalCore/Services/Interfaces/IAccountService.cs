@@ -7,6 +7,6 @@ namespace RP.Affiliate.Tracking.Services.Interfaces
 {
     public interface IAccountService
     {
-        Task<AuthenticateLoginResponse> login(AuthenticateLoginQueries request, CancellationToken cancellationToken);
+        Task<AuthenticateLoginResponse> Login(AuthenticateLoginQueries request, CancellationToken cancellationToken);
     }
 }

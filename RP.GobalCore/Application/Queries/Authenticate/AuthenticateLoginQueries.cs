@@ -12,9 +12,10 @@ namespace RP.GobalCore.Application.Queries.Authenticate
 {
     public class AuthenticateLoginQueries : IRequest<GenericResponse<AuthenticateLoginResponse>>
     {
-        public virtual string UserName { get; set; }
+        public string UserName { get; set; }
         public string SupervisorName { get; set; }
-        public virtual string Password { get; set; }
+        public string Password { get; set; }
+        public string Passcode { get; set; }
 
     }
 }

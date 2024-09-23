@@ -5,7 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 //Add Services
 builder.AddApplicationServices();
-builder.RPExtension();
+builder.AddGobalCoreExtension();
 
 //Builder build
 var app = builder.Build();

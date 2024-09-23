@@ -17,9 +17,7 @@ internal static class Extensions
         services.AddEndpointsApiExplorer();
 
         var configuration = builder.Configuration.Build();
-        Console.WriteLine($"Connectionstring of GoSellDB : ${builder.Configuration.GetConnectionStringEnvironment("GoSellDB")}");
-        Console.WriteLine($"Connectionstring of AffiliateTrackingConnection: ${builder.Configuration.GetConnectionStringEnvironment("AffiliateTrackingConnection")}");
-
+        Console.WriteLine($"Connectionstring of RPDB : ${builder.Configuration.GetConnectionStringEnvironment("SQLDB")}");
         services.AddExceptionHandler<CustomExceptionHandler>();
 
         services.AddProblemDetails();
@@ -79,7 +77,7 @@ internal static class Extensions
             .GetSectionWithEnvironment("JwtOptions")
             .Get<JwtOptions>();
       
-        services.AddSingleton<IDbConnection>(_ => new Npgsql.NpgsqlConnection($"{builder.Configuration.GetConnectionStringEnvironment("GoSellDB")};Include Error Detail=true;"));
+        services.AddSingleton<IDbConnection>(_ => new Npgsql.NpgsqlConnection($"{builder.Configuration.GetConnectionStringEnvironment("SQLDB")};Include Error Detail=true;"));
 
         services.AddSingleton(jwtOptions);
         services.AddCachesMemoryOrRedis();

@@ -17,7 +17,6 @@ namespace RP.API.Exceptions
                 { typeof(ValidationException), HandleValidationException },
                 { typeof(NotFoundException), HandleNotFoundException },
                 {typeof(JWTException), HandleJwtException },
-                {typeof(AffiliateException), HandleAffiliateException }
             };
             this.logger = logger;
         }
@@ -93,21 +92,7 @@ namespace RP.API.Exceptions
                 Detail = exception?.Message ?? ex.Message
             });
         }
-
-        private async Task HandleAffiliateException(HttpContext httpContext, Exception ex)
-        {
-            Log.Logger.Error(ex, ex.Message);
-            logger.LogError(ex, ex.Message);
-            var exception = ex as AffiliateException;
-            httpContext.Response.StatusCode = exception.Code;
-
-            await httpContext.Response.WriteAsJsonAsync(new
-            {
-                Code = exception.Code,
-                Title = "AffiliateException",
-                Message = exception.Message
-            });
-        }
+      
     }
 
 }

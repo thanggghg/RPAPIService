@@ -13,16 +13,16 @@ using Polly;
 
 public static class RPAPIExtension
 {
-    public static void AddAffiliateTrackingExtension(this IHostApplicationBuilder builder)
+    public static void AddGobalCoreExtension(this IHostApplicationBuilder builder)
     {
 
         var services = builder.Services;
         var configuration = builder.Configuration;
-        services.AddScoped<IGenericDbContext<AffiliateContext>, GenericDbContext<AffiliateContext>>();
-        services.AddDbContext<AffiliateContext>(options => options.UseNpgsql($"{builder.Configuration.GetConnectionStringEnvironment("AffiliateTrackingConnection")};Include Error Detail=true;",
+        services.AddScoped<IGenericDbContext<ERPOutsourceContext>, GenericDbContext<ERPOutsourceContext>>();
+        services.AddDbContext<ERPOutsourceContext>(options => options.UseNpgsql($"{builder.Configuration.GetConnectionStringEnvironment("AffiliateTrackingConnection")};Include Error Detail=true;",
            x => x.MigrationsHistoryTable("__MigrationsHistory", "affiliate-tracking-services"))
             );
-        services.AddMigration<AffiliateContext>();
+        services.AddMigration<ERPOutsourceContext>();
         //services.AddMediatR(cfg =>
         //{
         //    cfg.RegisterServicesFromAssemblyContaining(typeof(CreateClickTrackingCommand));
@@ -38,7 +38,7 @@ public static class RPAPIExtension
         services.AddSingleton(affiliateConfig);
 
         builder.Services.AddHealthChecks()
-                .AddDbContextCheck<AffiliateContext>("AffiliateContext")
+                .AddDbContextCheck<ERPOutsourceContext>("AffiliateContext")
                 .AddCheck("AffiliateService", () => HealthCheckResult.Healthy());
         //services.AddScoped<ExportAffiliateUrlReportService>();
         //services.AddExportRequestHandler<ExportAffUrlReportQuery>();

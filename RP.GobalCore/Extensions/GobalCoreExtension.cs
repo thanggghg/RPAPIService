@@ -14,6 +14,7 @@ using RP.GobalCore.Services.Interfaces;
 using RP.GobalCore.Services;
 using RP.API.Service;
 using RP.GobalCore.Repositories;
+using Microsoft.Extensions.Logging;
 
 public static class RPAPIExtension
 {
@@ -22,10 +23,23 @@ public static class RPAPIExtension
 
         var services = builder.Services;
         var configuration = builder.Configuration;
-        services.AddScoped<IGenericDbContext<ERPOutsourceContext>, GenericDbContext<ERPOutsourceContext>>();
+        //services.AddScoped<IGenericDbContext<ErpoutsourceContext>, GenericDbContext<ErpoutsourceContext>>();
 
-        services.AddDbContext<ERPOutsourceContext>(options =>
-        options.UseSqlServer(builder.Configuration.GetConnectionStringEnvironment("SQLDB")));
+        //services.AddDbContext<ERPOutsourceContext>(options =>
+        //options.UseSqlServer(builder.Configuration.GetConnectionStringEnvironment("SQLDB")));
+
+        services.AddDbContext<ErpoutsourceContext>(options =>
+        {
+            var loggerFactory = LoggerFactory.Create(builder =>
+            {
+                builder.AddConsole();
+            });
+
+            options.UseLoggerFactory(loggerFactory)
+                   .EnableSensitiveDataLogging() // Cẩn thận với thông tin nhạy cảm trong production!
+                   .UseSqlServer(builder.Configuration.GetConnectionStringEnvironment("SQLDB"));
+        });
+
         Console.WriteLine($"Connectionstring of UseSqlServer : ${builder.Configuration.GetConnectionStringEnvironment("SQLDB")}");
         services.AddScoped<IAccountService, AccountService>();
         services.AddScoped<IJwtTokenService, JwtTokenService>();

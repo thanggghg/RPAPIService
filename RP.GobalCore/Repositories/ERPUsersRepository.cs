@@ -9,15 +9,15 @@ using RP.Library.Seedwork;
 
 namespace RP.GobalCore.Repositories
 {
-    public class ERPUsersRepository(ERPOutsourceContext context) : IERPUsersRepository
-    {
-        private readonly ERPOutsourceContext _context = context;
-        public IUnitOfWork UnitOfWork => _context;
+    //public class ERPUsersRepository(ERPOutsourceContext context) : IERPUsersRepository
+    //{
+    //    private readonly ERPOutsourceContext _context = context;
+    //    public IUnitOfWork UnitOfWork => _context;
 
         
-        public long GetUserAsyc()
-        {
-            return 5;
-        }
-    }
+    //    public long GetUserAsyc()
+    //    {
+    //        return 5;
+    //    }
+    //}
 }

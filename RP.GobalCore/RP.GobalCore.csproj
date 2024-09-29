@@ -41,8 +41,6 @@
     <Folder Include="Application\Commands\Authenticate\" />
     <Folder Include="Mapper\" />
     <Folder Include="Migrations\" />
-    <Folder Include="Models\Mapping\" />
-    <Folder Include="Models\Requests\" />
     <Folder Include="ViewModels\Commands\" />
   </ItemGroup>
 

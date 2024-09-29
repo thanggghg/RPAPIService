@@ -23,23 +23,28 @@ namespace RP.GobalCore.Services
         private ILogger<AccountService> Logger;
 
         private readonly IERPOutsourceRepository<Users> _eRPUsersRepository;
+        private readonly ERPOutsourceContext _context;
         private readonly IJwtTokenService _jwtTokenService;
         public AccountService(
             ILogger<AccountService> logger,
             IERPOutsourceRepository<Users> eRPUsersRepository,
-            IJwtTokenService jwtTokenService
+            IJwtTokenService jwtTokenService,
+            ERPOutsourceContext context
            )
         {
             Logger = logger;
             _eRPUsersRepository = eRPUsersRepository;
             _jwtTokenService = jwtTokenService;
+            _context = context;
         }
 
         public async Task<AuthenticateLoginResponse> Login(AuthenticateLoginQueries request, CancellationToken cancellationToken)
         {
             try
             {
-              
+
+                var randomUser = await _context.Users
+                     .FirstOrDefaultAsync();       // Lấy bản ghi đầu tiên từ kết quả
                 var user1 =  _eRPUsersRepository.Filter(null);
                 var user = await _eRPUsersRepository.Filter(u => u.UsersID == request.UserName.Trim()).FirstOrDefaultAsync();
 

@@ -1,4 +1,4 @@
-﻿namespace RP.Affiliate.Tracking.Commons.Constants
+﻿namespace RP.GobalCore.Commons.Constants
 {
     public class UpdateProductActionType
     {

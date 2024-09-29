@@ -1,7 +1,7 @@
 ﻿using System.Security.Cryptography;
 using System.Text.RegularExpressions;
 
-namespace RP.Affiliate.Tracking.Utils
+namespace RP.GobalCore.Utils
 {
     public static class CommonFunction
     {

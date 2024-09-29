@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
-using RP.Affiliate.Tracking.Commons.Enums;
-namespace RP.Affiliate.Tracking.Commons.Constants
+using RP.GobalCore.Commons.Enums;
+namespace RP.GobalCore.Commons.Constants
 {
     public static class UtilsConstants
     {

@@ -38,10 +38,6 @@ namespace RP.Library.Extensions.JWT
             {
                 return true;
             }
-            else if (this.Roles.Contains(AuthoritiesConstants.STORE) && (permission == AuthoritiesConstants.STORE || permission == AuthoritiesConstants.USER))
-            {
-                return true;
-            }
             else if (this.Roles.Contains(AuthoritiesConstants.USER) && userAsGuest.Contains(permission))
             {
                 return true;
@@ -52,22 +48,6 @@ namespace RP.Library.Extensions.JWT
             }
             else if (this.Roles.Contains(AuthoritiesConstants.GUEST_CHECKOUT) && userAsGuest.Contains(permission))
             {
-                return true;
-            }
-            else if (this.Roles.Contains(AuthoritiesConstants.AFFILIATE) || this.Roles.Contains(AuthoritiesConstants.AFFILIATE_PROFILE))
-            {
-                var statusNotAllowAccessData = new int[]
-                {
-                     (int)UserStoreStatusEnum.INACTIVED,
-                     (int)UserStoreStatusEnum.LOCKED,
-                     (int)UserStoreStatusEnum.INACTIVED,
-                     (int)UserStoreStatusEnum.REJECTED
-                };
-
-                if (statusNotAllowAccessData.Contains((int)Status))
-                {
-                    return false;
-                }
                 return true;
             }
             else if (permission == AuthoritiesConstants.DEFAULT)

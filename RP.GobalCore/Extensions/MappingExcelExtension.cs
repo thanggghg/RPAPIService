@@ -1,7 +1,7 @@
 ﻿using DocumentFormat.OpenXml.Spreadsheet;
 using System.Globalization;
 using FluentValidation;
-using RP.Affiliate.Tracking.Commons.Enums;
+using RP.GobalCore.Commons.Enums;
 using RP.Library.Db;
 using RP.Library.Extensions;
 using RP.Library.Utils;

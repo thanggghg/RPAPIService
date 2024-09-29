@@ -8,6 +8,7 @@ namespace RP.API.Routes
         public static void AddRegisterRoutes(this WebApplication app)
         {
             app.RegisterDefault();  
+            app.RegisterAccountAthenRouter();
         }
         public static void RegisterDefault(this WebApplication app)
         {

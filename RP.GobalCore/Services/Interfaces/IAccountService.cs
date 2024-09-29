@@ -2,7 +2,7 @@
 using RP.GobalCore.Application.Queries.Authenticate;
 using RP.GobalCore.ViewModels.Queries;
 
-namespace RP.Affiliate.Tracking.Services.Interfaces
+namespace RP.GobalCore.Services.Interfaces
 {
     public interface IAccountService
     {

@@ -1,7 +1,11 @@
-﻿using System.Reflection;
+﻿using System.Data.SqlClient;
+using System.Reflection;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.OpenApi.Models;
+using Org.BouncyCastle.Pqc.Crypto.Lms;
 using RP.API.Exceptions;
+using RP.API.Service;
+using RP.GobalCore.Database;
 using RP.Library.Db;
 using RP.Library.Extensions;
 using RP.Library.Extensions.JWT;
@@ -77,24 +81,33 @@ internal static class Extensions
             .GetSectionWithEnvironment("JwtOptions")
             .Get<JwtOptions>();
       
-        services.AddSingleton<IDbConnection>(_ => new Npgsql.NpgsqlConnection($"{builder.Configuration.GetConnectionStringEnvironment("SQLDB")};Include Error Detail=true;"));
+        services.AddSingleton<IDbConnection>(_ => new SqlConnection(configuration.GetConnectionString("SQLDB")));
+
 
         services.AddSingleton(jwtOptions);
-        //services.AddMailClientConfiguration();
         services.AddHttpContextAccessor();
         // Configure mediatR
         services.AddMediatR(cfg =>
         {
             cfg.RegisterServicesFromAssemblyContaining(typeof(Program));
-            cfg.AddOpenBehavior(typeof(LoggingBehavior<,>));
-            cfg.AddBehavior(typeof(IPipelineBehavior<,>), typeof(ValidatorBehavior<,>));
-            cfg.AddOpenBehavior(typeof(TransactionBehavior<,>));
         });
         //JWT Authorization role ADMIN
         services.AddAuthentication();
-      
+        services.AddAuthorization(o =>
+        {
+            o.AddPolicy(AuthoritiesConstants.ADMIN, p => p.AddRequirements(new JWTTokenRequirement(AuthoritiesConstants.ADMIN)));
+            o.AddPolicy(AuthoritiesConstants.USER, p => p.AddRequirements(new JWTTokenRequirement(AuthoritiesConstants.USER)));
+            o.AddPolicy(AuthoritiesConstants.DEFAULT, o => o.AddRequirements(new JWTTokenRequirement(AuthoritiesConstants.DEFAULT)));
+            o.AddPolicy(AuthoritiesConstants.GUEST, o => o.AddRequirements(new JWTTokenRequirement(AuthoritiesConstants.GUEST)));
+            o.AddPolicy(AuthoritiesConstants.GUEST_CHECKOUT, o => o.AddRequirements(new JWTTokenRequirement(AuthoritiesConstants.GUEST_CHECKOUT)));
+
+        });
+
+
+
         services.AddTransient(typeof(IPipelineBehavior<,>), typeof(TransactionBehavior<,>));
         services.AddSingleton<IAuthorizationHandler, JWTTokenRequirementHandle>();
+        services.AddScoped<IJwtTokenService, JwtTokenService>();
 
         //Proxy client
         services.RegisterProxyClientService();
@@ -125,14 +138,5 @@ internal static class Extensions
         //app.UseMiddleware<JwtMiddlewareExtension>();
     }
 
-    private static ElasticsearchSinkOptions ConfigureElasticSink(IConfigurationRoot configuration)
-    {
-        var nodeUri = configuration.GetSectionWithEnvironment("Serilog:WriteTo:0:Args").GetValue<string>("nodeUris");
-        return new ElasticsearchSinkOptions(new Uri(nodeUri))
-        {
-            AutoRegisterTemplate = true,
-            AutoRegisterTemplateVersion = AutoRegisterTemplateVersion.ESv6,
-            TypeName = null
-        };
-    }
+  
 }

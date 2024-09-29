@@ -1,7 +1,7 @@
 ﻿using System.Linq.Expressions;
 using System.Web;
-using RP.Affiliate.Tracking.Services.Interfaces;
-using RP.Affiliate.Tracking.Utils;
+using RP.GobalCore.Services.Interfaces;
+using RP.GobalCore.Utils;
 using LinqKit;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -13,24 +13,25 @@ using RP.GobalCore.Database.Entities;
 using RP.API.Service;
 using RP.Library.Exceptions;
 using RP.Common.Models;
-using System.Data.Entity;
+using RP.GobalCore.Repositories.Interfaces;
+using RP.GobalCore.Repositories;
 
-namespace RP.Affiliate.Tracking.Services
+namespace RP.GobalCore.Services
 {
     public class AccountService : IAccountService
     {
         private ILogger<AccountService> Logger;
 
-        private readonly ERPOutsourceContext _eRPOutsourceContext;
+        private readonly IERPOutsourceRepository<Users> _eRPUsersRepository;
         private readonly IJwtTokenService _jwtTokenService;
         public AccountService(
             ILogger<AccountService> logger,
-            ERPOutsourceContext eRPOutsourceContext,
-            JwtTokenService jwtTokenService
+            IERPOutsourceRepository<Users> eRPUsersRepository,
+            IJwtTokenService jwtTokenService
            )
         {
             Logger = logger;
-            _eRPOutsourceContext = eRPOutsourceContext;
+            _eRPUsersRepository = eRPUsersRepository;
             _jwtTokenService = jwtTokenService;
         }
 
@@ -38,20 +39,23 @@ namespace RP.Affiliate.Tracking.Services
         {
             try
             {
-                var query = _eRPOutsourceContext.Users.AsQueryable();
+              
+                var user1 =  _eRPUsersRepository.Filter(null);
+                var user = await _eRPUsersRepository.Filter(u => u.UsersID == request.UserName.Trim()).FirstOrDefaultAsync();
 
-                query = query.Where(u => u.UsersID == request.UserName.Trim());
+                // query = query.Where(u => u.UsersID == request.UserName.Trim());
 
-                if (!string.IsNullOrEmpty(request.Passcode))
-                {
-                    query = query.Where(u => u.UsersPasscode == request.Passcode.Trim());
-                }
-                else
-                {
-                    query = query.Where(u => u.UsersWebPwd == request.Password.Trim());
-                }
+                //if (!string.IsNullOrEmpty(request.Passcode))
+                //{
+                //    query = query.Where(u => u.UsersPasscode == request.Passcode.Trim());
+                //}
+                //else
+                //{
+                //    query = query.Where(u => u.UsersWebPwd == request.Password.Trim());
+                // }
 
-                var user = await query.FirstOrDefaultAsync();
+
+                //var user = await query.FirstOrDefaultAsync();
 
                 if (user == null)
                 {

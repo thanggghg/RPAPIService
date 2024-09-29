@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace RP.Affiliate.Tracking.Commons.Enums
+namespace RP.GobalCore.Commons.Enums
 {
     public enum CampaignResponseCodeEnum
     {

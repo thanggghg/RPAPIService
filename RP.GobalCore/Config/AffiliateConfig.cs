@@ -1,4 +1,4 @@
-﻿namespace RP.Affiliate.Tracking.Config
+﻿namespace RP.GobalCore.Config
 {
     public class AffiliateConfig
     {

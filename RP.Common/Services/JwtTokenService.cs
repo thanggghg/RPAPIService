@@ -11,7 +11,6 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Net;
 using System.Security.Claims;
 using System.Text;
-using static RP.API.Service.JwtTokenService;
 
 namespace RP.API.Service
 {
@@ -24,13 +23,10 @@ namespace RP.API.Service
         public class JwtTokenService : IJwtTokenService
         {
             private readonly JwtOptions _jwtOptions;
-            private readonly IDistributedCache _cache;
 
-            public JwtTokenService(JwtOptions jwtOptions,
-                IDistributedCache cache)
+            public JwtTokenService(JwtOptions jwtOptions)
             {
                 _jwtOptions = jwtOptions;
-                _cache = cache;
             }
 
             //public string GenerateJwtRefreshToken(UserDto userInf, string clientId) //for qc testing

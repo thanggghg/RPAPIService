@@ -6,7 +6,7 @@ namespace RP.GobalCore.Database
 {
     public class ERPOutsourceContext : BaseContext
     {
-        public DbSet<UserConfiguration> Users { get; set; }
+        public DbSet<Users> Users { get; set; }
        
         public ERPOutsourceContext(DbContextOptions<ERPOutsourceContext> options, IMediator mediator) : base(options, mediator)
         {
@@ -15,6 +15,7 @@ namespace RP.GobalCore.Database
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Users>().ToTable("Users");
         }
 
     }

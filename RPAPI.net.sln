@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProxyClient", "ProxyClient\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RP.GobalCore", "RP.GobalCore\RP.GobalCore.csproj", "{7868D6A1-D28B-48DF-A2F1-FF3BF10AC7B2}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "RP.SQLCompare", "RP.SQLCompare\RP.SQLCompare.sqlproj", "{11E2E517-EA8E-436D-A95C-B36CD3D3E4FC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,12 @@ Global
 		{7868D6A1-D28B-48DF-A2F1-FF3BF10AC7B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7868D6A1-D28B-48DF-A2F1-FF3BF10AC7B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7868D6A1-D28B-48DF-A2F1-FF3BF10AC7B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11E2E517-EA8E-436D-A95C-B36CD3D3E4FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11E2E517-EA8E-436D-A95C-B36CD3D3E4FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11E2E517-EA8E-436D-A95C-B36CD3D3E4FC}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{11E2E517-EA8E-436D-A95C-B36CD3D3E4FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11E2E517-EA8E-436D-A95C-B36CD3D3E4FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11E2E517-EA8E-436D-A95C-B36CD3D3E4FC}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

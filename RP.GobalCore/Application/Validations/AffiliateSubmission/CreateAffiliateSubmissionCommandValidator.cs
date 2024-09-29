@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
-using RP.Affiliate.Tracking.Commons.Constants;
-using RP.Affiliate.Tracking.Commons.Enums;
+using RP.GobalCore.Commons.Constants;
+using RP.GobalCore.Commons.Enums;
 
 namespace RP.GobalCore.Application.Validations.AffiliateSubmission
 {

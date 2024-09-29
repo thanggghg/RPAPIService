@@ -1,10 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using RP.Library.Seedwork;
 
 namespace RP.GobalCore.Database.Entities
 {
     [Table("Users")]
-    public class UserConfiguration
+    public class Users :   IAggregateRoot
     {
         [Key]
         [Column("UsersID_PK")]

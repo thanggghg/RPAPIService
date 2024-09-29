@@ -9,8 +9,9 @@
         "ASPNETCORE_ENVIRONMENT": "Local",
         "PR_DBPORT": "2433",
         "PR_DB": "210.2.68.52",
-        "PR_DBUSERNAME": "ossa",
-        "PR_DBPASSWORD": "mLXIbrot7"
+        "PR_DBUSERNAME": "osrw",
+        "PR_DBPASSWORD": "P6RYhk4RFrrebRWrvhf9mQ==",
+        "ALLOWED_ORIGINS": "*"
       }
     }
 

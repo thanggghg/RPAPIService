@@ -1,0 +1,395 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title> | RP.APIDocs </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content=" | RP.APIDocs ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/thanggghg/RPAPIService/blob/develop/RP.API/docs/EFCore/scaffold-dbcontext.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo.svg" alt="RP.APIDocs">
+            RP.APIDocs
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<h2 id="2-scaffold-entities-from-the-database">2. Scaffold Entities from the Database</h2>
+<p>The next step is to generate the entity classes and DbContext from your existing database schema using the <code>Scaffold-DbContext</code> command.</p>
+<h3 id="step-1-run-the-scaffold-command">Step 1: Run the Scaffold Command</h3>
+<pre><code>`dotnet ef dbcontext scaffold &quot;YourConnectionString&quot; Microsoft.EntityFrameworkCore.SqlServer --output-dir Models --context-dir Data --context YourDbContextName --force` 
+</code></pre>
+<ul>
+<li><strong>YourConnectionString</strong>: Replace this with the actual connection string to your SQL Server database.</li>
+<li><strong>Microsoft.EntityFrameworkCore.SqlServer</strong>: Specifies the database provider.</li>
+<li><strong>--output-dir Models</strong>: Specifies the directory to place the generated entity classes (in this case, inside the <code>Models</code> folder).</li>
+<li><strong>--context-dir Data</strong>: Specifies the directory to place the DbContext (in this case, inside the <code>Data</code> folder).</li>
+<li><strong>--context YourDbContextName</strong>: Sets the name of the generated DbContext class.</li>
+<li><strong>--force</strong>: Forces overwriting of the existing files if they already exist.</li>
+</ul>
+<h3 id="example">Example:</h3>
+<pre><code>`dotnet ef dbcontext scaffold &quot;Server=myServer;Database=myDb;User Id=myUser;Password=myPassword;&quot; Microsoft.EntityFrameworkCore.SqlServer --output-dir Models --context-dir Data --context AppDbContext --force` 
+</code></pre>
+<p>This command will generate:</p>
+<ul>
+<li>Entity classes based on your database tables in the <code>Models</code> folder.</li>
+<li>A <strong>DbContext</strong> named <code>AppDbContext</code> in the <code>Data</code> folder.</li>
+</ul>
+<p>`# Database First with Entity Framework Core and Repository Pattern</p>
+<h2 id="introduction">Introduction</h2>
+<p><strong>Database First</strong> approach in <strong>Entity Framework Core</strong> allows you to generate entity classes and a DbContext based on an existing database schema. This is particularly useful when you are working with legacy databases or databases managed outside your application.</p>
+<p>This guide will cover how to:</p>
+<ol>
+<li>Scaffold the entity and DbContext classes from an existing database.</li>
+<li>Update entities when the database schema changes.</li>
+<li>Implement the <strong>Repository Pattern</strong> to interact with your data.</li>
+</ol>
+<hr>
+<h2 id="1-installing-entity-framework-core">1. Installing Entity Framework Core</h2>
+<p>Before you start, ensure you have installed <strong>Entity Framework Core</strong> in your project.</p>
+<h3 id="step-1-install-ef-core-packages">Step 1: Install EF Core Packages</h3>
+<p>In the <strong>.NET CLI</strong>, run the following commands to install the necessary EF Core packages:</p>
+<pre><code>dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+dotnet add package Microsoft.EntityFrameworkCore.Design` 
+</code></pre>
+<ul>
+<li><strong>Microsoft.EntityFrameworkCore.SqlServer</strong>: Adds support for SQL Server.</li>
+<li><strong>Microsoft.EntityFrameworkCore.Design</strong>: Provides tools for scaffolding the DbContext and entity classes.</li>
+</ul>
+<hr>
+<h2 id="2-scaffold-entities-from-the-database-1">2. Scaffold Entities from the Database</h2>
+<p>The next step is to generate the entity classes and DbContext from your existing database schema using the <code>Scaffold-DbContext</code> command.</p>
+<h3 id="step-1-run-the-scaffold-command-1">Step 1: Run the Scaffold Command</h3>
+<pre><code>`dotnet ef dbcontext scaffold &quot;YourConnectionString&quot; Microsoft.EntityFrameworkCore.SqlServer --output-dir Models --context-dir Data --context YourDbContextName --force` 
+</code></pre>
+<ul>
+<li><strong>YourConnectionString</strong>: Replace this with the actual connection string to your SQL Server database.</li>
+<li><strong>Microsoft.EntityFrameworkCore.SqlServer</strong>: Specifies the database provider.</li>
+<li><strong>--output-dir Models</strong>: Specifies the directory to place the generated entity classes (in this case, inside the <code>Models</code> folder).</li>
+<li><strong>--context-dir Data</strong>: Specifies the directory to place the DbContext (in this case, inside the <code>Data</code> folder).</li>
+<li><strong>--context YourDbContextName</strong>: Sets the name of the generated DbContext class.</li>
+<li><strong>--force</strong>: Forces overwriting of the existing files if they already exist.</li>
+</ul>
+<h3 id="example-1">Example:</h3>
+<pre><code>`dotnet ef dbcontext scaffold &quot;Server=myServer;Database=myDb;User Id=myUser;Password=myPassword;&quot; Microsoft.EntityFrameworkCore.SqlServer --output-dir Models --context-dir Data --context AppDbContext --force` 
+</code></pre>
+<p>This command will generate:</p>
+<ul>
+<li>Entity classes based on your database tables in the <code>Models</code> folder.</li>
+<li>A <strong>DbContext</strong> named <code>AppDbContext</code> in the <code>Data</code> folder.</li>
+</ul>
+<hr>
+<h2 id="3-updating-entities-after-database-changes">3. Updating Entities After Database Changes</h2>
+<p>If the database schema changes (e.g., new columns, tables, or relationships), you need to regenerate the entity classes and DbContext. You can simply rerun the <code>Scaffold-DbContext</code> command with the <code>--force</code> flag to update the entity classes.</p>
+<h3 id="step-1-re-run-the-scaffold-command">Step 1: Re-run the Scaffold Command</h3>
+<pre><code>`dotnet ef dbcontext scaffold &quot;YourConnectionString&quot; Microsoft.EntityFrameworkCore.SqlServer --output-dir Models --context-dir Data --context YourDbContextName --force` 
+</code></pre>
+<p>This will update your existing entity classes and DbContext to reflect the latest database schema changes.</p>
+<hr>
+<h2 id="4-using-the-repository-pattern">4. Using the Repository Pattern</h2>
+<p>The <strong>Repository Pattern</strong> is a design pattern used to abstract the data access logic and promote separation of concerns. It hides the complexity of data access behind simple interfaces.</p>
+<h3 id="step-1-create-the-repository-interface">Step 1: Create the Repository Interface</h3>
+<p>First, create a generic interface for the repository.</p>
+<pre><code>public interface IRepository&lt;T&gt; where T : class
+{
+    Task&lt;IEnumerable&lt;T&gt;&gt; GetAllAsync();
+    Task&lt;T&gt; GetByIdAsync(int id);
+    Task AddAsync(T entity);
+    Task UpdateAsync(T entity);
+    Task DeleteAsync(int id);
+}` 
+</code></pre>
+<p>This interface defines the basic CRUD operations for any entity.</p>
+<h3 id="step-2-implement-the-generic-repository">Step 2: Implement the Generic Repository</h3>
+<p>Now, create the generic repository class that implements the <code>IRepository</code> interface.</p>
+<pre><code>public class Repository&lt;T&gt; : IRepository&lt;T&gt; where T : class
+{
+    private readonly AppDbContext _context;
+    private readonly DbSet&lt;T&gt; _dbSet;
+
+    public Repository(AppDbContext context)
+    {
+        _context = context;
+        _dbSet = _context.Set&lt;T&gt;();
+    }
+
+    public async Task&lt;IEnumerable&lt;T&gt;&gt; GetAllAsync()
+    {
+        return await _dbSet.ToListAsync();
+    }
+
+    public async Task&lt;T&gt; GetByIdAsync(int id)
+    {
+        return await _dbSet.FindAsync(id);
+    }
+
+    public async Task AddAsync(T entity)
+    {
+        await _dbSet.AddAsync(entity);
+        await _context.SaveChangesAsync();
+    }
+
+    public async Task UpdateAsync(T entity)
+    {
+        _dbSet.Update(entity);
+        await _context.SaveChangesAsync();
+    }
+
+    public async Task DeleteAsync(int id)
+    {
+        var entity = await GetByIdAsync(id);
+        if (entity != null)
+        {
+            _dbSet.Remove(entity);
+            await _context.SaveChangesAsync();
+        }
+    }
+}
+</code></pre>
+<h3 id="step-3-create-a-specific-repository">Step 3: Create a Specific Repository</h3>
+<p>You can create a specific repository for an entity by extending the generic <code>Repository</code> class.</p>
+<pre><code>public interface IProductRepository : IRepository&lt;Product&gt;
+{
+    Task&lt;IEnumerable&lt;Product&gt;&gt; GetProductsWithDetails();
+}
+
+public class ProductRepository : Repository&lt;Product&gt;, IProductRepository
+{
+    public ProductRepository(AppDbContext context) : base(context)
+    {
+    }
+
+    public async Task&lt;IEnumerable&lt;Product&gt;&gt; GetProductsWithDetails()
+    {
+        return await _context.Products
+            .Include(p =&gt; p.Category) // Assuming there's a related Category entity
+            .ToListAsync();
+    }
+}
+</code></pre>
+<hr>
+<h2 id="5-using-the-repository-in-the-service-layer">5. Using the Repository in the Service Layer</h2>
+<p>Once the repository is set up, you can use it in your service layer to interact with the database.</p>
+<h3 id="step-1-create-a-service-interface-and-implementation">Step 1: Create a Service Interface and Implementation</h3>
+<pre><code>public interface IProductService
+{
+    Task&lt;IEnumerable&lt;Product&gt;&gt; GetAllProductsAsync();
+    Task&lt;Product&gt; GetProductByIdAsync(int id);
+    Task AddProductAsync(Product product);
+    Task UpdateProductAsync(Product product);
+    Task DeleteProductAsync(int id);
+}
+
+public class ProductService : IProductService
+{
+    private readonly IProductRepository _productRepository;
+
+    public ProductService(IProductRepository productRepository)
+    {
+        _productRepository = productRepository;
+    }
+
+    public async Task&lt;IEnumerable&lt;Product&gt;&gt; GetAllProductsAsync()
+    {
+        return await _productRepository.GetAllAsync();
+    }
+
+    public async Task&lt;Product&gt; GetProductByIdAsync(int id)
+    {
+        return await _productRepository.GetByIdAsync(id);
+    }
+
+    public async Task AddProductAsync(Product product)
+    {
+        await _productRepository.AddAsync(product);
+    }
+
+    public async Task UpdateProductAsync(Product product)
+    {
+        await _productRepository.UpdateAsync(product);
+    }
+
+    public async Task DeleteProductAsync(int id)
+    {
+        await _productRepository.DeleteAsync(id);
+    }
+}
+</code></pre>
+<hr>
+<h2 id="6-registering-repositories-and-services-in-dependency-injection">6. Registering Repositories and Services in Dependency Injection</h2>
+<p>You need to register your repositories and services in the <strong>Startup.cs</strong> or <strong>Program.cs</strong> for dependency injection.</p>
+<pre><code>public class Startup
+{
+    public void ConfigureServices(IServiceCollection services)
+    {
+        services.AddDbContext&lt;AppDbContext&gt;(options =&gt;
+            options.UseSqlServer(Configuration.GetConnectionString(&quot;DefaultConnection&quot;)));
+
+        services.AddScoped&lt;IProductRepository, ProductRepository&gt;();
+        services.AddScoped&lt;IProductService, ProductService&gt;();
+
+        services.AddControllers();
+    }
+}
+</code></pre>
+<hr>
+<h2 id="7-using-repositories-in-controllers">7. Using Repositories in Controllers</h2>
+<p>Finally, you can use the repository or service in your controllers to handle requests.</p>
+<pre><code>[ApiController]
+[Route(&quot;api/[controller]&quot;)]
+public class ProductsController : ControllerBase
+{
+    private readonly IProductService _productService;
+
+    public ProductsController(IProductService productService)
+    {
+        _productService = productService;
+    }
+
+    [HttpGet]
+    public async Task&lt;IActionResult&gt; GetAllProducts()
+    {
+        var products = await _productService.GetAllProductsAsync();
+        return Ok(products);
+    }
+
+    [HttpGet(&quot;{id}&quot;)]
+    public async Task&lt;IActionResult&gt; GetProductById(int id)
+    {
+        var product = await _productService.GetProductByIdAsync(id);
+        if (product == null)
+        {
+            return NotFound();
+        }
+        return Ok(product);
+    }
+
+    [HttpPost]
+    public async Task&lt;IActionResult&gt; AddProduct([FromBody] Product product)
+    {
+        await _productService.AddProductAsync(product);
+        return CreatedAtAction(nameof(GetProductById), new { id = product.ProductId }, product);
+    }
+
+    [HttpPut(&quot;{id}&quot;)]
+    public async Task&lt;IActionResult&gt; UpdateProduct(int id, [FromBody] Product product)
+    {
+        if (id != product.ProductId)
+        {
+            return BadRequest();
+        }
+
+        await _productService.UpdateProductAsync(product);
+        return NoContent();
+    }
+
+    [HttpDelete(&quot;{id}&quot;)]
+    public async Task&lt;IActionResult&gt; DeleteProduct(int id)
+    {
+        await _productService.DeleteProductAsync(id);
+        return NoContent();
+    }
+}
+</code></pre>
+<hr>
+<h2 id="conclusion">Conclusion</h2>
+<p>Using <strong>Database First</strong> with <strong>Entity Framework Core</strong> provides a quick and efficient way to generate entities from an existing database. By implementing the <strong>Repository Pattern</strong>, you can cleanly separate your data access logic from your business logic, making</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/thanggghg/RPAPIService/blob/develop/RP.API/docs/EFCore/scaffold-dbcontext.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

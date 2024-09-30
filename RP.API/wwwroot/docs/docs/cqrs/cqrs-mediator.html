@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Introduction to CQRS with Mediator | RP.APIDocs </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Introduction to CQRS with Mediator | RP.APIDocs ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/thanggghg/RPAPIService/blob/develop/RP.API/docs/CQRS/cqrs-mediator.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo.svg" alt="RP.APIDocs">
+            RP.APIDocs
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="introduction-to-cqrs-with-mediator">Introduction to CQRS with Mediator</h1>
+
+<h2 id="what-is-cqrs">What is CQRS?</h2>
+<p><strong>CQRS</strong> stands for <strong>Command Query Responsibility Segregation</strong>. It is an architectural pattern where the responsibility for reading data (queries) and modifying data (commands) is separated into different models.</p>
+<h3 id="11-key-concepts-of-cqrs">1.1 Key Concepts of CQRS:</h3>
+<ul>
+<li><strong>Command</strong>: Represents operations that change the state of the system (e.g., create, update, or delete actions).</li>
+<li><strong>Query</strong>: Represents operations that retrieve data without changing the system's state.</li>
+</ul>
+<p>By separating these two concerns, <strong>CQRS</strong> allows you to optimize and scale your application more efficiently. For example, you can use one database optimized for writing (commands) and another optimized for reading (queries).</p>
+<h3 id="12-benefits-of-cqrs">1.2 Benefits of CQRS:</h3>
+<ul>
+<li><strong>Scalability</strong>: You can scale read and write operations independently, which is useful in high-performance systems.</li>
+<li><strong>Separation of concerns</strong>: The logic for writing data and reading data is isolated, making the system more maintainable.</li>
+<li><strong>Better performance</strong>: You can optimize read operations separately from write operations, often using different data stores or denormalized views for queries.</li>
+</ul>
+<h2 id="what-is-mediator">What is Mediator?</h2>
+<p>The <strong>Mediator</strong> pattern is used to reduce the complexity of communication between different components by introducing a central mediator object. This pattern helps in decoupling the sender and receiver, meaning that the sender doesn't need to know who will handle its request.</p>
+<p>In the context of <strong>CQRS</strong>, the <strong>Mediator</strong> pattern is used to manage and route <strong>Commands</strong> and <strong>Queries</strong> to their respective handlers. This ensures that the application remains loosely coupled, and changes in one part of the system do not require changes in others.</p>
+<h3 id="21-how-cqrs-and-mediator-work-together">2.1 How CQRS and Mediator Work Together</h3>
+<p>In a CQRS architecture, <strong>Commands</strong> and <strong>Queries</strong> are sent through the <strong>Mediator</strong>, which dispatches them to the correct handler.</p>
+<ul>
+<li><strong>Command Handler</strong>: Responsible for processing commands that modify the system state.</li>
+<li><strong>Query Handler</strong>: Responsible for handling queries to retrieve data without modifying the system state.</li>
+</ul>
+<h3 id="example-flow">Example Flow:</h3>
+<ol>
+<li>A <strong>Command</strong> (e.g., &quot;CreateOrder&quot;) is sent by the application to the <strong>Mediator</strong>.</li>
+<li>The <strong>Mediator</strong> routes the command to the appropriate <strong>Command Handler</strong> that processes the command and modifies the system state (e.g., creates a new order).</li>
+<li>A <strong>Query</strong> (e.g., &quot;GetOrderById&quot;) is sent to the <strong>Mediator</strong> to retrieve data from the system.</li>
+<li>The <strong>Mediator</strong> routes the query to the appropriate <strong>Query Handler</strong>, which returns the required data.</li>
+</ol>
+<h2 id="implementing-cqrs-with-mediator-in-net">Implementing CQRS with Mediator in .NET</h2>
+<p>In .NET, you can implement <strong>CQRS</strong> with <strong>Mediator</strong> using the popular <a href="https://github.com/jbogard/MediatR"><strong>MediatR</strong></a> library. This library simplifies the implementation of the Mediator pattern by providing built-in mechanisms for routing commands and queries to their handlers.</p>
+<h3 id="example-command-and-query">Example Command and Query:</h3>
+<h4 id="command">Command:</h4>
+<pre><code class="lang-csharp">public class CreateOrderCommand : IRequest&lt;int&gt;
+{
+    public string ProductName { get; set; }
+    public int Quantity { get; set; }
+}
+</code></pre>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/thanggghg/RPAPIService/blob/develop/RP.API/docs/CQRS/cqrs-mediator.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

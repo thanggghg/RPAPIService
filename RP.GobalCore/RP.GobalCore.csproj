@@ -11,6 +11,7 @@
     <PackageReference Include="DocumentFormat.OpenXml" />
     <PackageReference Include="EPPlus" />
     <PackageReference Include="FluentValidation.AspNetCore" />
+    <PackageReference Include="ITGlobal.MarkDocs.Core" />
     <PackageReference Include="JWT" />
     <PackageReference Include="MediatR" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" />

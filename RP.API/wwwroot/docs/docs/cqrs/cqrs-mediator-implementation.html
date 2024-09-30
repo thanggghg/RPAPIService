@@ -1,0 +1,227 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title> | RP.APIDocs </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content=" | RP.APIDocs ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/thanggghg/RPAPIService/blob/develop/RP.API/docs/CQRS/cqrs-mediator-implementation.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo.svg" alt="RP.APIDocs">
+            RP.APIDocs
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<h2 id="implementing-cqrs-with-mediator-in-net">Implementing CQRS with Mediator in .NET</h2>
+<p>We will use the <strong>MediatR</strong> library to implement <strong>CQRS with Mediator</strong> in a .NET application. Below are steps to implement both <strong>commands</strong> and <strong>queries</strong>.</p>
+<h3 id="step-1-install-mediatr">Step 1: Install MediatR</h3>
+<p><code>dotnet add package MediatR dotnet add package</code> <code>MediatR.Extensions.Microsoft.DependencyInjection</code></p>
+<p>First, install the <strong>MediatR</strong> and <strong>MediatR.Extensions.Microsoft.DependencyInjection</strong> packages into your project:</p>
+<p>dotnet add package MediatR
+dotnet add package MediatR.Extensions.Microsoft.DependencyInjection</p>
+<p>enter code here</p>
+<h3 id="step-2-define-a-command-and-command-handler">Step 2: Define a Command and Command Handler</h3>
+<p><strong>Example Command:</strong> CreateOrderCommand
+This command represents an action to create a new order in the system.</p>
+<pre><code>public class CreateOrderCommand : IRequest&lt;int&gt; {
+    public string ProductName { get; set; }
+    public int Quantity { get; set; } }
+</code></pre>
+<p><strong>IRequest<int></int></strong>: This indicates that the command will return an integer (the ID of the newly created order).</p>
+<p><strong>Command Handler</strong>: CreateOrderCommandHandler
+The handler processes the CreateOrderCommand and performs the action (e.g., saving the order to a database).</p>
+<pre><code>public class CreateOrderCommandHandler : IRequestHandler&lt;CreateOrderCommand, int&gt;
+{
+    public Task&lt;int&gt; Handle(CreateOrderCommand request, CancellationToken cancellationToken)
+    {
+        // Simulate saving to a database
+        int newOrderId = 1;  // This would normally come from the database
+        Console.WriteLine($&quot;Order created: {request.ProductName}, Quantity: {request.Quantity}&quot;);
+        
+        return Task.FromResult(newOrderId);
+    }
+}
+</code></pre>
+<h3 id="step-3-define-a-query-and-query-handler">Step 3: Define a Query and Query Handler</h3>
+<h4 id="example-query-getorderbyidquery">Example Query: <code>GetOrderByIdQuery</code></h4>
+<p>This query retrieves an order by its ID.</p>
+<pre><code>public class GetOrderByIdQuery : IRequest&lt;Order&gt;
+{
+    public int OrderId { get; set; }
+}
+</code></pre>
+<h4 id="query-handler-getorderbyidqueryhandler">Query Handler: <code>GetOrderByIdQueryHandler</code></h4>
+<p>This handler processes the query and returns the requested order.</p>
+<pre><code>public class GetOrderByIdQueryHandler : IRequestHandler&lt;GetOrderByIdQuery, Order&gt;
+{
+    public Task&lt;Order&gt; Handle(GetOrderByIdQuery request, CancellationToken cancellationToken)
+    {
+        // Simulate fetching from a database
+        var order = new Order
+        {
+            OrderId = request.OrderId,
+            ProductName = &quot;Sample Product&quot;,
+            Quantity = 2
+        };
+        
+        return Task.FromResult(order);
+    }
+}
+</code></pre>
+<p><strong>Step 4: Register MediatR in ASP.NET Core</strong>
+In your <code>Program.cs</code> or <code>Startup.cs</code>, register <strong>MediatR</strong> so that it can resolve handlers for commands and queries:
+using MediatR;</p>
+<pre><code>using Microsoft.Extensions.DependencyInjection;
+
+var builder = WebApplication.CreateBuilder(args);
+
+// Register MediatR services
+builder.Services.AddMediatR(typeof(Program).Assembly);
+
+var app = builder.Build();
+app.MapControllers();
+
+app.Run();
+</code></pre>
+<p><strong>Step 5: Using CQRS in Controllers</strong>
+You can now use <strong>MediatR</strong> to send commands and queries in your controllers.</p>
+<h4 id="example-of-sending-a-command">Example of sending a Command:</h4>
+<pre><code>[ApiController]
+[Route(&quot;api/[controller]&quot;)]
+public class OrdersController : ControllerBase
+{
+    private readonly IMediator _mediator;
+
+    public OrdersController(IMediator mediator)
+    {
+        _mediator = mediator;
+    }
+
+    [HttpPost]
+    public async Task&lt;IActionResult&gt; CreateOrder([FromBody] CreateOrderCommand command)
+    {
+        var orderId = await _mediator.Send(command);
+        return Ok(new { OrderId = orderId });
+    }
+}
+</code></pre>
+<p>Example of sending a Query:</p>
+<pre><code>[HttpGet(&quot;{id}&quot;)]
+public async Task&lt;IActionResult&gt; GetOrderById(int id)
+{
+    var query = new GetOrderByIdQuery { OrderId = id };
+    var order = await _mediator.Send(query);
+    
+    if (order == null)
+    {
+        return NotFound();
+    }
+
+    return Ok(order);
+}
+</code></pre>
+<h3 id="conclusion">Conclusion</h3>
+<p>By using <strong>CQRS with the Mediator pattern</strong>, you can cleanly separate read and write operations, ensuring that your application is scalable, maintainable, and easy to extend. The <strong>MediatR</strong> library makes it simple to implement this pattern by abstracting the dispatching of commands and queries, allowing your application logic to remain clean and decoupled.</p>
+<h3 id="summary">Summary</h3>
+<p>This file introduces <strong>CQRS</strong> and <strong>Mediator</strong> with examples in .NET using <strong>MediatR</strong>. It explains how to define commands and queries, and how to handle them using the <strong>Mediator</strong> pattern. This structure can be extended further depending on your documentation needs.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/thanggghg/RPAPIService/blob/develop/RP.API/docs/CQRS/cqrs-mediator-implementation.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -22,6 +22,19 @@
     <Copy SourceFiles="@(JsonResourcePreBuild)" DestinationFolder="$(DestinationResourceFiles)" />
   </Target>
 
+
+  <Target Name="BuildAndCopyDocFX" AfterTargets="Build">
+    <Exec Command="C:\Users\Admin\.dotnet\tools\docfx build" />
+
+    <MakeDir Directories="$(ProjectDir)wwwroot\docs" Condition="!Exists('$(ProjectDir)wwwroot\docs')" />
+
+    <Copy SourceFiles="@(DocfxFiles)" DestinationFolder="$(ProjectDir)wwwroot\docs\%(RecursiveDir)" SkipUnchangedFiles="true" />
+
+    <ItemGroup>
+      <DocfxFiles Include="_site\**\*" />
+    </ItemGroup>
+  </Target>
+
   <Target AfterTargets="Build" Name="Copy">
     <ItemGroup>
       <JsonResourcePostBuild Include="$(SourceResourceFiles)\*.*" />
@@ -39,6 +52,7 @@
     <PackageReference Include="DotNetEnv" />
     <PackageReference Include="Elasticsearch.Net" />
     <PackageReference Include="FluentValidation.AspNetCore" />
+    <PackageReference Include="ITGlobal.MarkDocs" />
     <PackageReference Include="JWT" />
     <PackageReference Include="MediatR" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" />
@@ -72,6 +86,7 @@
   <ItemGroup>
     <Folder Include="Application\Handle\" />
     <Folder Include="Application\Queries\" />
+    <Folder Include="templates\" />
     <Folder Include="Templates\en\" />
   </ItemGroup>
 

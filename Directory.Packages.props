@@ -27,6 +27,8 @@
     <PackageVersion Include="EPPlus" Version="7.0.9" />
     <PackageVersion Include="FluentValidation" Version="11.5.1" />
     <PackageVersion Include="Google.Apis.Oauth2.v2" Version="1.66.0.1869" />
+    <PackageVersion Include="ITGlobal.MarkDocs" Version="2.8.176" />
+    <PackageVersion Include="ITGlobal.MarkDocs.Core" Version="2.8.176" />
     <PackageVersion Include="JWT" Version="7.2.1" />
     <PackageVersion Include="Elastic.Serilog.Sinks" Version="8.6.1" />
     <PackageVersion Include="Elasticsearch.Net" Version="7.17.5" />

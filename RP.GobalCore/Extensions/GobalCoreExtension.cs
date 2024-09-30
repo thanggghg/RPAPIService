@@ -1,15 +1,13 @@
-﻿using FluentValidation;
-using RP.Library.Db;
-using RP.Library.Extensions;
-using RP.Library.Utils;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Hosting;
 using Polly;
-using RP.GobalCore.Database;
+using RP.API.Service;
 using RP.GobalCore.Application.Handler.AuthenticateHandler;
-using Microsoft.EntityFrameworkCore;
+using RP.GobalCore.Database;
+using RP.GobalCore.Repositories;
+using RP.GobalCore.Services;
 using RP.GobalCore.Services.Interfaces;
 using RP.GobalCore.Services;
 using RP.API.Service;
@@ -58,5 +56,6 @@ public static class RPAPIExtension
         builder.Services.AddHealthChecks()
                     .AddDbContextCheck<ErpoutsourceContext>("ERPOutsourceContext")
                     .AddCheck("ERPOutsourceService", () => HealthCheckResult.Healthy());
+
     }
 }

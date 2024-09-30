@@ -1,5 +1,5 @@
-﻿using RP.API.Routes;
-using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+﻿using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using RP.API.Routes;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +21,13 @@ app.AddRegisterRoutes();
 app.MapHealthChecks("/health", new HealthCheckOptions
 {
     ResponseWriter = CustomHealthCheckResponseWriter.WriteResponse
+});
+app.UseStaticFiles();
+// Serve DocFX documentation at /docs
+app.MapGet("/docs", context =>
+{
+    context.Response.Redirect("/docs/index.html", permanent: false);
+    return Task.CompletedTask;  // Trả về Task.CompletedTask vì không có hành động không đồng bộ
 });
 
 //Run app

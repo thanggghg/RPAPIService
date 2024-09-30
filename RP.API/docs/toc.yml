@@ -1,0 +1,23 @@
+- name: Introduction
+  href: introduction.md
+- name: Getting Started
+  href: getting-started.md
+- name: "CQRS with Mediator"
+  href: "CQRS/cqrs-mediator.md"
+  items:
+    - name: "What is CQRS?"
+      href: "CQRS/cqrs-mediator.md"
+    - name: "Implementing CQRS"
+      href: "CQRS/cqrs-mediator-implementation.md"
+    - name: "Benefits of CQRS"
+      href: "CQRS/cqrs-benefits.md"
+- name: "SQL Visual Compare"
+  href: "SQLCompare/sql-visual-compare.md"
+- name: "Entity Framework Core"
+  href: "EFCore/db-first-ef-core-repository.md"
+  items:
+     - name: "Entity Framework Core"
+       href: "EFCore/db-first-ef-core-repository.md"
+     - name: "Scaffold Entities from the Database"
+       href: "EFCore/scaffold-dbcontext.md"
+  

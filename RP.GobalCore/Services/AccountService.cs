@@ -1,38 +1,33 @@
-﻿using System.Linq.Expressions;
-using System.Web;
-using RP.GobalCore.Services.Interfaces;
-using RP.GobalCore.Utils;
-using LinqKit;
-using Microsoft.EntityFrameworkCore;
+﻿using System;
+using System.Threading.Tasks;
+using System.Threading;
 using Microsoft.Extensions.Logging;
-using Serilog;
-using RP.GobalCore.ViewModels.Queries;
+using RP.GobalCore.Database.Entities;
+using RP.GobalCore.Services.Interfaces;
+using Microsoft.EntityFrameworkCore;
+using RP.API.Service;
 using RP.GobalCore.Application.Queries.Authenticate;
 using RP.GobalCore.Database;
-using RP.GobalCore.Database.Entities;
-using RP.API.Service;
-using RP.Library.Exceptions;
-using RP.Common.Models;
-using RP.GobalCore.Repositories.Interfaces;
 using RP.GobalCore.Repositories;
+using RP.GobalCore.ViewModels.Queries;
+using RP.GobalCore.Mapper;
 
 namespace RP.GobalCore.Services
 {
     public class AccountService : IAccountService
     {
-        private ILogger<AccountService> Logger;
-
+        private ILogger<AccountService> _logger;
         private readonly IERPOutsourceRepository<Users> _eRPUsersRepository;
-        private readonly ERPOutsourceContext _context;
+        private readonly ErpoutsourceContext _context;
         private readonly IJwtTokenService _jwtTokenService;
+
         public AccountService(
             ILogger<AccountService> logger,
             IERPOutsourceRepository<Users> eRPUsersRepository,
             IJwtTokenService jwtTokenService,
-            ERPOutsourceContext context
-           )
+            ErpoutsourceContext context)
         {
-            Logger = logger;
+            _logger = logger;
             _eRPUsersRepository = eRPUsersRepository;
             _jwtTokenService = jwtTokenService;
             _context = context;
@@ -42,58 +37,38 @@ namespace RP.GobalCore.Services
         {
             try
             {
+                var query = _context.Users.AsQueryable();
 
-                var randomUser = await _context.Users
-                     .FirstOrDefaultAsync();       // Lấy bản ghi đầu tiên từ kết quả
-                var user1 =  _eRPUsersRepository.Filter(null);
-                var user = await _eRPUsersRepository.Filter(u => u.UsersID == request.UserName.Trim()).FirstOrDefaultAsync();
+                query = query.Where(u => u.UsersIdPk == request.UserName.Trim());
 
-                // query = query.Where(u => u.UsersID == request.UserName.Trim());
+                // Kiểm tra điều kiện mật khẩu hoặc passcode
+                if (string.IsNullOrEmpty(request.Passcode))
+                {
+                    query = query.Where(u => u.UsersWebPwd == request.Password.Trim());
+                }
+                else
+                {
+                    query = query.Where(u => u.UsersPasscode == request.Passcode.Trim());
+                }
 
-                //if (!string.IsNullOrEmpty(request.Passcode))
-                //{
-                //    query = query.Where(u => u.UsersPasscode == request.Passcode.Trim());
-                //}
-                //else
-                //{
-                //    query = query.Where(u => u.UsersWebPwd == request.Password.Trim());
-                // }
-
-
-                //var user = await query.FirstOrDefaultAsync();
+                var user = await query.FirstOrDefaultAsync(cancellationToken);
 
                 if (user == null)
                 {
-                    throw new JWTException("User not found or invalid credentials.");
+                    _logger.LogError("Login failed for user: {UserName}", request.UserName);
+                    return null; // Or you can return a more specific error message or object
                 }
-
-                var userDto = new UserDto
-                {
-                    UserName = user.UsersID,  
-                    Token = Guid.NewGuid().ToString(),
-                    Email = user.UsersEmail,
-                    SupervisorName = user.UserSupervisorID 
-                };
-
-                var response = new AuthenticateLoginResponse
-                {
-                    AccessToken = _jwtTokenService.CreateAccessToken(userDto),  
-                    TokenType = "Bearer",
-                    ExpiresIn = 3600,
-                    RefreshToken = _jwtTokenService.CreateAccessToken(userDto),
-                };
-
-                return response;
+                var userDto = user.MapUserToUserDto();
+                // Assuming `AuthenticateLoginResponse` needs to be constructed
+                var AccessToken = _jwtTokenService.CreateAccessToken(userDto);
+                var token = _jwtTokenService.CreateAccessToken(userDto);
+                return new AuthenticateLoginResponse {AccessToken = AccessToken };
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                Log.Logger.Error(ex, $"Login failed for user {request.UserName}: {ex.Message}");
-                throw new Exception(ex.Message); 
+                _logger.LogError("An error occurred during login: {ExceptionMessage}", e.Message);
+                return null; // Or handle differently based on your error handling policies
             }
         }
-
-
     }
 }
-
-

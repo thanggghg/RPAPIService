@@ -8,7 +8,7 @@ public partial class Edipartner
     public int PartnerPk { get; set; }
 
     public int RecStatusNoFk { get; set; }
-
+    
     public string PartnerId { get; set; }
 
     public string PartnerName { get; set; }

@@ -39,7 +39,6 @@
 
   <ItemGroup>
     <Folder Include="Application\Commands\Authenticate\" />
-    <Folder Include="Mapper\" />
     <Folder Include="Migrations\" />
     <Folder Include="ViewModels\Commands\" />
   </ItemGroup>

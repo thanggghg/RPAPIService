@@ -56,7 +56,7 @@ public static class RPAPIExtension
         //services.AddScoped(typeof(IERPOutsourceRepository<>), implementationType: typeof(IERPOutsourceRepository<>));
         services.AddScoped(typeof(IERPOutsourceRepository<>), typeof(ERPOutsourceRepository<>));
         builder.Services.AddHealthChecks()
-                    .AddDbContextCheck<ERPOutsourceContext>("ERPOutsourceContext")
+                    .AddDbContextCheck<ErpoutsourceContext>("ERPOutsourceContext")
                     .AddCheck("ERPOutsourceService", () => HealthCheckResult.Healthy());
     }
 }

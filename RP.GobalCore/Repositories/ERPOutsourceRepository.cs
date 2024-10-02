@@ -15,10 +15,10 @@ namespace RP.GobalCore.Repositories
     public class ERPOutsourceRepository<TEntity> : IERPOutsourceRepository<TEntity>
         where TEntity : class
     {
-        public readonly ERPOutsourceContext _dbContext;
+        public readonly ErpoutsourceContext _dbContext;
         public IUnitOfWork UnitOfWork => (IUnitOfWork)_dbContext;
 
-        public ERPOutsourceRepository(ERPOutsourceContext dbContext)
+        public ERPOutsourceRepository(ErpoutsourceContext dbContext)
         {
             _dbContext = dbContext;
         }

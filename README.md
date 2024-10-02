@@ -27,3 +27,4 @@ A reference .NET application implementing an eCommerce web site using a services
 
 * Browser to address: https://local.gosell.com/swagger/index.html (if SSL false, disable security browser or using Chrome low version)
 
+dotnet ef dbcontext scaffold "Server=210.2.68.52,2433;Database=ERPOutsource;User Id=osrw;Password=P6RYhk4RFrrebRWrvhf9mQ==;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -o Database/Entities --project ./RP.GobalCore/RP.GobalCore.csproj

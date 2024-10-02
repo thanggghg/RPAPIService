@@ -8,8 +8,8 @@ using RP.Library.Seedwork;
 
 namespace RP.GobalCore.Repositories.Interfaces
 {
-    internal interface IERPUsersRepository : IRepository<Users>
-    {
-        long GetUserAsyc();
-    }
+    //internal interface IERPUsersRepository : IRepository<Users>
+    //{
+    //    long GetUserAsyc();
+    //}
 }

@@ -29,60 +29,60 @@ namespace RP.API.Service
                 _jwtOptions = jwtOptions;
             }
 
-            //public string GenerateJwtRefreshToken(UserDto userInf, string clientId) //for qc testing
-            //{
-            //    try
-            //    {
-            //        var secrect = GetSecret(clientId).Result;
-            //        var iat = DateTime.UtcNow;
-            //        //var tokenExpiration = DateTime.UtcNow.Add(TimeSpan.FromSeconds(_jwtOptions.RefreshTokenExpirationSeconds));
-            //        var tokenExpiration = DateTime.UtcNow.Add(TimeSpan.FromSeconds(3600)); // for qc testing
+        public string GenerateJwtRefreshToken(UserDto userInf, string clientId) //for qc testing
+        {
+            try
+            {
+                var secrect = GetSecret(clientId).Result;
+                var iat = DateTime.UtcNow;
+                //var tokenExpiration = DateTime.UtcNow.Add(TimeSpan.FromSeconds(_jwtOptions.RefreshTokenExpirationSeconds));
+                var tokenExpiration = DateTime.UtcNow.Add(TimeSpan.FromSeconds(3600)); // for qc testing
 
-            //        string combinedString = $"{clientId}:{secrect}";
-            //        var clientSign = JwtTokenUtil.ComputeSha256Hash(combinedString);
+                string combinedString = $"{clientId}:{secrect}";
+                var clientSign = JwtTokenUtil.ComputeSha256Hash(combinedString);
 
-            //        var jsonObject = new Dictionary<string, object>
-            //{
-            //    { "sub", userInf.Id },
-            //    { "userAffiliateStoreId", userInf.Id },
-            //    { "iat", iat.ToUnixTimestamp() },
-            //    { "clientId", clientId },
-            //    { "clientSign", clientSign},
-            //    { "exp", tokenExpiration.ToUnixTimestamp() }
-            //};
+                var jsonObject = new Dictionary<string, object>
+            {
+                { "sub", userInf.Id },
+                { "userAffiliateStoreId", userInf.Id },
+                { "iat", iat.ToUnixTimestamp() },
+                { "clientId", clientId },
+                { "clientSign", clientSign},
+                { "exp", tokenExpiration.ToUnixTimestamp() }
+            };
 
-            //        var base64UrlEncodedHeader = JwtTokenUtil.CreateBase64UrlEncoderJwtHeader(_jwtOptions.SigningKey);
-            //        var base64UrlEncodedPayload = JwtTokenUtil.CreateBase64UrlEncoderJwtPayLoad(jsonObject);
-            //        var jwtSign = JwtTokenUtil.SignJwt(base64UrlEncodedHeader + "." + base64UrlEncodedPayload, _jwtOptions.SigningKey);
+                var base64UrlEncodedHeader = JwtTokenUtil.CreateBase64UrlEncoderJwtHeader(_jwtOptions.SigningKey);
+                var base64UrlEncodedPayload = JwtTokenUtil.CreateBase64UrlEncoderJwtPayLoad(jsonObject);
+                var jwtSign = JwtTokenUtil.SignJwt(base64UrlEncodedHeader + "." + base64UrlEncodedPayload, _jwtOptions.SigningKey);
 
-            //        if (string.IsNullOrEmpty(jwtSign))
-            //        {
-            //            throw new JWTException($"Cannot generate refresh token");
-            //        }
+                if (string.IsNullOrEmpty(jwtSign))
+                {
+                    throw new JWTException($"Cannot generate refresh token");
+                }
 
-            //        return jwtSign;
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        Log.Logger.Error(ex, $"FAIL {nameof(SigninCommand)} : {ex.Message}");
-            //        throw new Exception($"JWT options hello: {JsonConvert.SerializeObject(_jwtOptions)}");
-            //    }
-            //}
+                return jwtSign;
+            }
+            catch (Exception ex)
+            {
+                Log.Logger.Error(ex, $"FAIL {nameof(SigninCommand)} : {ex.Message}");
+                throw new Exception($"JWT options hello: {JsonConvert.SerializeObject(_jwtOptions)}");
+            }
+        }
 
-            //private async Task<string> GetSecret(string clientId)
-            //{
-            //    var secret = await _cache.GetAsync(clientId);
-            //    if (secret == null)
-            //    {
-            //        var oauth = await _gatewayService.GetOauthClientDetailByClientIdAsync(clientId);
-            //        if (oauth != null && !string.IsNullOrWhiteSpace(oauth.clientSecret))
-            //        {
-            //            secret = Convert.FromBase64String(oauth.clientSecret);
-            //            await _cache.SetAsync(clientId, secret);
-            //        }
-            //    }
-            //    return secret != null ? Convert.ToBase64String(secret) : throw new Exception($"Cannot get client secret");
-            //}
+        //private async Task<string> GetSecret(string clientId)
+        //{
+        //    var secret = await _cache.GetAsync(clientId);
+        //    if (secret == null)
+        //    {
+        //        var oauth = await _gatewayService.GetOauthClientDetailByClientIdAsync(clientId);
+        //        if (oauth != null && !string.IsNullOrWhiteSpace(oauth.clientSecret))
+        //        {
+        //            secret = Convert.FromBase64String(oauth.clientSecret);
+        //            await _cache.SetAsync(clientId, secret);
+        //        }
+        //    }
+        //    return secret != null ? Convert.ToBase64String(secret) : throw new Exception($"Cannot get client secret");
+        //}
 
         public string CreateAccessToken(UserDto userDto)
         {

@@ -5,7 +5,7 @@ using RP.Library.Seedwork;
 namespace RP.GobalCore.Database.Entities
 {
     [Table("Users")]
-    public class Users :   IAggregateRoot
+    public class Users 
     {
         [Key]
         [Column("UsersID_PK")]

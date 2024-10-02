@@ -5,7 +5,7 @@
 We will use the **MediatR** library to implement **CQRS with Mediator** in a .NET application. Below are steps to implement both **commands** and **queries**.
 
 ### Step 1: Install MediatR
-`dotnet add package MediatR dotnet add package` `MediatR.Extensions.Microsoft.DependencyInjection`
+`dotnet add package MediatR dotnet add package MediatR.Extensions.Microsoft.DependencyInjection`
 
 First, install the **MediatR** and **MediatR.Extensions.Microsoft.DependencyInjection** packages into your project:
 

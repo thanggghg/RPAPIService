@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>This is the HOMEPAGE. | RP.APIDocs </title>
+      <title> | RP.APIDocs </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="This is the HOMEPAGE. | RP.APIDocs ">
+      <meta name="title" content=" | RP.APIDocs ">
       
       
       <link rel="icon" href="favicon.ico">
@@ -39,7 +39,7 @@
 
   </head>
 
-  <body class="tex2jax_ignore" data-layout="landing" data-yaml-mime="">
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
     <header class="bg-body border-bottom">
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
@@ -71,13 +71,20 @@
         </div>
 
         <article data-uid="">
-<h1 id="this-is-the-homepage">This is the <strong>HOMEPAGE</strong>.</h1>
 
-<p>Refer to <a href="http://daringfireball.net/projects/markdown/">Markdown</a> for how to write markdown files.</p>
-<h2 id="quick-start-notes">Quick Start Notes:</h2>
-<ol>
-<li>Add images to the <em>images</em> folder if the file is referencing an image.</li>
-</ol>
+<h2 id="rp-architecture-overview">RP Architecture Overview</h2>
+<p>The <strong>RP Architecture</strong> is a modern microservices-based structure built using <strong>.NET Core 8</strong>, leveraging <strong>CQRS</strong> (Command Query Responsibility Segregation) and the <strong>Mediator</strong> pattern for handling complex business logic in a clean and efficient way. The architecture employs the <strong>Database First</strong> approach, ensuring that the database schema drives the application model, allowing for quick adaptability to database changes.</p>
+<h3 id="key-components">Key Components:</h3>
+<ul>
+<li><strong>RP.API</strong>: The gateway service that orchestrates the communication between client requests and backend services, providing a secure entry point to the system.</li>
+<li><strong>RP.Common</strong>: Manages shared business logic across the architecture, promoting code reuse and consistency, acting as a utility for common functionalities.</li>
+<li><strong>RP.GobalCore</strong>: The heart of the system, responsible for executing the main business processes. It uses CQRS and Mediator to handle both command and query responsibilities, enabling efficient and maintainable code.</li>
+<li><strong>RP.Library</strong>: Acts as a repository of shared functions and resources that support the entire system, promoting modularity and service independence.</li>
+<li><strong>ProxyClient</strong>: A dedicated project that facilitates API communication between the services. It abstracts the inter-service communication and ensures secure and reliable API interactions, allowing the services to communicate without direct dependencies, enhancing the scalability and fault tolerance of the architecture.</li>
+</ul>
+<p>At the core of the architecture is <strong>SQL Server</strong>, which stores and manages all critical data, integrated via the <strong>Database First</strong> methodology. This ensures that the data model is in sync with the evolving database schema, making it adaptable and easier to manage over time.</p>
+<p>By utilizing <strong>CQRS</strong> and <strong>Mediator</strong>, this architecture ensures separation of concerns, making it easier to scale, maintain, and adapt to changing business requirements. With <strong>.NET Core 8</strong> at its foundation, it offers high performance, cross-platform support, and cloud-native capabilities, making it ideal for modern, distributed applications.</p>
+<p><img src="images/RP_architecture.webp" alt="RP Architecture Overview"></p>
 
 </article>
 

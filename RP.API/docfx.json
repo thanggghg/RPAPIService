@@ -40,7 +40,7 @@
       "_appName": "RP.APIDocs",
       "_appTitle": "RP.APIDocs",
       "_enableSearch": true,
-      "pdf": true
+      "pdf": false
     }
   }
 }

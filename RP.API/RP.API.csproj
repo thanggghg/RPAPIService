@@ -86,6 +86,7 @@
   <ItemGroup>
     <Folder Include="Application\Handle\" />
     <Folder Include="Application\Queries\" />
+    <Folder Include="docs\images\" />
     <Folder Include="templates\" />
     <Folder Include="Templates\en\" />
   </ItemGroup>
